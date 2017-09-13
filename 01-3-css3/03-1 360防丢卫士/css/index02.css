@@ -1,0 +1,66 @@
+@charset "utf-8";
+ul{
+	list-style-type:none;
+}
+div.content{width:95%;margin: 0 auto;}
+/*-------------header------------------*/
+header{border:0;}
+
+div.logo{
+	float: left;
+	width:152px;
+	height:27px;
+	background-image:url(../images/iconlist_1.png);
+	background-position:-868px -100px;
+	margin-top:11px;
+}
+header ul{
+	float:right;
+	width:550px;
+}
+header ul li{
+	float: left;
+	position:relative;
+}
+header ul a{
+	display: block;
+	text-decoration:none;
+	height:47px;
+	/*line-height等于height 实现垂直居中*/
+	line-height:47px;
+	padding:0 5px;
+	/*字体颜色不用加font*/
+	color: #5c5c5c;
+	transition:border .3s;
+}
+a.android,a.ios{
+	width:76px;
+	height:26px;
+	background-image:url(../images/iconlist_2.png);
+	margin:10px 5px 0;
+}
+a.android{
+	background-position:-430px -671px;
+}
+a.ios{
+	background-position:-1655px -536px;
+}
+/*鼠标悬浮出现下划线, 同时排除空的a标签*/ /*另一种写法 a:not([class]) */
+header ul a:not(:empty):hover,header ul a.current{
+	border-bottom:3px solid #f1595f;
+}
+
+/*二维码*/
+#android_code{
+	width:180px;
+	height:210px;
+	background-image:url(../images/iconlist_2.png);
+	background-position:-1654px -297px;
+	position:absolute;
+	top:40px;
+	display:none;
+}
+
+#android:hover div{
+	display:block;
+}

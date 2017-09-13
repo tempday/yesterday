@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>实现带样式的表单验证
+</title>
+	<link rel="Stylesheet" href="css/3_2.css" />
+	<!--<script src="js/3_22.js"></script>-->
+ </head>
+ <body>
+	<form>
+		<h2>增加管理员</h2>
+		<table>
+			<tr>
+				<td>姓名：</td><td>
+					<input name="username"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_Info">
+						10个字符以内的字母、数字和下划线的组合
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" name="pwd"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_Info">6位数字</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+					<input type="submit" value="保存"/>
+					<input type="reset" value="重填"/>
+				</td>
+			</tr>				
+	    </table>
+	</form>
+ </body>
+ 	<script type="text/javascript">
+	 	window.$=HTMLElement.prototype.$=function(selector){
+		 	return (this==window?document:this).querySelectorAll(selector);
+	 	}
+	 	window.onload=function(){
+		 	var form=document.forms[0];
+		 	var txtName=form.elements["username"];
+		 	var txtPwd=form.elements["pwd"];
+		 	txtName.onfocus=txtPwd.onfocus=function(){
+			 	this.className="txt_focus";
+			 	//this.parentNode.parentNode.$("div")[0].className="";
+			 	this.parentNode.parentNode.$("div")[0].removeAttribute("class");
+		 	}
+		 	txtName.onfocus=txtPwd.onfocus=function(){
+			 	this.className="txt_focus";
+			 	//this.parentNode.parentNode.$("div")[0].className="";
+			 	this.parentNode.parentNode.$("div")[0].removeAttribute("class");
+		 	}
+		 	txtName.onblur=valiName;
+		 	txtPwd.onblur=valiPwd;
+		 	form.onsubmit=function(){
+				var r=true;
+				r=txtName.onblur()&&txtPwd.onblur();
+				if(!r){
+				 	var e=window.event||arguments[0];
+				 	if(e.preventDefault){
+					 	e.preventDefault();
+				 	}else{
+					 	e.returnValue=false;
+				 	}
+			 	}
+	 		}
+	 		form.elements[3].onclick=function(){
+		 		var div=form.$("div");
+		 		for(var i=0;i<div.length;i++){
+			 		div[i].className="vali_Info";
+		 		}
+		 	};
+	 	}
+	 	function valiName(){
+		 	this.className="";
+		 	var div=this.parentNode.parentNode.$("div")[0];
+		 	var r=/^\w{1,10}$/.test(this.value);
+		 	div.className= r?"vali_success":"vali_fail";
+		 	return r;
+	 	}
+	 	function valiPwd(){
+		 	this.className="";
+		 	var div=this.parentNode.parentNode.$("div")[0];
+		 	var r=/^\d{6}$/.test(this.value);
+		 	div.className= r?"vali_success":"vali_fail";
+		 	return r;
+	 	}
+	 	
+	</script>
+
+</html>

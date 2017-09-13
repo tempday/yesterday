@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>修改元素的属性</title>
+<meta charset="utf-8" />
+<script >//src="js/3_1.js"
+	window.onload=function(){
+		var lis=document.querySelectorAll("ul li"); 
+		var nums=[];
+		while(nums.length<lis.length){
+			var n=parseInt(Math.random()*(lis.length-1+1)+1);
+			nums.indexOf(n)==-1&&nums.push(n);
+		}
+		for (var i=0;i<nums.length;i++){
+			lis[i].setAttribute("data-i",nums[i]);
+		}
+		lis=Array.prototype.slice.call(lis);
+		lis.sort(function(a,b){return a.getAttribute("data-i")-b.getAttribute("data-i")})
+		console.log(lis);
+	}
+</script>
+</head>
+<body>
+	<!--1. 使用自定义属性实现摇号排名-->
+	<ul>
+		<li>Eric</li>
+		<li>Scott</li>
+		<li>Jerry</li>
+		<li>Tom</li>
+		<li>Rose</li>
+		<li>John</li>
+		<li>Smith</li>
+		<li>Andy</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>canvas 圆下降</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px" height="300px" style="background:pink;border:1px solid black;"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var ctx=can.getContext("2d");
+	var r=parseInt(Math.random()*36+5);
+	var r2=parseInt(Math.random()*36+5);
+	var x=Math.random()*(can.width-r-r+1)+r;
+	var x2=Math.random()*(can.width-r-r+1)+r;
+	var y1=y2=y3=y4=y5=-r;
+	var arr=[y1,y2,y3,y4,y5];
+	setInterval(function(){
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]-r>can.height){
+				if(i==0||i==2){
+					r=parseInt(Math.random()*36+5);
+					x=Math.random()*(can.width-r-r+1)+r;
+				}else{
+					r2=parseInt(Math.random()*36+5);
+					x2=Math.random()*(can.width-r-r+1)+r;
+				}
+				arr[i]=-r;
+			}
+		}
+		for(var i=0;i<arr.length;i++){
+			arr[i]+=i+1;
+		}
+		//ctx.clearRect(0,0,500,500);
+		ctx.fillStyle="pink";
+		ctx.fillRect(0,0,can.width,can.height)
+		ctx.beginPath();
+		ctx.fillStyle="yellow";
+		ctx.arc(x,arr[0],r,0,Math.PI*2,false);
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(x2,arr[1],r2,0,Math.PI*2,false);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(x,arr[2],r,0,Math.PI*2,false);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(x2,arr[3],r2,0,Math.PI*2,false);
+		ctx.fill();
+	},10);
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>实现带样式的表单验证
+</title>
+	<link rel="Stylesheet" href="css/3_2.css" />
+	<!--<script src="js/3_22.js"></script>-->
+ </head>
+ <body>
+	<form>
+		<h2>增加管理员</h2>
+		<table>
+			<tr>
+				<td>姓名：</td><td>
+					<input name="username"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_Info">
+						10个字符以内的字母、数字和下划线的组合
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" name="pwd"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_Info">6位数字</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+					<input type="submit" value="保存"/>
+					<input type="reset" value="重填"/>
+				</td>
+			</tr>				
+	    </table>
+	</form>
+ </body>
+ <script type="text/javascript">
+		var txtName=document.getElementsByName("username")[0];
+		var txtPwd=document.getElementsByName("pwd")[0];
+		function getFocus(){
+			this.className="txt_focus";
+			this.parentNode.nextElementSibling.firstElementChild.className="";
+		}
+		
+		function vali(txt,reg){
+			txt.className="";
+			var div=txt.parentNode.nextElementSibling.firstElementChild;
+			if(reg.test(txt.value)){
+				div.className="vali_success";
+			}else{
+				div.className="vali_fail";
+			}
+		}
+		txtName.onfocus=getFocus;
+		txtName.onblur=function(){
+			vali(this,/^\w{1,10}$/);
+		}
+		txtPwd.onfocus=getFocus;
+		txtPwd.onblur=function(){
+			vali(this,/^\d{6}$/);
+		}
+	</script>
+
+</html>

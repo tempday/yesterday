@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>取消与利用冒泡</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/3.css"/>
+		<script>
+			/*1. 尝试取消冒泡*/
+			
+			/*2. 利用冒泡，简化计算器程序*/
+			function calc(){
+				var e=window.event||arguments[0];
+				var src=e.srcElement||e.target;
+				var txt=document.querySelector("#sc");
+				if(src.nodeName=="BUTTON"){
+					switch(src.innerHTML){
+						case "C":txt.value="";break;
+						case "=":
+							try{
+								txt.value=eval(txt.value);
+							}catch(err){
+								txt.value=err.toString();
+							};
+							break;
+						default:txt.value+=src.innerHTML;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div onclick="calc();">
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>4</button><br>
+			<button>C</button>
+			<button>+</button>
+			<button>-</button>
+			<button>=</button>
+		</div>
+		<textarea id="sc" style="resize:none;width:200px; height:50px;" ></textarea>
+	</body>
+</html>

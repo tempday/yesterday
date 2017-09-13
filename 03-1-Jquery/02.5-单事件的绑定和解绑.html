@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+	<style>
+		.d1 ,.d3{
+			width:200px;
+			height:50px
+			border:solid 1px black;
+			background:yellow;
+		}
+		.d2,.d4{
+			width:200px;
+			height:200px;
+			border:solid 1px black;
+			background:pink;
+		}
+	</style>
+</head>
+
+<script type="text/javascript">
+	
+</script>
+<body>
+	<div id="" class="d1">
+		<h3>jquery</h3>
+	</div>
+	<div id="" class="d2">
+		<p>js库</p>
+	</div>
+	<div id="" class="d3">
+		<h3>jquery</h3>
+	</div>
+	<div id="" class="d4">
+		<p>js库</p>
+	</div>
+</body>
+<script type="text/javascript">
+	/* 传统事件绑定
+	$(".d1").click(function(){
+		if($(".d2").is(":hidden")){
+			$(".d2").show(2000);
+		}else{
+			$(".d2").hide(2000);
+		}
+	});
+	*/
+	//JQ 绑定事件
+	$(".d1").bind("click",function(){
+		if($(".d2").is(":hidden")){
+			$(".d2").show(2000);
+		}else{
+			$(".d2").hide(2000);
+		}
+	});
+	$(".d1").unbind();
+	//传统 多事件绑定
+	/*
+	$(".d1").bind("mouseover",function(){
+		$(".d2").show(2000);	
+		}).bind("mouseout",function(){
+		$(".d2").hide(2000);	
+	});
+	*/
+	//JQ 绑定多事件
+	$(".d1").bind("mouseover mouseout",function(){
+		if($(".d2").is(":hidden")){
+			$(".d2").show(2000);
+		}else{
+			$(".d2").hide(2000);
+		}
+	});
+	//多事件 解绑 不填参数就解绑所有事件
+	//$(".d1").unbind("mouseover");
+	//JQ hover
+	$(".d3").hover(function(){
+			$(".d4").hide(2000);
+		},function(){
+			$(".d4").show(2000);
+		}
+	);
+</script>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>css3 选择器</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+	<style>
+		*{
+			font-size:24px;
+			text-align:center;
+			padding:0;
+		}
+		/*------为了兼容不同平台的浏览器,a标签的样式有顺序要求--------*/
+		/*定义链接颜色*/
+		a:link { /* Essentially means a[href], or that the link actually goes somewhere */  
+		  color: blue;  
+		}
+		/*点击访问后的颜色*/
+		a:visited {  
+		  color: purple;  
+		}
+		/*鼠标悬浮*/
+		a:hover {  
+		  color: green;  
+		}
+		/*鼠标左键点击时的颜色,即左键按下时的颜色*/
+		a:active {  
+		  color: red;  
+		}
+		
+		p,.s1,.c1{
+			display:block;
+			border:1px solid black;
+			width:300px;
+			margin:20px auto;
+			
+		}
+		/*/相邻兄弟选择器;*/
+		.s1+p{
+			color:red;
+		}
+		/*通用兄弟选择器;*/
+		.s1~p{
+			background:#ccc;
+		}
+		/*属性选择器*//*属性值不写引号很有可能无效*//*属性可以多个*/
+		input[name='123'][type]{
+			border:1px solid black;
+			color:red;
+		}
+		/*~= 只要具备某属性,值必须是独立*/
+		select[class~="456"]{
+			border:1px solid black;
+			color:red;
+		}
+		/* ^= 属性以某值开始的元素*/
+		div[class^='as']{
+			width:100px;
+			height:100px;
+			background: pink;
+			position:fixed;
+			left:100px;
+		}
+		/* *= 属性包含某值的元素*/
+		div[class*='dp']{
+			width:100px;
+			height:100px;
+			background: blue;
+			position:absolute;
+		}
+		/* $= 属性包含某值开始的元素*/
+		div[class*='df']{
+			border: 1px solid yellow;
+			margin: 20px;
+		}
+		/* != 属性不等于某值开始的元素*/
+
+		/*开始练习*/
+		p[id]{
+			border: 1px solid red;
+		}
+		p[id="summary"]{
+			background-color: pink;
+		}
+		p[class ~='warning']{
+			font-size:20pt;
+		}
+		p[title ^="f"]{
+			font-size:15pt;
+		}
+		p[title*="con"]{
+			font-size:20pt;
+		}
+		p[title$="rd"]{
+			font-size:25pt;
+		}
+		/*伪类选择器*/
+		/*目标伪类*/
+		a:target{
+			background:#e5eecc;
+		}
+		/*----元素动态伪类------*/
+		input:disabled{
+			padding-left:95px;
+		}
+		input:enabled{
+			background:#CCCCFF;
+		}
+		input:checked{
+			display: inline-block;
+			width:25px;
+			height:25px;
+		}
+		/*----结构伪类------*/
+		div span:first-child{
+			color:blue;
+		}
+		div span:last-child{
+			color:purple;
+		}
+		div span:only-child{/*选择的是冒号:前面的标签*/
+			color:red;
+		}
+		div span:empty{
+			display: inline-block;/*inline是行内元素,基本无法设置宽高,block块元素可设置浮动宽高定位,inline-block,同时具有两种元素的优点*/
+			width:200px;
+			height:50px;
+			background:#CCCCFF;
+		}
+		/*----否定伪类------*/
+		textarea:not([class="textarea"]){
+			background:#eeeeee;
+		}
+		/*----伪元素选择器------*/
+		/*首字符*/
+		.c1{width:500px;}
+		p:first-letter{
+			color:#e4393c;
+		}
+		/*第一行*/
+		div.c1:first-line{
+			color:#e4393c;
+		}
+		/*::selection选择部分*/
+		div.c1::selection{
+			color:yellow;
+			background-color:#000;
+		}
+	</style>
+</head>
+<body>
+	<a href="#b">click me.</a>
+	<a href="#c">click c.</a>
+	<p>p123</p>
+	<div id="" class="s1">
+		div
+	</div>
+	<p>p223</p>
+	<p>p323</p>
+	<p>p323</p>
+	<p>p323</p>
+	<br>
+	<input type="text" name="123" id="dd" value= "disabed" disabled/>
+	<br>
+	<input type="number" name="" />
+	<select name="1234" class="123 456 789">
+		<option value="123" selected>123
+		<option value="">456
+	</select>
+	<input type="checkbox" name="" checked/>
+	<input type="checkbox" name=""/>
+	<textarea rows="1" cols="15" class="textarea">text</textarea>
+	<textarea rows="1" cols="10">text</textarea>
+	<br>
+	<div id="" class="asdf">
+		
+	</div>
+	<div id="" class="pdpdp">
+		
+	</div>
+	
+	<!--练习-->
+	<p id="intro">id paragraph</p>
+	<p id="summary">summary</p>
+	<p class="important warning">warning</p>
+	<p title="fairly">first</p>
+	<p title="mycontent">mycontent</p>
+	<p title="third">last one</p>
+	<div id="" class="">
+		<span>1</span>
+		<span>2</span>
+	</div>
+	<div id="" class=""><span>3</span></div>
+	<div id="" class=""><span></span></div>
+	<p>诚然，实现同一种效果的方法有很多，我不想回答太多技术性的东西</p>
+	<div id="" class="c1" >首行红色,电影市场的长线走高仅仅是超级IP的一块收割地，
+	除了能够实现影漫游联动运营外，IP价值也在逐渐向舞台剧、音乐剧、有声书等周边产品辐射发展，
+	甚至包括主题餐厅、主题公园等。</div>
+	<a href="#" id="b">I am here.</a>
+	<a href="#" id="c">I am c.</a>
+</body>
+<script type="text/javascript">
+	function Shape(){
+		//window 可以不写
+		this.x=Math.random()*window.innerWidth;
+		this.y=Math.random()*innerHeight;
+		this.op=Math.random();
+		if(!Shape.prototype.move){
+			Shape.prototype.move=function(elem){
+				$(elem).animate({
+					top:this.y,
+					left:this.x,
+					opacity:this.op
+				},5000,move);
+			}
+		}
+	}
+	function move(){
+		var div1=new Shape();
+		var div2=new Shape();
+		div1.move("div[class*='dp']");
+		div2.move("div[class^='as']");
+	}
+	move();
+</script>
+</html>

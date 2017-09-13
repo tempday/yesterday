@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>表单验证</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<fieldset>
+		<legend>用户注册页面</legend>
+		<form id="myform" name="myform" onsubmit="formValidator();">
+			<table>
+				<tr>
+					<td>用户名:</td>
+					<td><input type="text" id="user"/></td>
+					<td><div id="userTip"></div></td>
+				</tr>
+				<tr>
+					<td>密码:</td>
+					<td><input type="password" id="pwd"/></td>
+					<td><div id="pwdTip"></div></td>
+				</tr>
+				<tr>
+					<td>确认密码:</td>
+					<td><input type="password" id="repwd"/></td>
+					<td><div id="repwdTip"></div></td>
+				</tr>
+				<tr>
+					<td>Email地址:</td>
+					<td><input type="text" id="Email"/></td>
+					<td><div id="emailTip"></div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="注册" /></td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
+</body>
+<script type="text/javascript">
+	function userValidator(){
+		var regExp=/^[a-zA-Z\d]{6,12}$/;
+		var $myval=$("#user").val();
+		if($myval==""||$myval==null){
+			$("#userTip").text("用户名不能为空").css({
+				"color":"red",
+				"font-weight":"bold"
+			});
+			return false;
+			//正则表达式 regExp.text()
+		}else if(!regExp.test($myval)){
+			$("#userTip").text("用户名错误").css({
+				"color":"blue",
+				"font-weight":"bold"
+			});
+			return false;
+		}else{
+			$("#userTip").text("正确").css({
+				"color":"green",
+				"font-weight":"bold"
+			});
+			return true;
+		}
+	}
+	function pwdValidator(){
+		var regExp=/^[a-zA-Z]{6,8}$/;
+		var $myval=$("#pwd").val();
+		if($myval==""||$myval==null){
+			$("#pwdTip").text("密码不能为空").css({
+				"color":"red",
+				"font-weight":"bold"
+			});
+			return false;
+			//正则表达式 regExp.text()
+		}else if(!regExp.test($myval)){
+			$("#pwdTip").text("密码格式错误").css({
+				"color":"blue",
+				"font-weight":"bold"
+			});
+			return false;
+		}else{
+			$("#pwdTip").text("正确").css({
+				"color":"green",
+				"font-weight":"bold"
+			});
+			return true;
+		}
+	}
+	function repwdValidator(){
+		var regExp=/^[a-zA-Z]{6,8}$/;
+		var $myval=$("#repwd").val();
+		if($myval==""||$myval==null){
+			$("#repwdTip").text("密码不能为空").css({
+				"color":"red",
+				"font-weight":"bold"
+			});
+			return false;
+			//正则表达式 regExp.text()
+		}else if(!regExp.test($myval)){
+			$("#repwdTip").text("密码格式错误").css({
+				"color":"blue",
+				"font-weight":"bold"
+			});
+			return false;
+		}else if($myval!=$("#pwd").val()){
+			$("#repwdTip").text("两次密码不一致").css({
+				"color":"red",
+				"font-weight":"bold"
+			});
+			return false;
+		}else{
+			$("#repwdTip").text("正确").css({
+				"color":"green",
+				"font-weight":"bold"
+			});
+			return true;
+		}
+	}
+	function emailValidator(){
+		var regExp=/^[a-zA-Z]{6,8}$/;
+		var $myval=$("#Email").val();
+		if($myval==""||$myval==null){
+			$("#emailTip").text("密码不能为空").css({
+				"color":"red",
+				"font-weight":"bold"
+			});
+			return false;
+			//正则表达式 regExp.text()
+		
+		}else{
+			$("#emailTip").text("正确").css({
+				"color":"green",
+				"font-weight":"bold"
+			});
+			return true;
+		}
+	}
+	//验证用户名
+	$("#user").focus(function(){
+		$("#userTip").text("输入英文或数字,长度6到12").css({
+				"color":"",
+				"font-weight":""
+			});
+	}).blur(userValidator);
+	// 密码验证
+	$("#pwd").focus(function(){
+		$("#pwdTip").text("输入英文或数字,长度6到8").css({
+				"color":"",
+				"font-weight":""
+			});
+	}).blur(pwdValidator);
+	//确认密码
+	$("#repwd").focus(function(){
+		$("#repwdTip").text("输入英文或数字,长度6到8").css({
+				"color":"",
+				"font-weight":""
+			});
+	}).blur(repwdValidator);
+	//验证邮箱
+	$("#Email").focus(function(){
+		$("#emailTip").text("不能空").css({
+				"color":"",
+				"font-weight":""
+			});
+	}).blur(emailValidator);
+	//提交表单前验证所有元素验证通过
+	function formValidator(){
+		if(userValidator()&&pwdValidator()&&repwdValidator()&&emailValidator()){
+			alert("验证成功");
+			return false;
+		}else{
+			alert("验证错误");
+			return false;
+		}
+	}
+</script>
+</html>

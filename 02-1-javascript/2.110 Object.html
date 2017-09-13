@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>2.110 Object</title>
+</head>
+<body>
+	<div onmouseover="lilei.intrSelf();" style="height:50px;width:50px;background-color:blue;margin-bottom:10px;"></div>
+	<div onmouseover="lc();" style="height:50px;width:50px;background-color:green;margin-bottom:10px;"></div>
+	<div onmouseover="lili.intrSelf();" style="height:50px;width:50px;background-color:pink;margin-bottom:10px;"></div>
+	<div onmouseover="hmm.intrSelf();" style="height:50px;width:50px;background-color:yellow;margin-bottom:10px;"></div>
+</body>
+<script type="text/javascript">
+	//--直接量  创建对象-------------------------------------
+	var lilei={
+		sname:"Li Lei", //用逗号分开各个属性
+		age:12,
+		intrSelf:function(){
+			console.log("Hello my name is "+lilei.sname+"!");
+		}
+	}
+	var hmm={
+		sname:"Han Meimei", 
+		age:11,
+		intrSelf:function(){
+			console.log("Hello my name is "+this.sname+" !");
+		}
+	}
+	var leo=lilei;
+	leo.sname="loe";
+	var mei=hmm;
+	mei.sname="mm";
+	var lc=lilei.intrSelf;
+	lc=function(){
+			console.log("Hello my name is lc!");
+		}
+	//----判断对象方法属性是否存在----------------------------------------------------
+	arr=[2,3,4,5,7,1];
+	document.write(Number(Boolean(arr.indexOf))+"<br />");
+	//判断对象方法或属性有没有的三种方法:
+	//第一种: hasOwnProperty
+	//if(!Array.prototype.hasOwnProperty("indexOf")){
+	//第二种: xx in Object
+	//if (!("indexOf" in Array.prototype)){ //**有空格断开的判断前加非 要用圆括号
+	//第三种: Array.prototype.indexOf===undefined
+	if(!Array.prototype.indexOf){
+		Array.prototype.indexOf=function(kword){
+			for(var i=0;i<this.length;i++){ 
+				if(arr[i]===kword){
+					return i;
+				}
+			}
+			return -1;
+		}
+	}
+	document.write(arr.indexOf(10)+"<br />");
+	//----构造函数 创建相同结构的对象-----------------------------------
+	function Student(sname,age,color){
+		this.sname=sname;
+		this.age=age;
+		this.color="color:"+color;
+		/*
+		this.intrSelf=function (){
+			console.log("%cI'm "+this.sname+",I'm "+this.age+".",this.color)
+			//document.write("I'm "+this.sname+",I'm "+this.age+".")
+		}*/
+	}
+	var lili=new Student("lili",13,"blue");
+	var hmm=new Student("Han Meimei",11,"red");
+	//----原形-----------------------------------
+	//在构造函数原型对象中定义公共属性(方法)
+	Student.prototype.intrSelf=function (){
+		console.log("%cI'm "+this.sname+",I'm "+this.age+" years old.",this.color)
+	}
+	Student.prototype.money=100;
+	Student.prototype.money-=10;
+	document.write(lili.money+"<br />");
+	//先在当前对象本地查找
+	//找不到再去原型
+	//原型也没有,undefined
+	document.write(hmm.money+"<br />");
+
+	//Sring类型,判断有没有trim方法,如果没有自己定义一个
+	//三种判断
+	//if(!String.prototype.hasOwnProterty("trim")){
+	//if(!("trim" in String.prototype)){
+	if(!String.prototype.trim){
+		document.write("浏览器不支持trim方法");
+		String.prototype.trim=function(){
+			return this.replace(/^\s+|\s+$/g,"");
+		}
+	}
+	var str="  		Hello,sunshine	  ";
+	document.write(str.trim()+"<br />");
+	document.write(str.replace(/ /g,"_")+"<br />");
+
+	//判断自有属性:obj.hasOwnProperty("属性名")
+	//判断共有属性: 两个条件:1.在自身和原型中查找;2.在自身查找
+	//			"属性名" in obj.prototy && obj.hasOwnProperty("属性名")
+
+	//删除属性:delete 对象.属性名;
+	//var n=1; 和 window.n=1; 不可删 ---window["n"]=1; 可以删
+
+	//原型链:由各级对象的__proto__逐级继承形成的关系
+	//lili.__proto__.__proto__ --> object
+	// 获得任意对象的父级原型对象:
+	//		Object.getPrototypeOf(子对象); ==>子对象.__proto__
+
+	//检查对象的父对象;父对象.isPrototypeOf(子对象)
+	//		例如: Student.prototype.isPrototypeOf(lili);
+
+	//判断类型 typeof("hello") -->"string"
+
+	//判断obj是不是数组类型
+	//1.在不在原型链中
+	//--return Array.prototype.isPrototypeOf(obj);
+	//2.instanceof 构造函数名
+	//--return obj instanceof Array;
+	//3.原型对象的constructor 属性
+	//--return obj.constructor==Array;
+	//4.利用Object原型的toString方法
+	/* call ,apply
+		call,
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>04_5-jQueryUi-tabs</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css" />
+	<!--<link rel="stylesheet" href="jquery-ui-themes-1.11.4\themes/sunny/jquery-ui.css" />-->
+	<style>
+		#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+		}
+		#dialog-link span.ui-icon {
+			margin: 0 5px 0 0;
+			position: absolute;
+			left: .2em;
+			top: 50%;
+			margin-top: -8px;
+		}
+	</style>
+</head>
+<body>
+	<div id="tabs">
+		<ul>
+			<li><a href="#d1">简介</a></li>
+			<li><a href="#d2">历史</a></li>
+			<li><a href="#d3">联系</a></li>
+		</ul>
+		<div id="d1" >建设中</div>
+		<div id="d2" >加载中...</div>
+		<div id="d3" >无</div>
+	</div>
+	
+	<input type="text" id="autocomplete"/> <button>搜索</button>
+	<hr/>
+	<a href="#" id="dialog-link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>打开对话框</a>
+	<div id="dialog" title="计算器"><p>对话框主界面</p></div>
+	<br/>
+	<br/>
+	<button id="btn">关闭对话框</button>
+</body>
+<script type="text/javascript">
+	
+	$("#tabs").tabs();
+	var availableTags = [
+		"baidu","javascript","html","lglong519"
+	];
+	//自动完成
+	$("#autocomplete").autocomplete({
+		source:availableTags
+	});
+	// 定义button样式
+	$("#btn").button();
+	//设置对话框样式
+	$("#dialog").dialog({ 
+		autoOpen:false,
+		//模式对话框
+		modal:true,
+		width:300,
+		height:200,
+		buttons:[
+			{
+				text:"确认",
+				click:function(){
+					$(this).dialog("close");
+				}
+			},
+			{
+				text:"取消",
+				click:function(){
+					$("#dialog").dialog("close");
+				}
+			}
+		]
+	});
+	//打开对话框
+	$("#dialog-link").click(function(event){
+		$("#dialog").dialog("open");
+		event.preventDefault();
+	});
+</script>
+</html>

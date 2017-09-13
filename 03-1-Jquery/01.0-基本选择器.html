@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>基本选择器</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style>
+		div{
+			width:150px;
+			height:150px;
+			border:solid 1px black;
+			background-color: pink;
+			float:left;
+			margin:10px;
+		}
+		.mini{
+			width:100px;
+			height:100px;
+			background-color: blue;
+		}
+		button{
+			margin-right:20px;
+		}
+	</style>
+</head>
+<body onclick="history.go(0);">
+	<button id="btn1">id选择器</button>
+	<button id="btn2">元素选择器</button>
+	<button id="btn3">class选择器</button>
+	<button id="btn4">*选择器</button>
+	<button id="btn5">复合选择器</button>
+	<br/>
+	<div id="d1" class="">id选择器</div>
+	<div id="" class="mini"></div>
+	<div id="" class=""></div>
+	<div id="" class=""></div>
+	<div id="" class=""></div>
+</body>
+<script type="text/javascript">
+	$("#btn1").click(function(event){
+		$("#d1").css("background","red");
+	});
+	$("#btn2").click(function(event){
+		var $divs=$("div");
+		
+		for(var i=0;i<$divs.length;i++){
+			var div=$divs[i];//Jq对象转换成Dom对象
+			div.style.background="red";
+		}
+	});
+	$("#btn3").click(functio n(event){
+		$(".mini").css("background","red");
+	});
+	$("#btn4").click(function(event){
+		$("*").css("background","red");
+	});
+	$("#btn5").click(function(event){
+		$("#d1,.mini").css("background","red");
+	});
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>input 新类型-用户注册</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style type="text/css" media="screen" id="test">
+		div{
+			width:150px;
+			height:150px;
+			border:1px solid black;
+			background:#e4393c
+		}
+		form{
+			display: block;
+			width:350px;
+			padding-left:10px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset >
+			<legend>用户注册</legend>
+			<table>
+				<tr>
+					<td>输入用户名:</td>
+					<td><input placeholder="Enter you name"type="text"/></td>
+				</tr>
+				<tr>
+					<td>确认密码:</td>
+					<td><input placeholder="password"type="password"/></td>
+				</tr>
+				<tr>
+					<td>再次确认密码:</td>
+					<td><input placeholder="password" type="password"/></td>
+				</tr>
+				<tr>
+					<td>Email地址:</td>
+					<td><input  type="email"/></td>
+				</tr>
+				<tr>
+					<td>个人主页:</td>
+					<td><input type="url"/></td>
+				</tr>
+				<tr>
+					<td>出生日期:</td>
+					<td><input type="date"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit"/></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+<script type="text/javascript">
+	function mychange(){
+		var e=window.event||arguments[0];
+		var src=e.srcElement||e.target;
+		var ipt=document.getElementsByTagName("ul")[0].children;
+		ipt=Array.prototype.slice.call(ipt,0);
+		for(var i=ipt.length-1;i>=0;i--){
+			if(ipt[i].type!="range"){
+				ipt.splice(i,1);
+			}
+		}
+		document.getElementById("d").style.background=("rgb("+ipt[0].value+", "+ipt[1].value+" ,"+ipt[2].value+")");
+	}
+</script>
+</html>

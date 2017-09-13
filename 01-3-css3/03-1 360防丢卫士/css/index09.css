@@ -1,0 +1,57 @@
+@charset "utf-8";
+/*-------------功能图标------------------*/
+footer>ul{
+	float: left;
+	margin-left:100px;
+	margin-top:5px;
+	margin-right:100px;
+}
+footer>ul h3{
+	height:60px;
+	line-height:60px;
+}
+footer>ul h3 a{
+	color:#818390;
+	font-weight:normal;
+	font-size:22px;
+	text-decoration:none;
+}
+footer>ul li{
+	line-height:30px;
+}
+footer>ul li a{
+	text-decoration:none;
+	color:#818390;
+	font-weight:normal;
+}
+footer>div{
+	float: left;
+	margin-left:100px;
+	margin-top:25px;
+}
+
+footer>div b{
+	float: left;
+	width:112px;
+	height:112px;
+	margin-right:15px;
+	background:url(../images/iconlist_2.png) no-repeat;
+}
+footer>div.weibo b{
+	background-position:0px -590px;
+}
+footer>div.weixin b{
+	background-position:-216px -590px;
+}
+footer>div span{
+	float:right;
+	width:150px;
+	margin-top:40px;
+	padding: auto 100px;
+}
+footer>p{
+	clear:both;
+	text-align:center;
+	font-size:16pt;
+	color:#818390;
+}

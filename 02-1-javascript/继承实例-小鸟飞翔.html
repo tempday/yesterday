@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>继承</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function Flyer(fname,speed){
+		this.fname=fname;
+		this.speed=speed;
+		if(!Flyer.prototype.fly){
+			Flyer.prototype.fly=function(){
+				console.log(this.fname+" 以"+this.speed+" 时速飞行");
+			}
+		}
+	}
+	var bird=new Flyer("麻雀",56);
+	bird.fly();
+	function Plane(fname,speed,capacity) {
+		
+		Flyer.call(this,fname,speed);
+		this.capacity=capacity;
+		
+	}
+	//Plane.__proto__=Flyer.prototype;
+	
+	if(!Flyer.prototype.isPrototypeOf(Plane.prototype)){
+		//修改父对象:方法一(此方法写在构造函数里无效)
+		//Plane.prototype=Flyer.prototype;
+		//修改父对象:方法二
+		//原方法
+		//Object.setPrototypeOf(Plane.prototype,Flyer.prototype);
+		//修改后
+		Object.setPrototypeOf(Plane,Flyer.prototype);//此方法plane的子对象,无法继承Flyer的方法,因为Flyer的方法不在Plane的原型链上
+		if(!Plane.hasOwnProperty("fly")){
+			Plane.prototype.fly=function(){
+				console.log(this.fname+" 搭载着"+this.capacity+"名乘客,以"+this.speed+" 时速飞行");
+			}
+		}
+	}
+	// Plane的__proto__指向Flyer.prototype
+	// Plane.prototype是Flyer.prototype的子对象
+	//__proto__指向父对象
+	var A380=new Plane("A380",999,500);
+	A380.fly();
+</script>
+</html>

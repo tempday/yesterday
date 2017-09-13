@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML>
+<html onclick="console.log('html');">
+	<head>
+		<title>事件处理</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/3.css"/>
+		<script>
+			/*1. 体验事件冒泡*/
+			function fun(div){
+				div.style.backgroundColor="yellow";
+				console.log(div);
+				div.style.backgroundColor="";
+			}
+		</script>
+	</head>
+	<body onclick="console.log('body');">
+		<div class="d1" onclick="fun(this);">
+			<div class="d2" onclick="fun(this);">
+				<div class="d3" onclick="fun(this);">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

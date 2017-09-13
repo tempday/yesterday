@@ -1,0 +1,40 @@
+body {
+	font-family: "Microsoft Yahei";
+	margin: 0px;
+}
+@media screen and (min-width:990px)  {
+	h1{
+		font-size:3em;
+		border-bottom: 3px solid #CCC;
+	}
+	.box{
+		border:1px solid #3a3;
+		background-color:pink;
+		color:#282;
+		padding:8px;
+	}
+}
+@media screen and (min-width:768px)and (max-width:989px)  {
+	h1{
+		font-size:2em;
+		border-bottom: 2px solid #CCC;
+	}
+	.box{
+		border:1px solid #3a3;
+		background:greenyellow;
+		color:#822;
+		padding:6px;
+	}
+}
+@media screen and  (max-width:767px)  {
+	h1{
+		font-size:1.5em;
+		border-bottom: 1px solid #CCC;
+	}
+	.box{
+		border:1px solid #3a3;
+		background:yellow;
+		color:#228;
+		padding:4px;
+	}
+}

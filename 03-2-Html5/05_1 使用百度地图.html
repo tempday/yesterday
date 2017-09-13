@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	body, html,#allmap {
+		width: 800px;
+		height: 600px;
+		overflow: hidden;
+		margin:0;
+		font-family:"微软雅黑";
+		#f0f0f0
+	}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hT7m8zIdGlKnsA9LgmtdbjslWxcpKegz"></script>
+	<title>地图展示</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");    // 创建Map实例
+	map.centerAndZoom("东莞",12);
+	//创建比例尺控件对象
+	var scale=new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT});
+	//添加控件
+	map.addControl(scale);
+	//导航控件
+	var nav=new BMap.NavigationControl();
+	map.addControl(nav);
+	//创建地图标注
+	//var point=new BMap.Point(0,0);
+	//var marker=new BMap.Marker(point);
+	//map.addControl(marker);
+
+	//定位
+	var geo=new BMap.Geocoder();
+	geo.getPoint("东城东路12号",function(point){
+		map.centerAndZoom(point,15);
+		var marker=new BMap.Marker(point);
+		map.addControl(marker);
+		var opts={
+			width:200,
+			height:100,
+			title:"办证中心"
+		}
+		var info=new BMap.InfoWindow("地址:东宝路",opts);
+		marker.addEventListener("click",function(){
+			
+			map.openInfoWindow(info,point);
+		});
+	},"东莞市");
+
+
+
+
+
+	
+	//map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+	//map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+	//map.setCurrentCity("广州");          // 设置地图显示的城市 此项是必须设置的
+	//map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>

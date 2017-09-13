@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>渐变和滤镜</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		
+	</style>
+</head>
+	<!--渐变-->
+	<svg width="400px" height="400px" style="background:pink;">
+		<defs>
+			<linearGradient id="mygrd" x1="0" y1="0" y2="50%" x2="100%">
+				<stop offset="0%" stop-color="red"/>
+				<stop offset="50%" stop-color="blue"/>
+				<stop offset="100%" stop-color="yellow"/>
+			</linearGradient >
+		</defs>
+		<rect x="0" y="0" width="400" height="400" fill="url(#mygrd)"/>
+	</svg>
+
+	<!--滤镜-高斯模糊-feGaussianBlur-->
+	<svg width="400px" height="400px" style="background:pink;">
+		<defs>
+			<filter id="myfgb">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+			</filter>
+		</defs>
+		<rect x="50" y="50" width="200" height="200" fill="yellow" filter="url(#myfgb)"/>
+	</svg>
+</body>
+<script type="text/javascript">
+	
+</script>
+</html>

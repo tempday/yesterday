@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>content counter column hack</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		body{
+			padding:0;
+			margin: 0;
+			text-align:center;
+		}
+		/*文本生成*/
+		.lw:before{
+			content:"老王:";
+			padding:5px;
+		}
+		.xm:before{
+			content:"小明:";
+			padding:5px;
+		}
+		
+		div.content a:before{
+			content: url("m1.gif");
+			padding-left:5px;
+		}
+		/*计数器*/
+
+		/*在要计数的元素外面定义计数器counter,可以使用多个变量c1 c2 c3*/
+		body{
+			counter-reset:mycount 3;
+		}
+		/*在要计数的元素里面定义计数器counter的 增量*/
+		h1{
+			counter-increment:mycount 3;
+		}
+		/*在要计数的元素里面调用counter()*/
+		h1:before{
+			content:"第"counter(mycount)"章";
+			padding-right:15px;
+		}
+		/*多列*/ /*有兼容性问题*/
+		div.column{
+			margin: 0 auto;
+			width:450px;
+			border: 1px solid #e4393c;
+			/*将内容分成3列*/
+			-webkit-column-count:3;
+			/*column-gap 列间距*/
+			-webkit-column-gap:30px;
+			/*列规则 间隔线 样式 颜色 粗细*/
+			column-rule:1px solid #e4393c;
+			
+			/*各版本浏览器特殊前缀*/
+			/*标准 黄不绿色*/
+			background-color:rgb(255,255,230);
+			/*IE7. 天青色*/
+			+background-color:rgb(230,255,255);
+			/*IE8. 紫色*/
+			background-color:rgb(230,230,255)\0;
+			
+		}
+		/*浏览器兼容问题*/
+		/*
+			FireFox:  -mor
+			chrome&safary: -webkit-
+
+		*/
+		/*css Hack */
+	</style>
+</head>
+<body>
+	<div class="lw">
+	今天下午有时间吗?
+  </div>
+  <div class="xm">
+    你要干什么?
+  </div>
+  <div class="lw">
+	我妹来了，今天下午去接我妹，行吗?
+  </div>
+  <div class="xm">
+	我去，接你妹!
+  </div>
+  <div class="lw">
+	你妹的。
+  </div>
+  <div class="content">
+	<a href="http://www.baidu.com">百度</a>
+	<a href="http://www.google.com">谷歌</a>
+	<a href="http://www.yahoo.com">雅虎</a>
+  </div>
+  <h1>Web 基础知识</h1>
+  <h1>HTML 快速入门</h1>
+  <h1>网页中的文本</h1>
+  <div id="" class="column">
+  	首行红色,电影市场的长线走高仅仅是超级IP的一块收割地，
+	除了能够实现影漫游联动运营外，IP价值也在逐渐向舞台剧、音乐剧、有声书等周边产品辐射发展，
+	甚至包括主题餐厅、主题公园等。
+  </div>
+  <!--[if IE 7]>
+  <p>介是IE7 浏览器</p>
+  <![endif]-->
+  <!--[if gt IE 7]>
+  <p><h2>当前浏览器版本高于ie7</h2></p>
+  <![endif]-->
+</body>
+<script type="text/javascript">
+	
+</script>
+</html>

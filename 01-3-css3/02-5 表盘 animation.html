@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>表盘</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<script src="http://www.lglong519.com/Tarena/css3/more%20Fun/more%20Fun.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		div#d1{
+			border: 3px solid #369;
+			width:300px;
+			height:300px;
+			position:relative;
+			top:50%;
+			left:50%;
+			margin:150px -150px;
+			border-radius:150px;
+		}
+		div.long{
+			height:120px;
+			width:100px;
+			position:absolute;
+			left:150px;
+			top:30px;
+			border-left:2px solid blue;
+			transform-origin:left bottom;
+		}
+		div.short{
+			position:absolute;
+			width:150px;
+			height:90px;
+			top:60px;
+			left:149px;
+			border-left:4px solid blue;
+			transform-origin:left bottom;
+		}
+		@keyframes second{
+			0%{
+				transform:rotate(0deg);
+			}
+			100%{
+				transform:rotate(360deg);
+			}
+		}
+		@keyframes minute{
+			0%{
+				transform:rotate(0deg);
+			}
+			100%{
+				transform:rotate(360deg);
+			}
+		}
+		div.long{
+			animation-name:second;
+			animation-duration:60s;
+			animation-timing-function:linear;
+			-webkit-animation-iteration-count:infinite;
+		}
+		div.short{
+			animation-name:minute;
+			animation-duration:3600s;
+			animation-timing-function:linear;
+			-webkit-animation-iteration-count:infinite;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="d1" class="">
+		<div id="" class="long">
+			
+		</div>
+		<div id="" class="short">
+			
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function fun(){
+		this.interest="football";
+	}
+	//还有这种操作?
+	fun.prototype={
+		ask:"what",
+		say:function(){
+			console.log(this.ask+" is eating you?");
+		}
+	}
+	fun.prototype.mm="nam";
+	function shape(name,color){
+		this.name=name;
+		this.color=color;
+		this.intr=function(){
+			console.log("my name is "+this.name);
+		}
+		shape.prototype.show=function(){
+			console.log(this.name +" is a good man.");
+		}
+	}
+	function oo(a,age){
+		this.age=age;
+	}
+	
+	var op=new oo("lglong",55);
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>用户中心</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="http://127.0.0.1/Tarena/Jquery/JS/jquery-1.11.3.min.js"></script>
+  <!--
+	  将自定义JS文件引入在jQuery文件后
+	  在自定义JS文件中可以使用jQuery的API
+	  <script src="scripts/orderList.js"></script>
+  -->
+
+ </head>
+ <script>
+
+ </script>
+ <body>
+	<!-- 导航区 -->
+	<div id="nav">
+		<div class="w">
+			<div class="logo">
+                <a href="http://127.0.0.1/Tarena/JD-京东商城/JD_index.html" id="e1"></a>
+				<a href="http://127.0.0.1/Tarena/JD-京东商城/JD_index.html" id="e2">我的京东</a>
+				<a href="http://127.0.0.1/Tarena/JD-京东商城/JD_index.html" id="e3">返回京东首页</a>
+			</div>
+        </div>
+	</div>
+
+	<!-- 内容区容器 -->
+	<div id="container">
+		<div class="w">
+			<!-- 左侧列表 -->
+			<dl id="playlist">
+				<dt>我的京东</dt>
+				<dd><a id="orderLink" href="#" class="selected">我的订单</a></dd>
+				<dd><a id="recordLink" href="#" class="">消费记录</a></dd>
+				<dd><a id="lotteryLink" href="#">幸运抽奖</a></dd>
+			</dl>
+			<!-- 右侧内容区 -->
+			<div id="content">
+				<!-- 订单列表 -->
+				<div id="orderContent">
+					<table id="orderList" width="100%">
+						<tr>
+							<th width="50%">订单信息</th>
+							<th width="10%">收货人</th>
+							<th width="10%">订单金额</th>
+							<th width="10%">
+								<select id="orderTime">
+									<option value="1">最近三个月</option>
+									<option value="2">今年内</option>
+									<option value="3">2014年</option>
+									<option value="4">2013年</option>
+									<option value="5">2012年</option>
+									<option value="6">2012年以前</option>
+								</select>
+							</th>
+							<th width="10%">
+								<select id="orderStatus">
+									<option value="1">全部状态</option>
+									<option value="2">等待付款</option>
+									<option value="3">等待自提</option>
+									<option value="4">等待收货</option>
+									<option value="5">已完成</option>
+									<option value="6">已取消</option>
+								</select>
+							</th>
+							<th width="10%">操作</th>
+						</tr>
+					</table>
+				</div>
+				<div id="recordContent">
+					<canvas id="recordCvs" width="600" height="400">
+						您的浏览器不支持canvas
+					</canvas>
+				</div>
+				<div id="lotteryContent">
+					<canvas id="lotteryCvs" width="500" height="500"></canvas>
+					<button id="btnLottery">开始抽奖</button>
+				</div>
+			</div>		
+		</div>
+	</div>
+
+
+	<!-- 页脚区 -->
+	<div id="foot">
+网络文化经营许可证京网文[2011]0168-061号  Copyright © 2004-2015  京东JD.com 版权所有<br/>
+京东旗下网站：English Site
+    </div>
+ </body>
+</html>

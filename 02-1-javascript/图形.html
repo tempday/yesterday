@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>图形</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var s="■";
+	var n=5;
+	// 正方形----------------------------------------------------
+	for (var r=0;r<n;r++){
+		for (var i=0,pt=[];i<n;i++){
+			if (r!=0&&r!=n-1){
+				if(i==0||i==n-1){
+					pt[pt.length]=s;
+				}else{
+					pt[pt.length]="&nbsp;";
+				}
+			}else{
+				pt[pt.length]=s;
+			}
+		}
+		document.write(pt.join("")+"<br />");
+	}
+	// 右平行四边形----------------------------------------------------
+	document.write("<hr />");
+	for (var r=0;r<n;r++){
+		for (var i=0,pt=[];i<2*n-1;i++){
+			if (i<n-r-1||i>=2*n-r-1){
+				pt[pt.length]="&nbsp;";
+			}else{
+			if(r!=0&&r!=n-1){
+					if (i==n-r-1||i==2*n-r-2){
+						pt[pt.length]=s;
+					}else{
+						pt[pt.length]="&nbsp;";
+					}
+				}else{
+					pt[pt.length]=s;
+				}
+			}
+		}
+		document.write(pt.join("")+"<br />");
+	}
+	document.write("<hr />");
+	// 左平行四边形----------------------------------------------------
+	for (var r=0;r<n;r++){
+		for (var i=0,pt=[];i<2*n-1;i++){
+			if (i<r||i>r+n-1){
+				pt[pt.length]="&nbsp;";
+			}else{
+			if(r!=0&&r!=n-1){
+					if (i==r||i==r+n-1){
+						pt[pt.length]=s;
+					}else{
+						pt[pt.length]="&nbsp;";
+					}
+				}else{
+					pt[pt.length]=s;
+				}
+			}
+		}
+		document.write(pt.join("")+"<br />");
+	}
+	document.write("<hr />");
+	// ◆菱形----------------------------------------------------
+	var s0="◆";
+	for (var r=0;r<2*n-1;r++){
+		for (var i=0,pt=[];i<2*n-1;i++){
+			if (r<n){
+			(i==n-r-1||i==n+r-1)?pt[pt.length]=s0:pt[pt.length]="&nbsp;";
+			}else{
+				(i==r-n+1||i==3*n-r-3)?pt[pt.length]=s0:pt[pt.length]="&nbsp;";
+			}
+		}
+		document.write(pt.join("")+"<br />");
+	}
+	//document.write("<hr />");
+	var n=20; //象限x,y的长度
+	//letter 字母 word 单词
+	//模拟第四象限----------------------------------------------------
+	document.write("<p style='letter-spacing:1px;font-size:8px;'>"+"<br />");
+	var s="○",t="●",st1,st2;
+	for (var r=0;r<=n;r++){
+		for (var i=0,pt=[];i<=n;i++){
+			r<10?st1="0"+r:st1=""+r;
+			i<10?st2="0"+i:st2=""+i;
+			pt[pt.length]="("+st2+",-"+st1+")";
+		}
+		document.write(pt.join("")+"<br />");
+	}
+	document.write("<hr />");
+	document.write("</p>");
+	document.write("<p style='letter-spacing:2px;font-size:8px;'>");
+	/*
+	var n=120;
+	for (var r=0;r<=n;r++){
+		for (var i=0,pt=[];i<=n;i++){
+			
+			if ((i==(Math.sqrt(Math.pow(n,2)-Math.pow(r,2))).toFixed(0))&&(r==(Math.sqrt(Math.pow(n,2)-Math.pow(i,2))).toFixed(0))){
+				pt[pt.length]=t;
+			}else{
+				pt[pt.length]=s;
+			}
+		}
+		document.write(pt.join("")+"<br />");
+	}
+	
+	*/
+	//沿x轴镜像第一象限
+	//输出圆----------------------------------------------------
+	var xAxis=100;//坐标大小
+	var r=30,r2=Math.pow(r,2);;//x^2+y^2=r^2
+	var x2,y2;
+	var a=40,b=35;//圆心坐标
+	for (var c=0;c<=xAxis-1;c++){			
+		for (var i=0,pt=[];i<=xAxis-1;i++){
+			if( (c>=b-r&&c<=b+r)&&(i>=a-r&&i<=a+r) ){ //x,y取值范围
+				y2=Math.pow(c-b,2);//y的平方
+				x2=Math.pow(i-a,2);//x的平方
+				if(Math.sqrt(x2+y2).toFixed(0)==r){	//四舍五入
+				//if(parseInt(Math.sqrt(x2+y2))==r){ //直接取整
+					pt[pt.length]=t;
+				}else if(Math.sqrt(x2+y2).toFixed(0)<r){
+					pt[pt.length]="□";
+				}else{
+					pt[pt.length]=s;
+				}
+			}
+			else{
+				pt[pt.length]=s;
+			}
+		}
+		document.write(pt.join("")+"<br />");
+	}
+	//------------------------------------------------------
+	document.write("</p>"+"<br />");
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

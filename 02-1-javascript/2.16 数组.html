@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>2.16 arr</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	
+	<script type="text/javascript">
+	<!--
+		for (var i=0,emp=[],a;i<10;i++){
+			a=parseInt(Math.random()*51);
+			emp[emp.length]=a;
+		}
+		function cpArr(emp){
+			// 复制一个数组作为副本,并打印到页面
+			for (var i=0,mpp=[];i<emp.length;mpp[mpp.length]=emp[i++]);	
+			document.write("___mpp:"+mpp+"<br />");
+			return mpp;
+		}
+
+
+		/*
+			
+		document.write("<div style='margin:0 10px;width:210px;height:150px;float:left;'>");
+		var star=6;
+		for (var j=0;j<star;j++){
+			for (var i=0,arr=[];i<=j;arr[arr.length]=i++%2!=0&&j%2==0?"☆":"★");	
+			document.write(arr.join(" ")+"<br />");		
+		}
+		document.write("------上面的是左对齐------"+"<br />");
+		document.write("</div>"+"<br />");
+		document.write("<div style='margin:0 50px;width:200px;height:150px;float:right;'>");
+		for (var j=0;j<star;j++){
+			for (var i=0,arr=[];i<star;arr[arr.length]= i++<star-j-1?"&nbsp;":(i%2!=0&&j%2==0?"☆":"★"));
+			document.write(arr.join("")+"<br />");		
+		}
+		document.write("------这个是右对齐------"+"<br />");
+		document.write("</div>"+"<br />");
+		
+		document.write("<div style='margin:0 50px;width:200px;height:150px;float:left;'>");		
+		for (var j=0;j<star;j++){
+			for (var i=0,arr=[];i<star+j;arr[arr.length]= i++<star-j-1?"&nbsp;":(i%2!=0&&j%2==0?"☆":"★"));
+			document.write(arr.join("")+"<br />");
+		}
+		document.write("------还有中间对齐------"+"<br />");
+		document.write("</div>"+"<br />");
+
+
+		
+		document.write("<div style='margin:0 auto ;width:500px;clear:both;'>"+"<br />");
+		for(var r=1;r<=9;r++){
+			for (var i=1,arr=[];i<=r;arr[arr.length]=i*r<10&&i>1?[i+"x"+r+"="+i++*r+"<span style='color:white;'>__</span>"]:[i+"x"+r+"="+i++*r+" "]);
+			document.write(arr.join("")+"<br />");
+		}
+		document.write("------终极左对齐乘法表------"+"<br />");
+		document.write("</div>"+"<br />");
+		*/
+
+
+
+
+		var sst="uiopbgiudydzezvyl";
+		var ar=sst.split("");
+		document.write(ar+"<br />");
+		
+		function compareNum(m,n){return m-n;}
+		function compareStr(m,n){
+			
+			if (m>n){
+				return 1;
+			}else if(m==n){
+				return 0;
+			}else{
+				return -1;
+			}
+
+
+		}
+		arr=null;
+		document.write(compareStr("8","899")+"<br />");
+		document.write(compareNum(5,5)+"<br />");
+		document.write(compareNum(5,10)+"<br />");
+		var mpp=cpArr(emp);
+		//***  冒泡排序
+		function bubble(arr,func){
+			for (var j=0;j<arr.length-1;j++){
+				//document.write("["+j+"]___")
+				for (var i=1,max=arr[0];i<arr.length-j;i++){
+					//document.write(i+"----"+arr[i-1]+"---"+arr[i]+"<br />");
+					if (func(arr[i-1],arr[i])>0){
+						max=arr[i-1];
+						arr[i-1]=arr[i];
+						arr[i]=max;
+					}
+				}
+			}
+		}
+		//完美冒泡.......
+		bubble(ar,compareStr);
+		document.write("<br />");
+		document.write("冒泡后:"+ar+"<br />");
+	//-->
+	</script>
+	
+</head>
+<body>
+	<button type="button" stlye='width:50px;height:50px;' onclick="alert(emp);" name="123">123</button>
+</body>
+	<script type="text/javascript">
+	<!--
+		/*
+		join()
+		push()和pop()
+		shift() 和 unshift()
+		sort()
+		reverse()
+		concat()
+		slice()
+		splice()
+		indexOf()和 lastIndexOf() （ES5新增）
+		forEach() （ES5新增）
+		map() （ES5新增）
+		filter() （ES5新增）
+		every() （ES5新增）
+		some() （ES5新增）
+		reduce()和 reduceRight() （ES5新增）
+		针对ES5新增的方法浏览器支持情况：
+		Opera 11+ 
+		Firefox 3.6+ 
+		Safari 5+ 
+		Chrome 8+ 
+		Internet Explorer 9+
+		对于支持的浏览器版本，可以通过Array原型扩展来实现。
+		*/
+	//-->
+	</script>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>子元素选择器</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style>
+		div{
+			width:150px;
+			height:150px;
+			border:solid 1px black;
+			background-color:pink;
+			float:left;
+			margin:10px;
+		}
+		.mini{
+			width:50px;
+			height:50px;
+			background-color: yellow;
+		}
+		button{
+			margin-right:20px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body onclick="history.go(0);">
+	<button id="btn1">:contains</button>
+	<button id="btn2">:empty</button>
+	<button id="btn3">:parent</button>
+	<button id="btn4">:has</button>
+	<br/>
+	<div id="" class="">
+		第一个div,class为div111
+	</div>
+	<div>
+		第一个div,class为div11
+		<div class="mini"></div>
+	</div>
+	<div>
+		第一个div,class为div
+	</div>
+	<div>
+		第一个div,class为div1
+	</div>
+	<div></div>
+</body>
+<script type="text/javascript">
+	$("#btn1").click(function(){
+		$("div:contains('div11')").css("background","green");
+	});
+	$("#btn2").click(function(){
+		$("div:empty").css("background","green");
+	});
+	$("#btn3").click(function(){
+		$("div:parent").css("background","green");
+	});
+	$("#btn4").click(function(){
+		$("div:has('.mini')").css("background","green");
+	});
+</script>
+</html>

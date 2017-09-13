@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>太极图</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		canvas{
+			/*background:#EBEBEB;*/
+			transform:rotate(0deg);
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px" height="500px"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var con=can.getContext("2d");
+	con.beginPath();
+	con.arc(250,250,200,0,Math.PI*2);
+	con.stroke();
+	//左大半黑圆
+	con.beginPath();
+	con.arc(250,250,200,Math.PI*.5,Math.PI*1.5);
+	con.fill(); 
+	//上半白圆
+	con.beginPath();
+	con.arc(250,150,100,Math.PI*0.5,Math.PI*1.5);
+	con.fillStyle="white";
+	con.fill();
+	//下半黑圆
+	con.beginPath();
+	con.arc(250,350,100,Math.PI*1.5,Math.PI*0.5);
+	con.fillStyle="black";
+	con.fill(); 
+	//上小白圆
+	con.beginPath();
+	con.arc(250,150,30,0,Math.PI*2);
+	con.fill();
+	//下小黑圆
+	con.beginPath();
+	con.arc(250,350,30,0,Math.PI*2);
+	con.fillStyle="white";
+	con.fill();
+	//
+	var deg=0;
+	setInterval(function(){
+		can.style.transform="rotate("+deg--+"deg)";
+	}, 20);
+</script>
+</html>

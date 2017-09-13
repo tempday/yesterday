@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>倒计时</title>
+  <meta charset="utf-8"/>
+  <!--<script src="js/4_1.js"></script>-->
+ </head>
+
+ <body>
+	<h1>距离放学还有<span></span></h1>
+	<button onclick="stop(this)">停止</button>
+ </body>
+ <script type="text/javascript">
+ <!--
+ 	function calc(){
+	 	var target=new Date("2018/07/23 20:20:00");
+	 	var now=new Date();
+	 	var span=document.querySelector("span");
+	 	var ms=target-now;
+	 	if (ms<1000){
+		 	timer=null;
+		 	span.innerHTML="00:00:00";
+		 	return;
+		}else{
+			timer=setTimeout(calc,1000);
+		}
+	 	var h=parseInt(ms/3600000);
+	 	h<10&&(h="0"+h);
+	 	var m=parseInt(ms/60000)-h*60;
+	 	m<10&&(m="0"+m);
+	 	var s=parseInt(ms/1000)-h*3600-m*60;
+	 	s<10&&(s="0"+s);
+		//document.querySelector("span").innerHTML=dbStr(h)+":"+dbStr(m)+":"+dbStr(s);
+		span.innerHTML=span.innerHTML.indexOf(":")!=-1?h+" "+m+" "+s:h+":"+m+":"+s;
+		
+ 	}
+ 	//function dbStr(time){if(time<10){return time="0"+time;}else{return time;}}
+ 	
+ 	var timer=null;
+ 	/*
+ 	//周期性定时器
+ 	calc();
+ 	timer=setInterval(calc,1000);
+ 	function stop(btn){
+	 	if(timer){
+		 	clearInterval(timer);
+		 	timer=null;
+		 	var span=document.querySelector("span");
+		 	span.innerHTML=span.innerHTML.replace(/^\s$/,":");
+		 	document.querySelector("button").innerHTML="启动";
+ 		}else{
+		 	calc();
+	 		timer=setInterval(calc,1000);
+	 		document.querySelector("button").innerHTML="停止";
+		}	 	
+ 	}
+ 	*/
+ 	//一次性定时器
+ 	calc();
+ 	function stop(btn){
+	 	if(timer){
+		 	clearTimeout(timer);
+		 	timer=null;
+		 	var span=document.querySelector("span");
+		 	span.innerHTML=span.innerHTML.replace(/\s/g,":");
+		 	document.querySelector("button").innerHTML="启动";
+ 		}else{
+		 	calc();
+	 		document.querySelector("button").innerHTML="停止";
+		}	 	
+ 	}
+ //-->
+ </script>
+</html>

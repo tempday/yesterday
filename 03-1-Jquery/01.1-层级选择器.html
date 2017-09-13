@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>基本选择器</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style>
+		div{
+			width:150px;
+			height:150px;
+			border:solid 1px black;
+			background-color: pink;
+			float:left;
+			margin:10px;
+		}
+		.mini{
+			width:50px;
+			height:50px;
+			background-color: yellow;
+		}
+		button{
+			margin-right:20px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body onclick="history.go(0);">
+	<button id="btn1">所有div</button>
+	<button id="btn2">body子元素为div</button>
+	<button id="btn3">id:one元素下一个兄弟div</button>
+	<button id="btn4">id:one元素后面兄弟div</button>
+	<button id="btn5">id选择器</button>
+	<br/>
+	<div id="" class=""></div>
+	<div id="one" class="">
+		<div id="" class="mini"></div>
+		<div id="" class="mini"></div>
+	</div>
+	<div id="" class="">
+		<div id="" class="mini"></div>
+		<div id="" class="mini"></div>
+	</div>
+	<div id="" class=""></div>
+	<div id="" class=""></div>
+</body>
+<script type="text/javascript">
+	$("#btn1").click(function(){
+		$("body div").css("backgroundColor","red");
+	});
+	$("#btn2").click(function(){
+		$("body>div").css("backgroundColor","red");
+	});
+	$("#btn3").click(function(){
+		$("#one+div").css("backgroundColor","red");
+	});
+	$("#btn4").click(function(){
+		$("#one~div").css("background","red");
+	});
+</script>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>循环</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+<!--
+	var n=0;
+	while(n<10){
+		n++;
+		document.write(n+"<br/>");
+		//document.write("&nbsp;&nbsp;&nbsp;&nbsp;"+Math.random().toFixed(1)+"<br />");
+		document.write("&nbsp;&nbsp;&nbsp;&nbsp;"+parseInt(Math.random()*10)+"<br />");
+	}
+	var ipt="";
+	while(ipt!="0"){
+		ipt=0;//prompt();
+		switch(ipt){
+			case "0":document.write(ipt+":正确"+"<br/>");break;
+			case "1":document.write(ipt+":第一步"+"<br/>");break;
+			case "2":document.write(ipt+":第二次"+"<br/>");break;
+			case "3":document.write(ipt+":事不过三"+"<br/>");break;
+			default:document.write(ipt+":什么鬼"+"<br/>");
+		}
+	}
+	var ran=parseInt(Math.random()*10);
+	var tx="";
+	document.write(ran+"<br />");
+	while(ipt!=ran&&ipt!="exit"){
+		//ipt=prompt(tx+"  请输入0-9的整数");
+		if(ipt=="t"){break;}
+		ipt=ran;
+		ipt=="exit"||(ipt=parseInt(ipt));
+		document.write(
+			tx=ipt>ran?"大":
+			ipt<ran?"小":
+			ipt==ran?"答案正确":
+			ipt=="exit"?"退出":"继续"
+		);
+		document.write(ran+"<br />");
+		
+	}
+	//------------for ---------------
+	var a=1;
+	var str="";
+	for(var n= 2;n<11;a+=n++){
+		n==2&&(str+=a);
+		str+=("+"+n);	
+		document.write(str+"="+a+";n="+(n-1)+"<br />");
+	}
+	a=1;
+	str="";
+	instead="";
+	//从1乘到10
+	for(var n= 1;n<=10;n++){
+		if (n==5){
+			continue;
+			//break;
+		}
+		a=a*n;
+		n==1&&(str+=n);
+		str+="x"+n;
+		instead=str;
+		for (var i=0;i<10-n;i++){
+		str="&nbsp;"+str;
+		}
+		document.write(str+"="+";n="+n+"<br />");
+		str=instead;
+	}
+	//--------打印乘法表-------------
+	function print(n){
+		for (var i=1,str="";i<=n;str+=i+"x"+n+"="+n*i+++"&nbsp;");
+			document.write(str+"<br />");
+	}
+	print(8);
+	
+	function getLeap(y){
+		for(var i=0,s="";i<5;){
+			if ((y+=1)%4==0&&y%100!=0||y%400==0){
+				i++;
+				document.write(y+"<br />");
+			}
+		}
+	}
+	//单行循环不用If写法
+	function getLeap(y){
+		for(var i=0,s="";i<5;((y+=1)%4==0 && y%100!=0 || y%400==0)&& (s+=(y+i++-i+1)+"&nbsp;"));
+		document.write(s+"<br />");
+	}
+	getLeap(2000);
+	//九九乘法表
+	for(var i=0;i<=9;i++){
+		for (var n=1,s="";n<=i;n++){
+			document.write(i+"x"+n+"="+i*n+"&nbsp;");
+			//控制台输出
+			s+=(i+"x"+n+"="+i*n+" ");
+			//没考虑到的地方,左边没有全对齐
+			i*n<10&&(s+=" ");
+		}
+		console.log(s);
+		document.write("<br />");		
+	}
+	var star=10;
+	//正三角星星
+	for (var i=0;i<star;i++){
+		for(var n=0,s="";n<=i;n++){			
+			s+="*";
+		}
+		document.write(s+"<br />");
+		console.log(s);
+	}
+	//倒三角星星,只能在控制台输出,因为在页面&nbsp;占两个位置导致无法对齐
+	for (var i=0;i<star;i++){
+		for(var n=0,s="";n<=i;n++){			
+			s+="*";		
+		}
+		//当有n个星星,有star-n个空格 
+		for (m=0;m<star-n;m++){
+				s=" "+s;
+			}
+		console.log(s);
+	}
+	//等腰三角星星,只能在控制台输出
+	for (var i=0,a=0;i<=star;i++,a+=2){
+		for(var n=0,s="";n<2*i+1;n++){			
+			s+="*";	
+		}
+		for (m=0;m<star-i;m++){
+			s=" "+s;
+		}
+		console.log(s);
+		document.write(s+"<br />");
+	}
+
+
+	//推演
+	function gettri(n){
+			for(var r=1;r<=n;r++){
+				for (var i=0,str="";i<n+r-1;i++){
+					str+= i<n-r?" ":"*";
+				}
+				console.log(str);
+				document.write(str+"<br />");
+			}
+		}
+		gettri(10);
+//-->
+</script>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

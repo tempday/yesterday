@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>动态操作表格</title>
+<meta charset="utf-8" />
+<style>
+	table{width:500px; border-collapse:collapse;
+		text-align:center;
+	}
+	td,th{border:1px solid #ccc}
+</style>
+<script>
+	var data=[
+{"id":1001,"name":'可口可乐',"price":2.5,"count":3000},
+{"id":1003,"name":'百事可乐',"price":2.5,"count":5000},
+{"id":1011,"name":'非常可乐',"price":2.3,"count":1000}
+	];
+	window.onload=function(){
+		var tbody=document.querySelector("#data table tbody");
+		for(var i=0;i<data.length;i++){
+			var tr=tbody.insertRow();
+			for(var key in data[i]){
+				//分支结构
+				/*
+				if(key=="price"){
+					(tr.insertCell()).innerHTML="&yen;"+data[i][key].toFixed(2);
+				}else{
+					(tr.insertCell()).innerHTML=data[i][key];
+				}
+				*/
+				//三元运算
+				(tr.insertCell()).innerHTML= key=="price"?"&yen;"+data[i][key].toFixed(2):data[i][key];
+			}
+			//添加删除列
+			var btn=document.createElement("button");
+			btn.innerHTML="删除";
+			btn.onclick=function(){
+				var tr=this.parentNode.parentNode;
+				var pname=tr.cells[1].innerHTML;
+				if(confirm("是否删除"+pname+"吗?")){
+					tr.parentNode.removeChild(tr);
+				}
+			};
+			(tr.insertCell()).appendChild(btn);
+		}
+	}	
+</script>
+</head>
+<body>
+	<div id="data">
+		<table>
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>名称</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		
+	</div>
+</body>
+</html>

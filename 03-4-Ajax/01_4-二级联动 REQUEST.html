@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>二级联动</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		select{
+			margin: 20px;
+			text-align:center;
+			font-size:30px;
+		}
+		#city{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<select name=""id="province">
+		<option  selected>--请选择--</option>
+	</select>
+	<select name=""id ="city">
+		<option  selected>--请选择--</option>
+	</select>
+</body>
+<script type="text/javascript">
+	var xhr=getXhr();
+	xhr.open("get","01_4 REQUEST.php?state=1");
+	xhr.send(null);
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var data=xhr.responseText;
+			cities=data.split(",");
+			cities[0]==""&&(cities.length=0);
+			for(i=0;i<cities.length;i++){
+				var opt=document.createElement("option");
+				opt.innerHTML=cities[i];
+				province.add(opt);
+			}
+		}
+	}
+	province.onchange=function(){
+		for(i=city.options.length-1;i>0;i--){
+			city.remove(i);
+		}
+		xhr.open("post","01_4 REQUEST.php");
+		xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+		xhr.send("state=2&province="+province.value);
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var data=xhr.responseText;
+				cities=data.split(",");
+				cities[0]==""&&(cities.length=0);
+				if(cities.length!=0){
+					city.style.display="inline-block";
+				}else{
+					city.style.display="none";
+				}
+				for(i=0;i<cities.length;i++){
+					var opt=document.createElement("option");
+					opt.innerHTML=cities[i];
+					city.add(opt);
+				}
+			}
+		}
+	}
+	city.onchange=function(){
+		console.log(province.value+":"+city.value);
+	}
+	function getXhr(){
+		var xhr=null;
+		if(window.XMLHttpRequest){
+			xhr=new XMLHttpRequest;
+		}else{
+			xhr=new ActiveXObject("Microsoft.XMLHttp");
+		}
+		return xhr;
+	}
+</script>
+</html>

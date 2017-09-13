@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+</head>
+<script type="text/javascript">
+	var startTime=new Date().getTime();
+	window.onload=function(){
+		var endTime=new Date().getTime();
+		//console.log(document.getElementsByTagName("h1")[0].innerHTML);
+		console.log(endTime-startTime+"on");
+	}
+	$(document).ready(function(){
+		//console.log($("h1").html());
+		var endTime=new Date().getTime();
+		console.log(endTime-startTime+"re");
+	});
+	$().ready(function(){
+		console.log($("h1").html());
+	});
+	$(function(){
+		console.log($ ("h1").html());
+	});
+</script>
+<body>
+	<h1>1234</h1>
+</body>
+
+</html>

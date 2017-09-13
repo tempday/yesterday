@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>canvas 文字</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		canvas{
+			background:pink;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px;"height="400px;"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var context=can.getContext("2d");
+	//基准线
+	context.moveTo(150,0);
+	context.lineTo(150,500);
+	context.stroke();
+	//文字
+	context.font="bold  64px verdena";
+	context.textAlign="right";
+	context.fillText("r",200,300);
+	//
+
+	context.textAlign="center";
+	context.fillText("e",200,150);
+	//
+	context.textAlign="left";
+	context.fillText("l",200,100);
+	//
+	context.moveTo(500,300);
+	context.lineTo(0,300);
+	
+	context.stroke();
+	//
+	context.strokeText("l",100,100);
+	//top bottom middle hanging alphabetic
+</script>
+</html>

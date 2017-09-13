@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>2.110 This</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+</head>
+<body>
+	<div style="height:50px;width:50px;background-color:blue;margin-bottom:10px;color:red;" onmouseover="lilei.intrSelf();">Lilei</div>
+	<div style="height:50px;width:50px;background-color:green;color:red;" onmouseover="hmm.intrSelf();">Hmm</div>
+</body>
+<script type="text/javascript">
+//<!--
+	//页面有唯一一个指针,一次只指向一个对象,指向当前object或者是window
+	//this -->window
+	var a=2;
+	function fun(){ //地址:0x1011
+		document.write(this.a+"<br />");
+	}
+	fun();
+	var o={a:3,fun:fun};
+
+	var p={a:4};
+
+	o.fun();
+
+	(p.fun=o.fun)(); //***赋值表达式的结果相当于等号右侧表达式的*值
+	//圆括号里得到的是fun的地址0x1011,当前没有对象,指针指向全局
+	
+	p.fun();//指针指向当前使用的对象p
+
+	
+//-->
+</script>
+</html>

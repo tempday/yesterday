@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Math</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+</head>
+<body>
+	<button onclick="checkCode();">确定</button>
+	<input type="text" id="ipt"></input> 请输入验证码: <label id="lab" onclick="lab.innerHTML=(getCode().join(''));"></label>
+	
+</body>
+<script type="text/javascript">
+<!--
+	function doubleBall(){
+		var reds=[];
+		while(reds.length<6){
+			var n=parseInt(Math.random()*(33-1+1)+1);
+			if(reds.indexOf(n)==-1){
+				reds.push(n);
+			}
+		}
+		var blue=parseInt(Math.random()*(16-1+1)+1);
+		var gettag=document.getElementsByTagName("button");
+		//document.write("+");
+		
+		document.write("<br/>"+reds+" | "+blue);
+		/*
+		if (gettag.length<1){			
+			document.write("<button onclick=\"doubleBall();\">双色球</button>"+"<br/>"+reds+" | "+blue);
+		}else{
+			document.write("<br/>"+reds+" | "+blue);
+		}
+		*/
+	}
+	//doubleBall();
+	//document.write(parseInt(Math.random()*10));
+	var chars=[];
+	for (var c=48;c<=57;chars.push(String.fromCharCode(c++)));
+	for (var c=65;c<=90;chars.push(String.fromCharCode(c++)));
+	for (var c=97;c<=122;chars.push(String.fromCharCode(c++)));
+	/*
+	document.write(chars+"<br />");
+	for (var i=0;i<100;i++){
+		var n=parseInt(Math.random()*chars.length);
+		document.write(n+"+");
+		if(n==0){alert("000000000000");}
+	}
+	*/
+	function getCode(){
+		var code=[];
+		while(code.length<4){
+			code.push(chars[parseInt(Math.random()*chars.length)]);
+		}
+		return code;
+	}
+	var lab=document.getElementById("lab"); //新发现 后面不能直接加innerHTML属性,否则再次调用只能取值,不能赋值
+	lab.innerHTML=(getCode().join(""));
+	//document.write("验证码:"+code.join("")+"<br/>");
+	function checkCode(){
+		var ipt=document.getElementById('ipt').value;
+		if (ipt.toLowerCase()==lab.innerHTML.toLowerCase()){
+			document.write("验证通过"+"<br />");
+		}
+		else{
+			alert("验证失败,请从新输入!");
+			lab.innerHTML=(getCode().join(""));
+		}
+	}
+//-->
+</script>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

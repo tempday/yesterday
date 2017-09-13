@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+<!--
+	/*var str1="\\d{6}";
+	var reg=new RegExp(strl,"");
+
+	var reg="\\d{6}";*/
+	var str="明明可以靠脸吃饭,偏偏要靠能力吃饭,这就是明明和偏偏的差距";
+	var reg=/ 明明|偏偏/g; //不能用字符串类型,因为只有声明的是对象才能接受exec返回来的属性
+	/*先找一次,判断结果是否为null
+		如果不是null,就输出数组的第一个元素以及数组的index属性*/
+	// exec 说明: 返回一个*关联*数组,数组的索引为index,索引就是字符串里关键字的位置
+	//		返回第二个属性 lastIndex 存入对象 reg,作为下一次查找开始的位置
+	var arr=null;
+	while( (arr=reg.exec(str)) !=null){
+	//while( (arr=str.exec(reg)) !=null){
+		document.write(arr.index+"<br />");
+		document.write("在新的位置继续查找"+reg.lastIndex+"<br />");
+	}
+	var pid="440881198903151705";
+	//字符串方法
+	var birth=pid.slice(6,-4);
+	//正则方法
+	var reg=/(\d{4})(\d{2})(\d{2})/;
+	birth=birth.replace(reg,"$1年$2月$3日");
+	document.write(birth);
+	
+//-->
+</script>
+</html>

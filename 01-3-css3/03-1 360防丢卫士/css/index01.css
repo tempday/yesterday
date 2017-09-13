@@ -1,0 +1,30 @@
+/*在css文件 设置解析编码为 utf-8*/
+@charset "utf-8";
+*{
+	margin:0;
+	padding:0;
+}
+/*总体设置:*/
+body{
+	font-size:12pt;
+	color: #666;
+	font-family:"微软雅黑",Arial;
+}
+header,footer,section{
+	width:100%;
+	/*border: 1px solid #999;*/
+}
+#description,#intelremind,#icons{
+	width:80%;
+	margin:0 auto;
+}
+header{height:50px;}
+#banner{height:550px;}
+#description,#intelremind,#positioning,#phonecall{
+	height:650px;
+}
+#icons{clear: both;}
+footer{
+	clear: both;
+	background-color:#333;
+}

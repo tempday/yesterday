@@ -1,0 +1,31 @@
+function showSubCate(){
+	var src=event.srcElement||event.target;
+	var curr;
+	//console.log(src.nodeName);
+	switch(this){
+		case(src):break;
+		case(src.parentNode.parentNode):curr=src.parentNode;break;/*h3  div*/
+		case(src.parentNode.parentNode.parentNode):curr=src.parentNode.parentNode;break;/* a */
+		default:curr=src;var i=0;while(curr.parentNode.parentNode.parentNode!=this){
+			curr=curr.parentNode;
+			i++;
+			if(i>60){console.log(i);console.log(curr);}
+		}
+		curr=curr.parentNode.parentNode;
+		
+	}
+	
+	/*
+	if(src.parentNode.parentNode==){
+		curr=src.parentNode;
+	}else if(src.parentNode.parentNode.parentNode==this){
+		curr=src.parentNode.parentNode;
+	}
+	*/
+	//console.log(curr);
+	//console.log(src);
+	if(curr){
+		curr.$(".sub_cate_box")[0].style.display="block";
+		curr.$("a")[0].className="hover";
+	}
+}

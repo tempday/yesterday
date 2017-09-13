@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>如何使用canvas</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		canvas{
+			background:white;
+		}
+	</style>
+</head>
+<body>
+	
+	<canvas id="can" width="800px;"height="600px;"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var context=can.getContext("2d");
+	const WIDTH=can.width;
+	const HEIGHT=can.height;
+	function paintRec(){
+		w=parseInt(Math.random()*WIDTH+1);
+		h=parseInt(Math.random()*HEIGHT+1);
+		x=parseInt(Math.random()*(WIDTH-w+1));
+		y=parseInt(Math.random()*(HEIGHT-h+1));
+		color="rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+		context.strokeStyle=color;
+		context.globalAlpha=Math.random();
+		context.strokeRect(x,y,w,h);
+	}
+	timer=setInterval(paintRec,1000);
+	//paintRec();
+	//设置填充颜色 fillStyle  注意:绘制前设置颜色
+		//context.fillStyle="green";
+	//----实心矩形,x轴,y轴,宽,高
+		//context.fillRect(10,15,100,100);
+	//描边颜色
+		//context.strokeStyle="blue";
+	//----描边
+		//context.strokeRect(120,15,100,100);
+	//----
+		//context.fillStyle="yellow";
+	//透明度
+		//context.globalAlpha=0.9;
+		//context.fillRect(60,70,100,100);
+	
+</script>
+</html>

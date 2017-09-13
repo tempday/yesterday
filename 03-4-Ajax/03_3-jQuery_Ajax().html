@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<script src="http://www.lglong519.com/Tarena/Jquery/JS/jquery-1.11.3.min.js"></script>
+	<script src="http://www.lglong519.com/Tarena/css3/more%20Fun/more%20Fun.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<input type="text" name="" id="chatdata" value="ad">
+	<input type="button" value="发送" onclick="" id="btn">
+	<div id="" class="">
+	</div>
+</body>
+<script type="text/javascript">
+	$("#btn").click(function(){
+		if($("#chatdata").val().trim()!=""){
+			console.log("aa");
+			var mychat={value:$("#chatdata").val()};
+			$.ajax({
+				url:"03_3.php",
+				type:"post",
+				async:true,//open 三部曲
+				data:mychat,
+				dataType:"json",
+				success:function(data,textStatus){
+					console.log(textStatus);
+					//var dataa=eval('('+data+')');
+					console.log(data.value);
+					$("div:first").append("me:"+data.value+"<br>");
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					//console.log(XMLHttpRequest);
+					console.log(textStatus);
+					console.log(errorThrown);
+				}
+			});
+		}
+		
+			
+	});
+	
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>样式</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+	<style tyle="text/css">
+		div{
+			width:100px;
+			height:100px;
+			border:1px solid black;
+			background:pink;
+			float:left;
+			margin:10px;
+		}
+		.one{
+			width:50px;
+			height:50px;
+			border:1px solid black;
+			background:green;
+		}
+		.three{
+			width:50px;
+			height:50px;
+			border:1px solid black;
+			background:yellow;
+		}
+		span{
+			display: block; 
+		}
+	</style>
+</head>
+<body>
+	<span>
+		<button id="btn1">attr</button>
+		<button id="btn2">addclass</button>
+		<button id="btn3">rmclass</button>
+		<button id="btn4">toggleclass</button>
+		<button id="btn5">has</button>
+		<button id="btn6">css</button>
+	</span>
+	<div id="d1" class="">
+		
+	</div>
+	<div id="d2" class="">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	//设置class,覆盖原有的
+	$("#btn1").click(function(){
+		$("#d1").attr("class","one");
+	});
+	//追加到原有的class里
+	$("#btn2").click(function(){
+		$("#d1").addClass("two");
+	});
+	$("#btn3").click(function(){
+		$("#d1").removeClass();
+	});
+	//toggle 只切换有与没有
+	$("#btn4").click(function(){
+		$("#d1").toggleClass("three");
+	});
+	//判断是否有没有指定样式
+	$("#btn5").click(function(){
+		console.log($("#d1").hasClass("three"));
+	});
+	$("#btn6").click(function(){
+		//jquery 链式操作
+		$("#d1").css("background","red").css("height","80px");
+		//对象方式操作
+		$("#d2").css({
+			"background":"yellow",
+			"width":"120px",
+			"height":"55px"
+		});
+	});
+	
+</script>
+</html>

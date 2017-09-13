@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>video方法</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		#adv{
+			display:none;
+			position:absolute;
+			top:80px;
+			left:200px;
+			
+		}
+	</style>
+</head>
+<body>
+	<!--
+	aotuplay 自动播放
+	controls 控制条
+	loop 循环
+	poster 播前画面
+	peload   auto|none;
+	-->
+	<audio id="mv"poster="video/oceans-clip.png" controls loop width="640" height="320" style="background:black" peload="auto">
+		<source src="video/oceans-clip.webm"/>
+		<source src="video/oceans-clip.ogg"/>
+		<source src="video/oceans-clip.mp4"/>
+		不支持H5 audio
+	</audio>
+	<div id="adv" class="">
+		<img src="video/无标题.jpg" width="200"/>
+	</div>
+</body>
+<script type="text/javascript">
+	var mv=document.getElementById("mv");
+	var adv=document.getElementById("adv");
+	mv.addEventListener("play",myPlay);
+	mv.addEventListener("pause",myPause);
+	function myPlay(){
+		adv.style.display="none";
+	}
+	function myPause(){
+		adv.style.display="block";
+	}
+</script>
+</html>

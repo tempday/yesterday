@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>canvas shadow && path</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		canvas{
+			background:pink;
+			border-radius:0 50px 50px 0;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px;"height="400px;"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var context=can.getContext("2d");
+	//基准线
+	context.moveTo(150,0);
+	context.lineTo(150,500);
+	context.stroke();
+	
+	//shadow
+	context.shadowColor="red";
+	context.shadowOffsetX=10;
+	context.shadowOffsetY=8;
+	context.shadowBlur=15;
+	
+	//文字
+	///*
+	context.font="bold  72px verdena";
+	context.textAlign="bottom";
+	//context.strokeText("r",200,200); //空心字
+	context.fillText("r",200,200);
+	//
+	context.strokeRect(300,100,100,100);
+	context.fillRect(300,250,100,100);
+	//*/
+	context.moveTo(500,300);
+	context.lineTo(0,300);
+	context.stroke();
+	
+	//beginPath();
+	context.beginPath();
+	context.rect(10,10,100,100);
+	context.fill();
+	
+	//线形
+	context.beginPath();
+	context.rect(200,10,100,100);
+	//清除矩形部分
+	context.stroke();
+	context.clearRect(201,9,100,100);
+	//圆形
+	context.beginPath();
+	context.arc(250,150,50,0,Math.PI*1.3);
+	//closePath();放在绘制方法之前
+	context.closePath();
+	context.stroke();
+	
+	context.beginPath();
+	context.arc(250,280,50,0,Math.PI*0.7,true);	
+	context.fill();
+	
+	context.beginPath();
+	context.arc(400,150,50,0,Math.PI*1.5);
+	context.stroke();
+
+	context.moveTo(400,150);
+	context.lineTo(450,150);
+	context.stroke();
+	
+	context.moveTo(400,150);
+	context.lineTo(400,100);
+	context.stroke();
+</script>
+</html>

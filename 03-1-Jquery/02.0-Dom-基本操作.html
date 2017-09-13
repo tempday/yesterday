@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Dom-基本操作</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<ul id="city">
+		<li id="bj" name="bjing">beijing</li>
+		<li id="tj" name="tjing">tianjing</li>
+		<li id="nj" name="njing">nanjing</li>
+		<li id="sh" name="shai">shanghai</li>
+		<li id="cq" name="cqing">congqing</li>
+		<li id="cx" >congqing</li>
+	</ul>
+	<input type="text" name="" value="12332">
+</body>
+<script type="text/javascript">
+	//console.log($("#city").html());
+	//$("#city").html("<li>长春</li>");
+	//console.log($("input").val("1313131313"));
+	$("#tj").text("天津");
+	console.log($("#tj").attr("name"));
+	$("#tj").attr("name","tianjing");
+	console.log($("#tj").attr("name"));
+	$("#tj").removeAttr("name");
+	console.log($("#tj").attr("name"));
+	console.log(document.getElementById("cx").className);
+</script>
+</html>

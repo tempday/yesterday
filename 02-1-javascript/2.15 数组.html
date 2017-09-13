@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>2.15 数组</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script type="text/javascript">
+	<!--
+		var arr=[1,2,3,4,5];
+		document.write(arr+"<br />");
+		console.log(arr);
+		var emp=[],tips="请输入名字",ipt;
+		//对话框直接取消会返回 null 
+		//input 重点是赋值的同时当作判断的条件
+		/*
+		while((ipt=String(prompt(tips)))!="p"&&ipt!="null"){			
+			ipt!=""&&(emp[emp.length]=ipt);			
+			if (emp.length>50){
+				break;
+				}
+			document.write(emp+"<br />");
+		}
+		for (var i=0;i<emp.length;i++){
+			document.write(emp[i]+",");
+		}*/
+		//arr.length  [length-1]  增加元素  获得最后一个  改小会删除末尾元素
+		//document.write("<br />");
+		//*** 创建emp数组
+		document.write("<h4>emp : [");
+		for (var i=0,a;i<10;i++){
+			a=parseInt(Math.random()*51);
+			emp[emp.length]=a;
+		}
+		document.write(emp+" ]<br /></h4>");
+		function cpArr(emp){
+			// 复制一个数组作为副本,并打印到页面
+			for (var i=0,mpp=[];i<emp.length;mpp[mpp.length]=emp[i++]);	
+			document.write("mpp: "+mpp+"<br />");
+			return mpp;
+		}		
+		document.write("冒泡前:"+emp+"<br />");
+		//牛角尖版 对比的是两个数组
+		var max;
+		/*
+		for (var i=0;i<emp.length;i++){
+			for (var j=i+1;j<emp.length;j++){
+				//max>(emp[i]>emp[j]?emp[i]:emp[j]);
+				max=max>emp[i]?max:emp[i];
+				max=max>emp[j]?max:emp[j];
+			}
+		}
+		document.write(max+"<br />");
+		*/
+		//半成品
+		//for (var i=0;i<emp.length;max=max>emp[i++]?max:emp[i-1]);
+		for (var i=0,max=emp[0];i<emp.length;max>emp[i++]||(max=emp[i-1]));
+		document.write("最大值: "+max+"<br />");
+		function indexof(arr,ename){
+			for (var i=0;i<arr.length;i++){
+				if (ename==arr[i]){
+					return i
+				}
+					 //return 只能单独使用,无法放进表达式里
+					 //continue 是跳过 ,return是退出循环 同时还可以返回值
+				 				
+			}
+			return -1;
+		}
+		document.write("10-index: "+indexof(emp,10)+"<br />");
+		var fbb=[];
+		fbb["sname"]="bingbing";
+		fbb["sclass"]="083";
+		fbb["ssex"]="male";
+		//哈希算法:根据传入的内容,计算出对应的哈希值,不用--遍历--直接找到对应的值
+		//关联数组也称hash数组
+		//遍历关联数组,找到key,根据key得到元素的值
+		var n=0,arr=[];
+		for( var k in fbb){
+			document.write(k+" : ");
+			document.write(fbb[k]+"<br />");
+			arr[n++]=k;
+		}
+		for(var i=0;i<arr.length;i++){
+			document.write(arr[i]+": "+fbb[arr[i]]+"<br />");
+		}
+		//难点怎样判断一个数组是不是关联数组!!!
+		arr=[];
+		//自己写的去重复元素
+		for(var i=0,str;i<emp.length;i++){
+			str=emp[i];
+			document.write(i+":"+arr[str]+" ");
+			arr[str]==undefined&&(arr[str]=emp[i]);
+			document.write(i+":"+emp[i]+" ");
+		}
+		document.write("<br />");
+		document.write(emp+"<br />");
+		document.write("自己="+arr+"<br />");
+		//从教材学的 去重复元素
+		//首先遍历旧数组,用旧数组元素作为新数组的索引(下标)
+		for(var i=0;i<emp.length;arr[emp[i++]]=1);
+		var newArr=[];
+		//精华所在,遍历新的关联数组,在循环变量里将每一个变量作为新新数组的元素
+		//用length做下标,所以新新数组不是关联数组
+		for (newArr[newArr.length] in arr);
+		document.write("newArr="+newArr+"<br />");
+		var mpp=cpArr(emp);
+		//***  冒泡排序
+		for (var j=0;j<mpp.length-1;j++){
+			for (var i=1,max=mpp[0];i<mpp.length-j;i++){
+				//m比i大, m不变,m比i小,m=i;
+				//m 作为新盒子 更容易理解
+				if (max<mpp[i]){
+					max=mpp[i];
+				}else{
+				//如果m比 i小,说明 i-1 <i  冒泡排序正常
+				//如果m比ida, 说明 i-1 >i 排序不对, i-1 要和i 调换
+				//因为大值已经有了, 所以将大值替换成小值
+					mpp[i-1]=mpp[i];
+					mpp[i]=max;
+				}
+			}
+		}
+		//完美冒泡.......
+		document.write("冒泡后:"+mpp+"<br />");
+		
+		document.write("join : "+emp.join("")+"<br />");
+		//正常打印 是用String() ,分割数组元素 用的是 逗号 ","
+		console.log(emp);
+		//arr.join() y.concat(x,[x])
+		//含头不含尾
+		str=emp.slice(3,9);
+		document.write("slice(3,9) : "+str+"<br />");
+		//arr.splice(start,count) 删除元素 --还有 替换 插入 , 在原数组修改
+		mpp.splice(2,4);
+		document.write("arr.splice(start,count) : "+mpp+"<br />");
+		mpp=cpArr(emp);
+		//arr.splice(start,count,值1,值2,...) 替换
+		var as=mpp.splice(2,4,"1+",2,"+3");
+		document.write("splice(start,count,值1,值2,...) : "+mpp+"<br />");
+		document.write("被删除的元素: "+as+"<br />");
+		mpp=cpArr(emp);
+		//arr.splice(start,0,值1,值2,...) 插入
+		mpp.splice(2,0,"1+",2,3,"+4"); 
+		document.write("splice(start,0,值1,值2,...) : "+mpp+"<br />");
+		mpp=cpArr(emp);
+		mpp.sort();
+		document.write("排序sort()后:"+mpp+"<br />");
+		mpp.reverse();
+		document.write("reverse后:"+mpp+"<br />");
+	//-->
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	
+</head>
+<body>
+	<input type="text" id="a" class="ipt" value="200"/>
+	<input type="text" id="b" class="ipt" value="10"/>
+	<input type="button" value="点击" onclick="getA();"/>
+</body>
+	<script type="text/javascript">
+	<!--
+		function getA(){
+			var a=document.getElementsByClassName("ipt");
+			num=parseFloat(document.getElementById("a").value);
+		
+		var hht=a[0].value;
+		var wgt=a[1].value;
+		document.write("<br />"+hht+"<br />");
+		var n=2;
+		m=3;
+		//2 3+1 4
+		++m+n+++1;
+		document.write(m+"<br />");
+		var num;
+		//num=num%2;
+		document.write((num+"是基数吗: "+(num===1))+"<br />");
+		document.write((num+"%2是偶数码: "+(num%2===0))+"<br />");
+		document.write("<br />");
+		a=10;
+		s=1;
+		b=parseFloat(a)*11;
+		document.write(b+"<br />");
+		document.write(b=++a>10||s>10+"<br />");
+		++a>10 && (m=a*0.8);
+		document.write(m.toFixed(2)+"<br />");
+		var ipt=hht;
+		document.write(
+			ipt>="0"&&ipt<="9"?"number":
+			ipt>="\u4e00"&&ipt<="\u9fa5"?"Chanese":
+			ipt>="a"&&ipt<="z"||ipt>="A"&&ipt<="Z"?"letter":"others"
+			+"<br />");
+		document.write(
+			ipt%4==0&&ipt%100!=0||ipt%400==0?"闰年":"平年"
+			+"<br />");
+		var clayto=wgt/(hht*hht);
+		document.write(
+			clayto<20?"slim|thin:"+clayto.toFixed(2):
+			clayto>25?"fat:"+clayto.toFixed(2):"normal"
+			+"<br />");
+		}
+	//-->
+	</script>
+</html>

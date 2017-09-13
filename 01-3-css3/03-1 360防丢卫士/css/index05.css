@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*-------------一键呼叫------------------*/
+#phonecall{
+	background-image:url(../images/bg_2.jpg);
+	background-position:50% 80%;
+	background-size:120% 120%;
+}
+#phonecall div{
+	width:55%;
+	height:500px;
+	float:left;
+	margin: 100px 80px 0 0;
+	text-align: right;
+}
+#phonecall div h3{
+	font-size:30pt;
+	font-weight:normal;
+	height:90px;
+	line-height:90px;
+	color:#ffe325;
+	margin:40px 0;
+}
+#phonecall div h3 b{
+	/*有大图标时,对齐是以bottom为准,加float后不再与文字对齐*/
+	float:right;
+	margin-left:5px;
+	width:80px;
+	height:86px;
+	background-image:url(../images/iconlist_3.png);
+	transition:transform 0.5s;
+}
+#phonecall div h3:hover b,#phonecall div h3 b:hover{
+	transform:rotate(-20deg);
+}
+#phonecall div p{
+	font-size:14pt;
+	line-height:30px;
+	color:#8b7f73;
+}
+#phonecall>b{
+	float: left;
+	width:255px;
+	height:530px;
+	background-image:url(../images/iconlist_2.png);
+	background-position:-570px 0;
+	margin-top:70px;
+	transition:transform 1s;
+}
+#phonecall>b:hover{
+	transform:rotate(20deg);
+}

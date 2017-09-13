@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		
+	</style>
+</head>
+<body>
+		<canvas id="left" width="100px" height="120px" style="background:green;border:1px solid black;margin: 100px;"></canvas>
+			<canvas id="right" width="500px" height="500px" style="background:pink;border:1px solid black;margin: 100px;"></canvas>
+	
+</body>
+<script type="text/javascript">
+	var cansId=null;
+	//先给左边canvas绑定onclick事件
+	var cansLeft=document.getElementById("left");
+	var ct=cansLeft.getContext("2d");
+	ct.beginPath();
+	ct.arc(30,30,15,0,Math.PI*2,false);
+	ct.fillStyle="blue";
+	ct.fill();
+	cansLeft.onclick=function(){
+		src=event.srcElement||event.target;
+			cansId=this.id;
+	}
+	//先给右边canvas绑定onclick事件
+	//var cansRight=document.getElementById...
+	var cansRight=document.getElementById("right");
+	cansRight.onclick=function(){
+		console.log("asdf");
+		var ctx=cansRight.getContext("2d");
+		var cansLeft=document.getElementById(cansId);
+		var x=event.offsetX;
+		var y=event.offsetY;
+		ctx.clearRect(0,0,cansRight.width,cansRight.height);
+		ctx.drawImage(cansLeft, x, y,cansLeft.width,cansLeft.height);
+	}
+</script>
+</html>

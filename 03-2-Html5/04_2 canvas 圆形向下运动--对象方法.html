@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>canvas 圆下降</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px" height="300px" style="background:pink;"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var ctx=can.getContext("2d");
+	function Shape(){
+		this.r=parseInt(Math.random()*36+5);
+		this.x=Math.random()*can.width+1;
+		this.y=-this.r;
+		this.clr="rgb("+parseInt(Math.random()*56+200)+","+parseInt(Math.random()*26+230)+","+parseInt(Math.random()*26+230)+")";
+		this.sp=parseInt(Math.random()*5+1);
+		this.gbalp=Math.random();
+		this.intr=function(){
+			alert("000");
+		}
+		if(!Shape.prototype.paint){
+			Shape.prototype.paint=function(){
+				ctx.beginPath();
+				ctx.fillStyle=this.clr;
+				ctx.globalAlpha=this.gbalp;
+				ctx.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+				ctx.fill();
+			}
+		}
+		if(!Shape.prototype.step){
+			Shape.prototype.step=function(){
+				this.y+=this.sp;
+			}
+		}
+		Shape.prototype.intr=function(){
+				alert("123");
+			}
+	}
+	//声明一个全局数组,接收定时器定时产生的所有shape对象
+	var shapes=[];
+	//定义创建shape的方法
+	function createShapes(){
+		var shape=new Shape();
+		shapes[shapes.length]=shape;
+	}
+	//定义每个shape对象的画图方法
+	function paintShapes(){
+		var i=shapes.length-1;
+		while(i>=0){
+			shapes[i--].paint();
+		}
+	}
+	//定义每个shape对象的移动方法,y++
+	function stepShapes(){
+		for(var i=0;i<shapes.length;shapes[i++].step());
+	}
+	//设置定时器,每五十毫秒创建一个shape对象,然后在canvas画出来,最后向下移动y+sp的距离
+	//避免shapes数组的里的shape对象无限增加,单个对象走完全程需要的最长周期是340/1
+	//shapes数组满340个元素减一
+	setInterval(function(){
+		ctx.fillStyle="pink";
+		ctx.fillRect(0,0,can.width,can.height);
+		createShapes();
+		paintShapes();
+		stepShapes();
+		/*额外运算导致闪烁
+		if(shapes.length>340){
+			shapes.shift();
+		}
+		*/
+	},50);
+	var obj={
+		name:"liu",
+		intr:function(){
+			alert(0)
+		}
+	}
+</script>
+</html>

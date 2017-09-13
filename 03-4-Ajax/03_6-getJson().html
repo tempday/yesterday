@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<script src="http://127.0.0.1/Tarena/Jquery/JS/jquery-1.11.3.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<input type="button" value="getJSON" onclick=""id="btn">
+	<input type="button" value="getJSON2" onclick=""id="btn2">
+</body>
+<script type="text/javascript">
+	$('#btn').click(function(){
+		//请求方式是get
+		$.getJSON("03_4.php",{"username":"lglong","pwd":"123"},function(data){
+			console.log(data);
+		});
+	});
+	$('#btn2').click(function(){
+		//请求方式是get
+		$.getJSON("03_5.php?callback=?",function(data){
+			console.log(data);
+		});
+	});
+</script>
+</html>

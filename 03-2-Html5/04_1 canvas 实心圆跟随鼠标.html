@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>canvas 实心圆跟随鼠标</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px" height="500px" style="background:pink;border:1px solid black;margin: 200px;"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var ctx=can.getContext("2d");
+	//用清除的方法
+	ctx.beginPath();
+	ctx.arc(200,200,30,0,Math.PI*2,false);
+	ctx.fill();
+	can.onmousemove=function(){
+		var e=window.event||arguments[0];
+		var x=e.offsetX;
+		var y=e.offsetY;
+		ctx.clearRect(0,0,500,500);
+		ctx.beginPath();
+		ctx.arc(x,y,30,0,Math.PI*2,false);
+		ctx.fill();
+	}
+	//用onload img的方法,在生成新的圆之前用img盖住之前的所有图形,模拟跟随
+</script>
+</html>

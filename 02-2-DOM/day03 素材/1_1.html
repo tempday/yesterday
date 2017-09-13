@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>动态创建表格</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; border-collapse:collapse;
+		text-align:center;
+	}
+	td,th{border:1px solid #ccc}
+</style>
+<script>
+	var json='[{"ename":"Tom","salary":"5000","age":"25"},{"ename":"Jacket","salary":"7000","age":"23"},{"ename":"Jhon","salary":"6000","age":"27"}]';
+	var emps=eval("("+json+")");
+	window.onload=function(){
+		var table=document.createElement("table");
+		var thead=document.createElement("thead");
+		var tr=document.createElement("tr");
+		for(var i=0;i<3;i++){
+			tr.appendChild(document.createElement("th"));
+		}
+		tr.childNodes[0].innerHTML="姓名";
+		tr.childNodes[1].innerHTML="薪资";
+		tr.childNodes[2].innerHTML="年龄";
+		thead.appendChild(tr);
+		table.appendChild(thead);
+		for(var i=0;i<emps.length;i++){
+			var tr=document.createElement("tr");
+			for(var n=0;n<3;n++){
+				tr.appendChild(document.createElement("td"));
+			}
+			tr.childNodes[0].innerHTML=emps[i].ename;
+			tr.childNodes[1].innerHTML="&yen;"+Number(emps[i].salary).toFixed(2);
+			tr.childNodes[2].innerHTML=emps[i].age;
+			thead.appendChild(tr);
+			console.log(emps[i].ename);
+		}
+		var frag=document.createDocumentFragment();
+		frag.appendChild(table);
+		document.getElementById("data").appendChild(frag);
+	}
+</script>
+</head>
+<body>
+	<div id="data">
+		
+	</div>
+</body>
+</html>

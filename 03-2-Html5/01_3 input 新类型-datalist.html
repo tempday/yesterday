@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>input 新类型-用户注册</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style type="text/css" media="screen" id="test">
+		div{
+			width:150px;
+			height:150px;
+			border:1px solid black;
+			background:#e4393c
+		}
+		form{
+			display: block;
+			width:350px;
+			padding-left:10px;
+		}
+	</style>
+	
+</head>
+<body>
+	<select>
+		<option>1</option>
+		<option>11</option>
+		<option>12</option>
+		<option>13</option>
+	</select>
+	<datalist id="data">
+		<option>1</option>
+		<option>11</option>
+		<option>12</option>
+		<option>13</option>
+	</datalist>
+	<form id="myform">
+		<input type="text" list="data"/>123
+	</form>
+	<br>
+	<progress max="100" value="0"></progress>
+	<meter min="10" max="100" value="60" low="30" heigh="85"></meter>
+	<input type="number" id="a"/>+<input type="number" id="b"/>=<output for="a b"></output>
+	<br>
+	<input type="text" id="a" placeholder="please insert you name." autofocus form="myform"/>456
+</body>
+<script type="text/javascript">
+	function mychange(){
+		var prog=document.getElementsByTagName("progress")[0];
+		prog.value+=10;
+		if(prog.value==100){
+			setTimeout(function(){
+				timer=setTimeout(function(){mychange();},300);
+				prog.value=0;
+			},300);
+			
+		}else{
+			timer=setTimeout(function(){mychange();},300);
+		}
+	}
+	setTimeout(mychange,1000);
+</script>
+</html>

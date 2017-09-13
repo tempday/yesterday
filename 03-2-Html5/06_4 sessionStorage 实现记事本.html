@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>sessionStorage 实现记事本</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		
+		input{
+			width:75px;
+			height:30px;
+			font-size:15px;
+		}
+		hr{
+			visibility: hidden;
+		}
+		#note{
+			width:500px;
+			height:200px;
+		}
+		div{
+			/*width:500px;
+						height:200px;*/
+			/*border:1px solid black;*/
+			margin-top: 20px;
+		}
+		table{
+			background: #EBEBEB ;
+			width:445px;
+			overflow-x:hidden;
+		}
+		table tbody,table thead{
+			width:445px;
+		}
+		
+		td{
+			padding:0;
+			margin:0;
+			border:1px solid #FFCC99;
+			width:120px;
+			height:35px;
+			background:#F8EDDA;
+		}
+		#table tr td:nth-child(3){
+			width:300px;
+			white-space:nowrap;
+			overflow-x:hidden;
+		}
+		tr td:nth-child(1),tr td input{
+			width:20px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="note" placeholder="Please enter your words." autofocus></textarea>
+	<hr />
+	<input type="button" id="add" onclick="" value="新增"/>
+	<input type="button" id="save" onclick="" value="保存"/>
+	<input type="button" id="read" onclick="" value="读取"/>
+	<input type="button" id="updata" onclick="" value="修改"/>
+	<input type="button" id="del" onclick="" value="删除"/>
+	<input type="button" id="clear" onclick="" value="清空"/>
+	<div id="show">
+		
+		
+	</div>
+	<input type="hidden" name="hidden"/>
+</body>
+<script type="text/javascript">
+	var note=document.getElementById("note");
+	var add=document.getElementById("add");
+	var save=document.getElementById("save");
+	var read=document.getElementById("read");
+	var show=document.getElementById("show");
+	var input=document.getElementsByTagName("input");
+	var myform;
+	add.onclick=function(){
+		note.value="";
+		input[input.length-1].value="";
+	}
+	//保存按钮事件:
+		
+	save.onclick=function(){
+		var data=note.value;
+		//难点:怎样判断key是新增还是修改的
+		var key=input[input.length-1].value;
+		if(!key){
+			key=new Date().getTime();
+			input[input.length-1].value=key;
+		}
+		if(data.trim()){
+			localStorage.setItem(key,data);
+		}
+		if(myform){
+			for(var i=0;i<myform.elements.length;i++){
+				if(myform.elements[i].checked){
+					readData().elements[i].checked=true;
+					return;
+				}
+			}
+			readData();
+		}
+	}
+	
+	read.onclick=readData;
+	function readData(){
+		var myHtml="<form name='myform'><table border='1'><thead><tr><th></th><th>key</th><th>value</th></tr></thead><tbody>";
+		for(var i=0;i<localStorage.length;i++){
+			var key=localStorage.key(i);
+			var data=localStorage.getItem(key);
+			myHtml+="<tr><td><input type='radio' name='mydata'value='"+i+"'/></td><td>"+key+"</td><td>"+data+"</td></tr>";
+		}
+		myHtml+="</tbody></table></form>";
+		show.innerHTML=myHtml;
+		//生成表单后才获取
+		return myform=document.forms["myform"];
+		/*
+		if(localStorage.length!=0&&index<localStorage.length){
+			key=localStorage.key(index);
+			var data=localStorage.getItem(key);
+			note.value=data;
+			index++;
+		}else{
+			index=0;
+		}
+		*/
+	}
+	//读取选中表格的内容,加载到文本框,并给隐藏域value赋值
+	var updata=document.getElementById("updata");
+	updata.onclick=function(){
+		var index=getChecked();
+		if(index!=-1){
+			var key=localStorage.key(index);
+			var data=localStorage.getItem(key);
+			note.value=data;
+			input[input.length-1].value=key;
+		}
+	}
+	function getChecked(){
+		if(myform){
+			for(var i=0;i<myform.elements.length;i++){
+				if(myform.elements[i].checked){
+					return i;
+				}
+			}
+		}else{
+			return -1;
+		}
+	}
+	var clear=document.getElementById("clear");
+	clear.onclick=function(){
+		localStorage.clear();
+		note.value="";
+		show.innerHTML="";
+		input[input.length-1].value="";
+	}
+	var del=document.getElementById("del");
+	del.onclick=function(){
+		var index=getChecked();
+		if(index!=-1){
+			var key=localStorage.key(index);
+			var data=localStorage.removeItem(key);
+			readData();
+			if(key==input[input.length-1].value){
+				input[input.length-1].value="";
+			}
+		}
+		
+	}
+</script>
+</html>

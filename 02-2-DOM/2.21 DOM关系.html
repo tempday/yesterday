@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+</head>
+<body>
+	<a href="http://baidu.com">百度</a>
+	<h1>我的搜索</h1>
+</body>
+
+<script type="text/javascript">
+<!--
+	console.log(
+	document.body.childNodes[3].childNodes[0].nodeValue+"\n"+
+	document.body.childNodes[3].childNodes[0].nodeType+"\n"+
+	document.body.childNodes[3].childNodes[0].nodeName
+	);
+	//空格换行符都是节点
+	/*
+	obj.hasOwnProperty("属性/方法")
+	"属性名" in 对象
+	arr.indexOf!==undefined
+
+
+
+	Object.getPrototypeOf(子对象)
+	检查对象的父对象：父对象.isPrototypeOf(子对象)
+
+
+	Object.setPrototypeOf(子对象,父对象)
+
+	构造函数.prototype=父对象
+	*/
+	var blanks=[];
+	function getChildren(parent){
+			str=parent.nodeType!=3?parent.nodeName:parent.nodeValue;
+			str.trim().length!=0&&console.log(blanks.join("")+"|-"+str);
+		/*
+		if (parent.nodeType!=3){
+			console.log(blanks.join("")+"|-"+parent.nodeName);
+		}else{
+			parent.nodeValue!=""&&(console.log(blanks.join("")+"|-"+parent.nodeValue));
+		}*/
+		if(parent.childNodes.length>0){
+			blanks.push("\t");
+			for (var i=0,len=parent.childNodes.length;i<len;i++){
+				getChildren(parent.childNodes[i]);
+			}
+			blanks.pop("\t");
+		}
+	}
+	getChildren(document);
+	document.write(blanks.join("")+"<br />");
+//-->
+</script>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<script src="http://www.lglong519.com/Tarena/Jquery/JS/jquery-1.11.3.min.js"></script>
+	<script src="http://www.lglong519.com/Tarena/css3/more%20Fun/more%20Fun.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<form method="post" action="testing.php" id="test" name="">
+		用户名:<input type="text" name="username" id="chatdata" value="ad">
+		密码:<input type="password" name="pwd">
+		确认密码:<input type="password" name="repwd">
+		<input type="button" value="提交" onclick="" id="btn">
+	</form>
+	
+	<div id="" class="">
+	</div>
+</body>
+<script type="text/javascript">
+	$("#btn").click(function(){
+		if($("#chatdata").val().trim()!=""){
+			//序列表表格内容为字符串,转为key=value 格式
+			var mychat=$("#test").serialize();
+			//序列化表格元素返回 JSON 数据结构数据
+			var myjson=$("#test").serializeArray();
+			console.log(mychat);
+			console.log(myjson);
+			$.ajax({
+				url:"03_4.php",
+				type:"post",
+				async:true,//open 三部曲
+				data:myjson,
+				dataType:"json",
+				success:function(data,textStatus){
+					console.log(textStatus);
+					//var dataa=eval('('+data+')');
+					console.log(data.username+":"+data.pwd);
+					$("div:first").append("me:"+data.username+"<br>");
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					//console.log(XMLHttpRequest);
+					console.log(textStatus);
+					console.log(errorThrown);
+				}
+			});
+		}
+		
+			
+	});
+	
+</script>
+</html>

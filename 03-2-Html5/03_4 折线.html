@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>折线</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		canvas{
+			/*background:#EBEBEB;*/
+			transform:rotate(0deg);
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px" height="500px"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var con=can.getContext("2d");
+	con.beginPath()
+	con.moveTo(10,10);
+	con.lineTo(50,90);
+	con.lineTo(100,100);
+	con.lineTo(150,190);
+	con.lineTo(250,290);
+	con.lineTo(250,200);
+	con.lineTo(10,10);
+	con.lineWidth=20;
+	con.lineCap="round";
+	//con.lineJoin="miter";
+	con.stroke();
+	//
+	/*var deg=0;
+		setInterval(function(){
+			can.style.transform="rotate("+deg--+"deg)";
+		}, 20);*/
+</script>
+</html>

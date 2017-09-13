@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>String()</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script type="text/javascript">
+	<!--
+		var a="afe34中提以上就85dfa";		
+		for(var n=0;n<a.length;n++){
+			var arr=[];
+			arr.push(a.charCodeAt(n));
+			if( String(a.charCodeAt(n)).length<5){
+				for (var i=0;i<5-String(a.charCodeAt(n)).length;i++){
+					arr.unshift("0");
+				}
+			}
+			document.write(arr.join("")+"+");
+		}
+		document.write("<br />");
+		document.write(a.indexOf("afp")+"<br />");
+		var myword="afe34中提以as you say上就85dfaFdaShboard";
+		function findKeywords(key){
+			var index=-1;
+			while((index=myword.indexOf(key,index+1))!=-1){
+				document.write(index+"<br />");
+			}
+		}
+		findKeywords("f");
+		document.write("key"+"<br />");
+		var key=/AF/i;
+		//判断有没有关键字 缺点:只查找一个
+		document.write(myword.search(key)+"<br />");
+		var key=/as0/ig;
+		//获得所有关键字的内容 缺点:无法返回下标,能获得第一个
+		document.write(myword.match(key)+"<br />");
+		//替换 str.replace
+		var num=myword.match(key);
+		document.write("替换了"+num.length+"个地方"+"<br />");
+		var str=myword.replace(key,"**");
+		document.write("原文是:"+myword+"<br />");
+		document.write(str+"<br />");
+	//-->
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

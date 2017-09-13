@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Document</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+<!--
+
+	//arguments 对象:类数组对象
+	function calc(){
+		if (arguments.length==1){
+			return arguments[0]*arguments[0];
+		}else if (arguments.length==2){
+			return arguments[0]+arguments[1];
+		}else{
+			return false;
+		}
+	}
+	document.write(calc(1,2)+"<br />");
+	document.write(calc(9)+"<br />");
+	document.write(calc(5,2,9,3)+"<br />");
+	document.write(calc()+"<br />");
+
+	//求和函数
+	function add(){
+		var sum=0;
+		if (arguments.length!=0){
+			for (var i=0;i<arguments.length;sum+=arguments[i++]);			
+		}
+		return sum;
+	}
+	document.write(add()+"<br />");
+	document.write(add(1,3)+"<br />");
+	document.write(add(1,3,8,7,4,6,1,3,54,1,39,9,8,7,5,1,4,6,3,7,5)+"<br />");
+//---创建函数对象 的三种方式----------------------------------------------------------------------------
+
+	//声明函数 不单会声明提前,连[函数体]也会提前
+	// 声明方式: funciton func(){}  函数调用不分先后;
+	// 函数直接量:var func=function(){}	必须按顺序调用  
+	// 使用new创建函数类型对象: var func=new Function("a","b","函数体");   
+
+	//比较器三种写法
+	var arr=[3,2,5,12,32,8,59,4];
+	//声明方式
+	function compare(a,b){return a-b;}
+	//函数直接量
+	var compare=function(a,b){return a-b;}
+	//使用new创建函数类型对象
+	var compare=new Function("a","b","return a-b");
+	arr.sort(compare);
+	document.write(arr+"<br />");
+	//匿名函数 比较器
+	arr.sort(new Function("a","b","return -a+b"));
+	document.write(arr+"<br />");
+	
+	function test(){
+		var n=1;
+		var bb=function(){return n++;};
+		return bb;
+	}
+	var bb=test();
+	var cc=new test();
+	document.write(test()+"<br />");
+	document.write(bb()+"<br />");
+	document.write(bb()+"<br />");
+	document.write(cc()+"<br />");
+	document.write(cc()+"<br />");
+	document.write(bb()+"<br />");
+	document.write(typeof(bb)+"<br />");
+	function tt(){
+		document.write("123"+"<br />");
+	}
+	var ac=tt;
+	var ad=tt;
+	ac=5;
+	ad();
+	//ac();
+	var cd=true;
+	if(cd){
+		document.write(Number(Boolean(cd))+"<br />");
+	}else{
+		document.write(Number(Boolean(cd))+"<br />");
+	}
+//-->
+</script>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

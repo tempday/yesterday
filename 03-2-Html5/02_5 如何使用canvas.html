@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>如何使用canvas</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		canvas{
+			background:pink;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		默认尺寸 300x150 px
+		类似div 是个盒子
+		方法:getContext("2d"|"3d"),
+		用css定义canvas高宽会导致图形拉伸,要用属性方式
+	-->
+	<canvas id="can" width="400px;"height="250px;"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var context=can.getContext("2d");
+	//设置填充颜色 fillStyle  注意:绘制前设置颜色
+	context.fillStyle="green";
+	
+	//----实心矩形,x轴,y轴,宽,高
+	context.fillRect(10,15,100,100);
+	//描边颜色
+	context.strokeStyle="blue";
+	//----描边
+	context.strokeRect(120,15,100,100);
+	//----
+	context.fillStyle="yellow";
+	//透明度
+	context.globalAlpha=0.9;
+	context.fillRect(60,70,100,100);
+</script>
+</html>

@@ -1,0 +1,15 @@
+/*屏幕大于768小于990*/
+body {
+	font-family: "Microsoft Yahei";
+	margin: 0px;
+}
+h1{
+	font-size:2em;
+	border-bottom: 2px solid #CCC;
+}
+.box{
+	border:1px solid #3a3;
+	background:greenyellow;
+	color:#822;
+	padding:6px;
+}

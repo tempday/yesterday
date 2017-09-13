@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>样式</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+	<style tyle="text/css">
+		div{
+			width:100px;
+			height:100px;
+			border:1px solid black;
+			background:pink;
+			float:left;
+			margin:10px;
+		}
+		.one{
+			width:50px;
+			height:50px;
+			border:1px solid black;
+			background:green;
+		}
+		.three{
+			width:50px;
+			height:50px;
+			border:1px solid black;
+			background:yellow;
+		}
+		span{
+			display: block; 
+		}
+	</style>
+</head>
+<body>
+	<ul id="city">
+		<li id="bj" name="bjing">beijing</li>
+		<li id="tj" name="tjing">tianjing</li>
+		<li id="nj" name="njing">nanjing
+			<ul>
+				<li>a</li>
+				<li>b</li>
+			</ul>
+		</li>
+		<li id="sh" name="shai">shanghai</li>
+		<li id="cq" name="cqing">congqing</li>
+		<li id="cx" >congqing</li>
+	</ul>
+	<span>
+		<button id="btn1">attr</button>
+		<button id="btn2">addclass</button>
+		<button id="btn3">rmclass</button>
+		<button id="btn4">toggleclass</button>
+		<button id="btn5">has</button>
+		<button id="btn6">css</button>
+	</span>
+	<div id="d1" class="">
+		
+	</div>
+	<div id="d2" class="">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	console.log($("#bj").parent().attr("id"));
+	console.log($("#city").children().length);
+	console.log($("#nj").prev().html());
+	console.log($("#nj").next().html());
+	console.log($("#nj").siblings().length);
+	console.log($("#nj~li").length);
+	//find 查找后代节点,必须传入参数
+	console.log($("#city").find("li").length);
+	//-----------------------------------------------
+	//创建节点
+	$("#city").append($("<li id='gz' name='guangzou'>广州</li>"));
+	//-----------------------------------------------
+	//删除节点:remove() 删除自身和后代
+	//		empty() 删除后代,保留自身,但内容清空 ==>innerHTML="";
+	$("#bj").remove();
+	$("#nj").empty();
+	//-----------------------------------------------
+	//插入节点:内部插入 和 外部插入 ;
+	
+</script>
+</html>

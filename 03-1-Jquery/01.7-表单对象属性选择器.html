@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>可见性选择器</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style>
+		div{
+			width:150px;
+			height:150px;
+			border:solid 1px black;
+			background-color: pink;
+			float:left;
+			margin:10px;
+		}
+		input{margin:10px;}
+		.mini{
+			width:50px;
+			height:50px;
+			background-color: yellow;
+		}
+		button{
+			margin-right:20px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body >
+	<button id="btn1">:enabled</button>
+	<button id="btn2">:disabled</button>
+	<button id="btn3">:checked</button>
+	<button id="btn4">:selected</button>
+	<br/>
+	<input type="text" value="可用元素"/><br/>
+	<input type="text" disabled="disabled"value="不可用元素"/><br/>
+	<input type="radio" name="single" value="h5"/>h5<br/>
+	<input type="radio" name="single" value="c"/>c3<br/>
+	<input type="radio" name="single" value="js"/>js<br/>
+	<select id="city">
+		<option>-select-</option>
+		<option selected="selected" value="bj">beijing</option>
+		<option value="sh">shanghai</option>
+		<option value="sz">shenzhen</option>
+		<option value="dg">dongguan</option>
+		<option>guangzhou</option>
+	</select>
+</body>
+<script type="text/javascript">
+	$("#btn1").click(function(){
+		$("input:enabled").val("xxx");
+	});
+	$("#btn2").click(function(){
+		$("input:disabled").val("abbs");
+	});
+	$("#btn3").click(function(){
+		console.log($("input[type=radio]:checked").val());
+	});
+	$("#btn4").click(function(){
+		var sel=$("#city option:selected").val();
+		console.log(sel);
+	});
+</script>
+</html>

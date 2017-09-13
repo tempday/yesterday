@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html >
+	<head>
+		<title>事件处理</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/3.css"/>
+		<script>
+			function fun(){
+				var e=window.event||arguments[0];
+				this.style.backgroundColor="yellow";
+				console.log(this.className);
+				this.style.backgroundColor="";
+				//取消冒泡
+				if(e.stopPropagation){
+					e.stopPropagation();
+				}else{
+					e.cancelBubble=true;
+				}
+			}
+			window.onload=function(){
+				var divs=document.getElementsByTagName("div");
+				for(var i=0;i<divs.length;i++){
+					divs[i].addEventListener("click",fun,false);
+				}
+			}
+		</script>
+	</head>
+	<body >
+		<div class="d1" >
+			<div class="d2" >
+				<div class="d3" >
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

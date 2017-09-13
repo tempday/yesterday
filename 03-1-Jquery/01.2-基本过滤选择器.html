@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>基本选择器</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style>
+		div{
+			width:150px;
+			height:150px;
+			border:solid 1px black;
+			background-color: pink;
+			float:left;
+			margin:10px;
+		}
+		.mini{
+			width:50px;
+			height:50px;
+			background-color: yellow;
+		}
+		button{
+			width:100px;
+			height:30px;
+			font-size:18px;
+			margin-right:10px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body onclick="history.go(0);">
+	<h1>1231313</h1>
+	<h2>8978</h2>
+	<button id="btn1">:first</button>
+	<button id="btn2">:last</button>
+	<button id="btn3">:event</button>
+	<button id="btn4">:odd</button>
+	<button id="btn5">:gt</button>
+	<button id="btn6">:lt</button>
+	<button id="btn7">:eq</button>
+	<button id="btn8">:not</button>
+	<button id="btn9">:header</button>
+	<button id="btn10">:animated</button>
+	<br/>
+	<div id="d1" class=""></div>
+	<div id="" class=""></div>
+	<div id="one" class="">
+		<div id="" class="mini"></div>
+		<div id="" class="mini"></div>
+	</div>
+	<div id="" class="">
+		<div id="" class="mini"></div>
+		<div id="" class="mini"></div>
+	</div>
+	<div id="" class=""></div>
+	<div id="" class="mini"></div>
+
+</body>
+<script type="text/javascript">
+	$("#btn1").click(function(){
+		$("div:first").css("background","green");
+	});
+	$("#btn2").click(function(){
+		$("div:last").css("background","green");
+	});
+	$("#btn3").click(function(){
+		$("div:even").css("background","green");
+	});
+	$("#btn4").click(function(){
+		$("div:odd").css("background","green");
+	});
+	$("#btn5").click(function(){
+		$("div:gt(1)").css("background","green");
+	});
+	$("#btn6").click(function(){
+		$("div:lt(3)").css("background","green");
+	});
+	$("#btn7").click(function(){
+		$("div:eq(2)").css("background","green");
+	});
+	$("#btn8").click(function(){
+		$("div:not('.mini')").css("background","green");
+	});
+	//获取标题元素
+	$("#btn9").click(function(){
+		$(":header").css("background","green");
+	});
+	function move(){
+		$("#d1").slideToggle(3000,function(){move();});
+	}
+	move();
+	$("#btn10").click(function(){
+		$(":animated").css("background","green");
+	});
+</script>
+</html>

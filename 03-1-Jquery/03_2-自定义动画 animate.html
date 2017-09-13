@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>自定义动画</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+	<style>
+		.d1 ,.d3{
+			width:100px;
+			height:50px
+			border:solid 1px black;
+		}
+		.d2,.d4{
+			width:200px;
+			height:200px;
+			border:solid 1px black;
+			background:pink;
+		}
+		span{
+			float: left;
+		}
+		div{
+			float: left;
+			margin-right:10px;
+			//display: none;
+		}
+		.d4{
+			transform:rotate(7deg);
+			position:absolute;
+			top:250px;
+			left:250px;
+			text-align:center;
+			//line-height:100px;
+			font: 30px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+		}
+	</style>
+</head>
+
+<script type="text/javascript">
+	
+</script>
+<body>
+	<span id="" class="d1">
+		<button>执行动画</button>
+	</span>
+	<span id="" class="d3">
+		<button>hide</button>
+	</span>
+	<br/>
+	<hr/>
+	<div id="" class="d2">
+		<p>js库</p>
+	</div>
+	
+	<div id="" class="d4">
+		<p>D4</p>
+	</div>
+</body>
+<script type="text/javascript">
+	/*
+	animate(params, [duration], [easing], [callback])
+
+	*/
+	// animate 并发效果
+	$("button:first").click(function(){
+		$("div[class=d2]").animate({
+			"width":50,
+			"height":50
+		},3000);
+	});
+	// 排队效果
+	$("button:first").click(function(){
+		$("div[class=d4]").animate({
+			width:50,
+		},1000).animate({
+			"height":50,
+		},1000).animate({"top":500,},2000).animate({"left":500,},2000).animate({
+			"width":250,
+			"height":250,
+			"border-radius":250,
+			"top":100
+		},1000);
+	});
+	$("button:last").click(function(){
+		$("div[class=d2]").animate({
+			"height":50
+		},{
+			"duration":3000,
+		}).animate({
+			"width":50,
+		},{
+			"duration":3000,
+			"queue":false
+		});
+	});
+</script>
+</html>

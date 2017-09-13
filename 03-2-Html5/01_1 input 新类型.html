@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>input 新类型</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style type="text/css" media="screen" id="test">
+		div{
+			width:150px;
+			height:150px;
+			border:1px solid black;
+			background:#e4393c
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<input type="email"/>email<br>
+		<input type="search"/>search<br>
+		<input type="url"/>url<br>
+		<input type="tel"/>tel<br>
+		<input type="number" min="0" max="9" step="2"/>number<br>
+		<input type="range" min="0" max="9" step="2" value="20"/>range<br>
+		<input type="color"/>color<br>
+		<input type="submit"/><br>
+	</form>
+	<div id="d"></div>
+	<ul onclick="mychange();">
+		红:<input type="range" id="r" min="0" max="255"  value="20"/>range<br>
+		绿:<input type="range" id="g" min="0" max="255"  value="20"/>range<br>
+		蓝:<input type="range" id="b" min="0" max="255"  value="20"/>range<br>
+		
+	</ul>
+	<form>
+		日期:<input type="date"/>
+		月:<input type="month"/>
+		星期:<input type="week"/>
+	</form>
+</body>
+<script type="text/javascript">
+	function mychange(){
+		var e=window.event||arguments[0];
+		var src=e.srcElement||e.target;
+		var ipt=document.getElementsByTagName("ul")[0].children;
+		ipt=Array.prototype.slice.call(ipt,0);
+		for(var i=ipt.length-1;i>=0;i--){
+			if(ipt[i].type!="range"){
+				ipt.splice(i,1);
+			}
+		}
+		document.getElementById("d").style.background=("rgb("+ipt[0].value+", "+ipt[1].value+" ,"+ipt[2].value+")");
+	}
+</script>
+</html>

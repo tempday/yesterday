@@ -1,0 +1,89 @@
+@charset "utf-8";
+/*-------------功能图标------------------*/
+#icons ul{
+	text-align: center;
+	width:905px;
+	padding:100px  50px 0;
+	margin: auto;
+	overflow: hidden;
+}
+#icons ul li{
+	float: left;
+	width:300px;
+	height:175px;
+}
+#icons ul b{
+	float: left;
+	width:85px;
+	height:80px;
+	background-image:url(../images/iconlist_3.png);
+	margin-left:10px;
+}
+#icons ul div{
+	float: left;
+	width:200px;
+	line-height:20px;
+	font-size:11pt;
+	color:#a3a3a3;
+}
+#icons ul div h3{
+	color:#ffe325;
+	font-size:16pt;
+	margin:10px auto;
+}
+#icons ul li:nth-child(2) b{
+	background-position:-340px 0;
+}
+#icons ul li:nth-child(2) h3{
+	color:#f1595f;
+}
+#icons ul li:nth-child(3) b{
+	background-position:-426px 0;
+}
+#icons ul li:nth-child(3) h3{
+	color:#33CCFF;
+}
+#icons ul li:nth-child(4) b{
+	background-position:0 -86px;
+}
+#icons ul li:nth-child(4) h3{
+	color:#99CC66;
+}
+#icons ul li:nth-child(5) b{
+	background-position:-86px -86px;
+}
+#icons ul li:nth-child(5) h3{
+	color:#FF9966;
+}
+#icons ul li:nth-child(6) b{
+	background-position: -166px -86px;
+}
+#icons ul li:nth-child(6) h3{
+	color:#9999FF;
+}
+@keyframes jump{
+	0%{
+		transform:rotate(0deg);
+		opacity:1;
+	}
+	25%{
+		transform:rotate(-15deg);
+		opacity:.5;
+	}
+	50%{
+		transform:rotate(0deg);
+		opacity:1;
+	}
+	75%{
+		transform:rotate(15deg);
+		opacity:.5;
+	}
+	100%{
+		transform:rotate(0deg);
+		opacity:1;
+	}
+}
+
+#icons ul b:hover{
+	animation:jump .3s linear 2;
+}

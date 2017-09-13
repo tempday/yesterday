@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>加载图片</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		canvas{
+			border:solid 1px black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="can" width="600px" height="500px"></canvas>
+</body>
+<script type="text/javascript">
+	var can=document.getElementById("can");
+	var con=can.getContext("2d");
+	var img=new Image();
+	img.src="regexp.jpg";
+	// 加载图片
+	/*
+	img.onload=function(){
+		con.drawImage(img,0,0,600,338);	
+	}
+	*/
+	//平铺图片
+	img.onload=function(){
+		var ptn=con.createPattern(img,"repeat-x");
+		con.fillStyle=ptn;
+		con.fillRect(0,0,can.width,can.height);	
+	}
+	con.beginPath();
+	con.rect(50,50,300,100);
+	con.clip();
+	
+	con.beginPath();
+	con.arc(50,50,100,0,Math.PI*2);
+	con.clip();
+</script>
+</html>

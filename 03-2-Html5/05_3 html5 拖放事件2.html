@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>html5 拖放事件</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		div{
+			width:200px;
+			height:120px;
+			border: 1px solid #999;
+			margin-bottom:5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="" class="">
+		<img id="img"src="regexp.jpg" width="200px"/>
+		
+	</div>
+	<div id="d1" class="">
+		<img id="img"src="regexp.jpg" width="200px"/>
+	</div>
+	<div id="d2" class="">
+		
+	</div>
+	<div id="d3" class="d33">
+		123
+	</div>
+</body>
+<script type="text/javascript">
+	//低版本ie不支持 addEventListener
+	//源文件
+	var img=document.getElementById("img");
+	img.addEventListener("dragstart", function (e) {
+		var mydata=img.src;
+		var trans=e.dataTransfer;
+		trans.setData("src",mydata);
+		return true;
+	}, false);
+	
+	//目标元素
+	var d2=document.getElementById("d2");
+	/*
+	d2.addEventListener("dragover", function (e) {
+		e.preventDefault();
+		return true;
+	}, true);
+	*/
+	d2.addEventListener("drop", function (e) {
+		var trans=e.dataTransfer;
+		var src=trans.getData("src");
+		d2.innerHTML='<img id="img"src="'+src+'" width="200px"/>';
+		trans.clearData;
+		d1.innerHTML="";
+		return true;
+	}, false);
+	
+
+	//d1 拖放事件
+	var d1=document.getElementById("d1");
+	d1.addEventListener("dragover", function (e) {
+		e.preventDefault();
+		return true;
+	}, false);
+	d1.addEventListener("drop", function (e) {
+		d1.appendChild(img);
+		return true;
+	}, false);
+</script>
+</html>

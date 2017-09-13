@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>可见性选择器</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style>
+		div{
+			width:150px;
+			height:150px;
+			border:solid 1px black;
+			background-color:pink;
+			float:left;
+			margin:10px;
+		}
+		.mini{
+			width:50px;
+			height:50px;
+			background-color: yellow;
+		}
+		.one{
+			display:none;
+		}
+		button{
+			margin-right:20px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body onclick="history.go(0);">
+	<button id="btn1">可见</button>
+	<button id="btn2">不可见</button>
+	<button id="btn3">id选择器</button>
+	<button id="btn4">id选择器</button>
+	<button id="btn5">id选择器</button>
+	<br/>
+	<div id="" class=""></div>
+	<div id="" class=""></div>
+	<div id="" class=""></div>
+	<div id="" class="one"></div>
+	<div id="" class=""></div>
+</body>
+<script type="text/javascript">
+	$("#btn1").click(function(){
+		$("div:visible").css("background","green");
+	});
+	$("#btn2").click(function(){
+		$("div:hidden").show(1000).css("background","green");
+	});
+</script>
+</html>

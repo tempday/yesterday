@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>使用节点方式实现两列表框间选项移动与排序</title>
+<meta charset="utf-8" />
+<style>
+	select{width:100px;height:85px;}
+	div{display:inline-block;width:50px}
+</style>
+</head>
+<body>
+	<select id="unsel" size="5" multiple>
+		<option>Argentina</option>
+		<option>Brazil</option>
+		<option>Canada</option>
+		<option>Chile</option>
+		<option>China</option>
+		<option>Cuba</option>
+		<option>Denmark</option>
+		<option>Egypt</option>
+		<option>France</option>
+		<option>Greece</option>
+		<option>Spain</option>
+	</select>
+	<div>
+<button onclick="move(this)">&gt;&gt;</button>
+<button onclick="move(this)">&gt;</button>
+<button onclick="move(this)">&lt;</button>
+<button onclick="move(this)">&lt;&lt;</button>
+	</div>
+	<select id="sel" size="5" multiple>
+	</select>
+	<script>
+		
+	</script>
+</body>
+</html>

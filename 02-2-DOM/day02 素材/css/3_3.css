@@ -1,0 +1,58 @@
+*{margin:0;padding:0}
+#gridPanel{
+	margin:0 auto;
+	width: 480px;
+	height: 480px;
+	background: #BBADA0;
+	border-radius: 10px;
+	padding: 20px 0 0 20px;
+	top:20px;
+	position: relative;
+}
+#gridPanel .grid{
+	width:100px;
+	height:100px;
+	border-radius: 6px;
+	background-color: #ccc0b3;
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.cell{
+	width: 100px;
+	height: 100px;
+	border-radius: 6px;
+	position: absolute;
+	line-height: 100px;
+	text-align: center;
+	font-size: 60px;
+	color: #776E65;
+}
+/* 前景格中的行位置 */
+#c00,#c01,#c02,#c03{top:20px;}
+#c10,#c11,#c12,#c13{top:140px;}
+#c20,#c21,#c22,#c23{top:260px;}
+#c30,#c31,#c32,#c33{top:380px;}
+/* 前景格中的列位置 */
+#c00,#c10,#c20,#c30{left:20px;}
+#c01,#c11,#c21,#c31{left:140px;}
+#c02,#c12,#c22,#c32{left:260px;}
+#c03,#c13,#c23,#c33{left:380px;}
+
+/*每个数字对应的单元格背景色*/
+.n2{background:#eee4da;}
+.n4{background:#ede0c8;}           
+.n8{background:#f2b179;}
+.n16{background:#f59563;}
+.n32{background:#f67c5f;}
+.n64{background:#f65e3b;}
+.n128{background:#edcf72;}
+.n256{background:#edcc61;}
+.n512{background:#9c0;}
+.n1024{background:#33b5e5;}
+.n2048{background:#09c;}
+.n4096{background:#a6c;}
+.n8192{background:#93c;}
+/*n>8后，字体颜色变为白色*/
+.n8,.n16,.n32,.n64,.n128,.n256,.n512,.n1024,.n2048,.n4096,.n8192{color:#fff;}
+/*n>1024后，字体大小缩小为40px*/
+.n1024,.n2048,.n4096,.n8192{font-size:40px;}

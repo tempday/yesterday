@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>用户中心</title>
+  <link rel="stylesheet" href="css/style.css" />
+	 <script src="http://127.0.0.1/Tarena/Jquery/JS/jquery-1.11.3.min.js"></script>
+	 <script src="scripts/orderList.js"></script>
+	 <script src="scripts/recordPaint.js"></script>
+ </head>
+ <body>
+ <script type="text/javascript">
+	 $(function(){
+		 $("#orderContent,#lotteryContent").hide();
+		 $("#recordContent").show();
+		 //-----------------
+		$("#orderLink").click(function(){
+			$(this).addClass("selected");
+			$("#recordLink,#lotteryLink").removeClass("selected");
+			$("#orderContent").show();
+			$("#recordContent,#lotteryContent").hide();
+		});
+		 $("#recordLink").click(function(){
+			 $(this).addClass("selected");
+			 $("#orderLink,#lotteryLink").removeClass("selected");
+			 $("#orderContent,#lotteryContent").hide();
+			 $("#recordContent").show();
+		 });
+		 $("#lotteryLink").click(function(){
+			 $(this).addClass("selected");
+			 $("#orderLink,#recordLink").removeClass("selected");
+			 $("#orderContent,#recordContent").hide();
+			 $("#lotteryContent").show();
+		 });
+		 $.get("server.php",function(data){
+			initOrderList($("#orderList"),data);//jquery 对象加下标就是DOM对象
+
+		 },"json");
+
+		 //消费记录
+		 var datas=[1200,2000,3000,500,200,800,1800,2200,2600,1000,600,300];
+		 recordPaint($("#recordCvs")[0],datas);
+	 });
+ </script>
+	<!-- 导航区 -->
+	<div id="nav">
+		<div class="w">
+			<div class="logo">
+				<a href="http://127.0.0.1/Tarena/JD-京东商城/JD_index.html" id="e1"></a>
+				<a href="http://127.0.0.1/Tarena/JD-京东商城/JD_index.html" id="e2">我的京东</a>
+                <a href="http://127.0.0.1/Tarena/JD-京东商城/JD_index.html" id="e3">返回京东首页</a>
+			</div>
+		</div>
+	</div>
+
+ <!-- 内容区容器 -->
+ <div id="container">
+	 <div class="w">
+		 <!-- 左侧列表 -->
+		 <dl id="playlist">
+			 <dt>我的京东</dt>
+			 <dd><a id="orderLink" href="#" class="selected">我的订单</a></dd>
+			 <dd><a id="recordLink" href="#">消费记录</a></dd>
+			 <dd><a id="lotteryLink" href="#">幸运抽奖</a></dd>
+		 </dl>
+		 <!-- 右侧内容区 -->
+		 <div id="content">
+			 <!-- 订单列表 -->
+			 <div id="orderContent">
+				 <table id="orderList" width="100%">
+					 <tr>
+						 <th width="50%">订单信息</th>
+						 <th width="10%">收货人</th>
+						 <th width="10%">订单金额</th>
+						 <th width="10%">
+							 <select id="orderTime">
+								 <option value="1">最近三个月</option>
+								 <option value="2">今年内</option>
+								 <option value="3">2014年</option>
+								 <option value="4">2013年</option>
+								 <option value="5">2012年</option>
+								 <option value="6">2012年以前</option>
+							 </select>
+						 </th>
+						 <th width="10%">
+							 <select id="orderStatus">
+								 <option value="1">全部状态</option>
+								 <option value="2">等待付款</option>
+								 <option value="3">等待自提</option>
+								 <option value="4">等待收货</option>
+								 <option value="5">已完成</option>
+								 <option value="6">已取消</option>
+							 </select>
+						 </th>
+						 <th width="10%">操作</th>
+					 </tr>
+					 <!--
+					 <tr class="trOrder">
+						 <td colspan="6">
+							 <span>订单编号: 9545709796</span>
+							 <span><a href="http://mall.jd.com/index-119003.html" target="_blank">BROWNE FOX旗舰店</a></span>
+						 </td>
+					 </tr>
+					 <tr class="trProd">
+						 <td>
+							 <div class="imgList">
+								 <a href="9545709796" target="_blank">'+
+									 <img src="img/prod1.jpg" width="50" height="50" title="【限量秒杀】男士时尚韩版腰带加宽针扣潮商务皮带azkz A款针扣咖啡色" />'+
+								 </a>
+							 </div>
+						 </td>
+						 <td>aaa</td>
+						 <td>￥21.90<br/>在线支付</td>
+						 <td>2015-5-30<br/>13:40:20</td>
+						 <td>已完成</td>
+						 <td>
+							 <a href="{0}">查看</a>|<a href="{1}">删除</a><br/>
+							 <a href="{2}">评价晒单</a><br/>
+							 <a class="btn_buy_again" href="{3}">还要买</a>
+						 </td>
+					 </tr>
+					 -->
+				 </table>
+			 </div>
+			 <div id="recordContent">
+				 <canvas id="recordCvs" width="600" height="400">
+					 您的浏览器不支持canvas
+				 </canvas>
+			 </div>
+			 <div id="lotteryContent">
+				 <canvas id="lotteryCvs" width="500" height="500"></canvas>
+				 <button id="btnLottery">开始抽奖</button>
+			 </div>
+		 </div>
+	 </div>
+ </div>
+
+
+ <!-- 页脚区 -->
+ <div id="foot">
+	 网络文化经营许可证京网文[2011]0168-061号  Copyright © 2004-2015  京东JD.com 版权所有<br/>
+	 京东旗下网站：English Site
+ </div>
+ </body>
+</html>

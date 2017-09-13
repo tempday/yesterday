@@ -1,0 +1,57 @@
+@charset "utf-8";
+/*-------------智能提醒------------------*/
+#intelremind{
+	background-image:url(../images/bg_3.jpg);
+	background-size:100% 100%;
+}
+/*-------------定位记录------------------*/
+#positioning{
+	background-image:url(../images/bg_4.jpg);
+	background-position:50% 80%;
+	background-size:120% 120%;
+}
+#positioning div{
+	width:55%;
+	height:500px;
+	float:right;
+	margin: 100px 0 0 80px;
+	text-align:left;
+}
+#positioning div h3{
+	font-size:30pt;
+	font-weight:normal;
+	height:90px;
+	line-height:90px;
+	color:#33CCFF;
+	margin:40px 0;
+}
+#positioning div h3 b{
+	/*有大图标时,对齐是以bottom为准,加float后不再与文字对齐*/
+	float:left;
+	margin-right:5px;
+	width:80px;
+	height:86px;
+	background-image:url(../images/iconlist_3.png);
+	background-position:-426px 0;
+	transition:transform 0.5s;
+}
+#positioning div h3:hover b,#positioning div h3 b:hover{
+	transform:rotate(20deg);
+}
+#positioning div p{
+	font-size:14pt;
+	line-height:30px;
+	color:#8b7f73;
+}
+#positioning>b{
+	float:right;
+	width:255px;
+	height:530px;
+	background-image:url(../images/iconlist_2.png);
+	background-position:-905px 0;
+	margin-top:70px;
+	transition:transform 1s;
+}
+#positioning>b:hover{
+	transform:rotate(-20deg);
+}

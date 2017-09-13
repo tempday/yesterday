@@ -1,0 +1,146 @@
+@charset "utf-8";
+/*-------------banner------------------*/
+#banner{
+	background-image:url(../images/bg_1.jpg);
+	background-size:100% 100%;
+	background-color:#dedede;
+	overflow:hidden;
+}
+div.title{
+	width:456px;
+	height:60px;
+	background-image:url(../images/iconlist_1.png);
+	background-position:-869px 0;
+	margin: 0 auto;
+	margin-top:120px;
+}
+div.title+p{
+	text-align: center;
+	font-size:14pt;
+	color:#7e7e7e;
+}
+/*五个小球*/
+#banner ul{
+	width:780px;
+	margin: 50px auto;
+	
+}
+#banner ul li{
+	width:200px;
+	position: relative;
+}
+#banner ul i,#banner ul b{
+	position: absolute;
+	background-image:url(../images/iconlist_1.png);
+}
+#banner ul i{
+	width:174px;
+	height:174px;
+	z-index:1;
+}
+/*各个圆*/
+#banner ul #intr_2 i{
+	background-position:-173px 0;
+}
+#banner ul #intr_2{
+	left:150px;
+	z-index:2;
+}
+#banner ul #intr_3 i{
+	background-position:-347px 0;
+}
+#banner ul #intr_3{
+	left:300px;
+	z-index:3;
+}
+#banner ul #intr_4 i{
+	background-position:-521px 0;
+}
+#banner ul #intr_4{
+	left:450px;
+	z-index:4;
+}
+#banner ul #intr_5 i{
+	background-position:-695px 0;
+}
+#banner ul #intr_5{
+	left:600px;
+	z-index:5;
+}
+#banner ul b{
+	width:173px;
+	height:24px;
+	background-position: -868px -127px;
+	top:160px;
+}
+/*intr_5 的移动*/
+@-webkit-keyframes move5{
+	0%{
+		left:-500px;
+	}
+	100%{
+		left:600px;
+	}
+}
+@-webkit-keyframes rotate5{
+	0%{
+		transform:rotate(0deg);
+	}
+	100%{
+		transform:rotate(720deg);
+	}
+}
+#banner ul #intr_5{
+	animation:move5 4s linear;
+}
+#banner ul #intr_5 i{
+	animation:rotate5 4s linear;
+}
+/*intr_4 的移动*/
+@-webkit-keyframes move4{
+	0%{
+		left:-500px;
+	}
+	100%{
+		left:450px;
+	}
+}
+#banner ul #intr_4{
+	animation:move4 3.45s linear;
+}
+/*intr_3 的移动*/
+@-webkit-keyframes move3{
+	0%{
+		left:-500px;
+	}
+	100%{
+		left:300px;
+	}
+}
+#banner ul #intr_3{
+	animation:move3 2.9s linear;
+}
+/*intr_2 的移动*/
+@-webkit-keyframes move2{
+	0%{
+		left:-500px;
+	}
+	100%{
+		left:150px;
+	}
+}
+#banner ul #intr_2{
+	animation:move2 2.36s linear;
+}
+/*intr_1 的移动*/
+@-webkit-keyframes move1{
+	0%{
+		left:-500px;
+	}
+	100%{
+		left:0px;
+	}
+}
+#banner ul #intr_1{
+	animation:move1 1.81s linear;
+}

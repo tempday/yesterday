@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>倒计时自动关闭/跳转页面</title>
+<meta charset="utf-8" />
+<script>
+	window.onload=function(){
+		timer=setTimeout(calc,1000);
+	}
+	function calc(){
+		var span=document.getElementsByTagName("span")[0];
+		//var txt=span.innerHTML.slice(0,1)-1;
+		var n=parseInt(span.innerHTML)-1;
+		//span.innerHTML=span.innerHTML.replace(/\d*/,n);
+		span.innerHTML=n+span.innerHTML.slice(1);//一到最后一个
+		
+		timer=null;
+		if (n>0){
+			timer=setTimeout(calc,1000);
+		}else{
+			clearTimeout(timer);
+			timer=null;
+			close();
+		}
+	}
+	function stop(){
+		clearTimeout(timer);
+		timer=null;
+	}
+</script>
+</head>
+<body>
+	<span>5秒钟后自动关闭</span><br>
+	<a href="javascript:stop()" >留在本页</a>
+</body>
+</html>

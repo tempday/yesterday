@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>04_3 svg绘制椭圆+line</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<svg id="svg" width="500px" height="300px" style="background:pink;">
+		<!--椭圆-->
+		<ellipse id="cir"cx="100" cy="60" rx="80" ry="50" stroke="red" fill="purple"/>
+		<line x1="200" y1="60" x2="180" y2="250" stroke="blue"stroke-width="3"/>
+		<line x1="200" y1="60" x2="90" y2="300" stroke="blue"stroke-width="3"/>
+		<polyline points="11,33 115,235 444,0" fill="pink"stroke="blue"stroke-width="3"/>
+		<polygon points="120,50 150,250 444,0" fill="pink"stroke="blue"stroke-width="3"/>
+	</svg>
+</body>
+<script type="text/javascript">
+	//跟随鼠标 svg事件直接可绑定到图形
+	var cir=document.getElementById("cir");
+	var svg=document.getElementById("svg");
+	svg.onmouseover=function(event){
+		var x=event.offsetX;
+		var y=event.offsetY;
+		//console.log(x);
+		//cir.cx=x;
+		cir.setAttribute("cx",x);
+		cir.setAttribute("cy",y);
+	}
+</script>
+</html>

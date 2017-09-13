@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>transform</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href=""/>
+	<style>
+		body{
+			text-align: center;
+			padding-top:200px;
+			transform-style:flat;
+		}
+		div#d1{
+			width:200px;
+			height:200px;
+			border: 1px solid #999;
+			display: inline-block;
+			text-align: center;
+			position:relative;
+			
+			/*修改原点*/
+			/*transform-origin:0 0;*/
+			/*顺时针旋转90度*/ /*自身坐标会随着一起转动,影响缩放等等*/
+			transform:translate(500px,60px) rotate(60deg);
+			/*位移指定方向*/
+			transform:translateX(120px) translateY(100px);
+			/*scale默认是x轴方向, 整体缩放 scale(dg,dg),单方向缩放scaleX scaleY*/
+			transform:scale(.5);
+			transform:skew(10deg,10deg);
+
+			transform:skew(10deg,10deg) translateZ(120px);
+			/*3D旋转*/
+			transform: rotateX(60deg);
+		}
+		div.d2{
+			border-bottom:1px solid #e4393c;
+			text-align: right;
+			width:200px;
+			margin:40px auto;
+		}
+		div.d3{
+			border-left:1px solid #e4393c;
+			height:200px;
+			top:0;
+			margin: auto 50px;
+			position:absolute;
+		}
+		div.d4{
+			border-left:1px solid blue;
+			height:100%;
+			top:0;
+			left:50%;
+			position:absolute;
+		}
+		div.d5{
+			border-top:1px solid blue;
+			width:100%;
+			top:300px;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1" class="">
+		<div id="" class="d2">y</div>
+		<div id="" class="d3">x</div>
+	</div>
+	<div id="" class="d4"></div>
+	<div id="" class="d5"></div>
+</body>
+<script type="text/javascript">
+	var angle=0;
+	function trans(){
+		setTimeout(function(){
+			angle++;
+			d1.style.transform="rotate3D(1,1,1,"+angle+"deg)";
+			trans();
+		}, 50);
+	}
+	trans();
+</script>
+</html>
