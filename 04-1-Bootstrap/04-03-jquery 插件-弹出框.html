@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>jquery 插件-弹出框</title>
+	<link href="bootstrap_3_3_5/css/bootstrap.min.css" rel="stylesheet">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>工具提示tooltip</h1>
+	<div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Est, harum omnis? Ab blanditiis dicta dolorem dolorum eveniet impedit ipsum minima,
+		<br>nam odio officia officiis quam recusandae totam,<br> unde voluptatibus voluptatum.
+		<span data-toggle="tooltip" data-placement="top" title="lorem create by shortcup" class="text-primary bg-success">Lorem</span>
+		ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis deserunt dolor eligendi esse, harum id ipsa minima nemo odit officia officiis omnis perferendis reprehenderit sed sunt,
+		<br>tempora tenetur voluptatem.
+	</div>
+	<h2>弹出框</h2>
+	<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content.">Click to toggle popover</button>
+	<h2>警告框</h2>
+	<div class="alert alert-danger alert-dismissible fade in">
+		<span class="close" data-dismiss="alert">&times;</span>
+		<p>
+			<span class="glyphicon glyphicon-alert"></span>
+			警告:没有重要提示!
+		</p>
+	</div>
+	<div class="alert alert-success fade in alert-dismissible">
+		<span data-dismiss="alert" class="close">&times;</span>
+		<p>
+			<span class="glyphicon glyphicon-alert"></span>
+			警告:没有重要提示!
+		</p>
+	</div>
+	<h2>模态框modal</h2>
+	<a href="#mod1" class="btn btn-primary" data-toggle="modal">register</a>
+	<button type="button" class="btn btn-info"data-toggle="modal" data-target="#mod2">anniu</button>
+</div>
+<div class="modal fade in" id="mod1">  <!--遮罩层-->
+	<div class="modal-dialog modal-lg"> <!--宽-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="close" data-dismiss="modal">&times;</div>
+				<h1 class="modal-title">register</h1>
+			</div>
+			<div class="modal-body">
+				<form action="" class="">
+					<div class="form-group">
+						<label for="usn">username:</label>
+						<input type="text" id="usn" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="pwd">password:</label>
+						<input type="password" id="pwd" class="form-control">
+					</div>
+					<input type="submit" class="btn btn-success">
+					<input type="reset"class="btn btn-danger">
+				</form>
+			</div>
+			<div class="modal-footer">
+				<input type="button"class="btn btn-warning" value="close" data-dismiss="modal">
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal" id="mod2">modal</div>
+
+
+</body>
+<script src="http://127.0.0.1/yesterday/03-1-Jquery/JS/jquery-1.11.3.min.js"></script>
+<script src="bootstrap_3_3_5/js/bootstrap.js"></script>
+<script >
+	$(function(){
+		$("[data-toggle='tooltip']").tooltip();
+		$('[data-toggle="popover"]').popover();
+	});
+	(function () { var s = document.createElement("script"); s.onload = function () { bootlint.showLintReportForCurrentDocument([]); }; s.src = "bootstrap_3_3_5/js/bootlint.js"; document.body.appendChild(s) })();
+</script>
+
+</html>

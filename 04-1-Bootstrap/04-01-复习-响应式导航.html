@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>复习-响应式导航</title>
+	<link href="bootstrap_3_3_5/css/bootstrap.min.css" rel="stylesheet">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		body{
+			padding-bottom: 50px;
+			padding-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>复习-响应式导航</h1>
+	<div class="navbar navbar-default">
+		<div class="container">
+			<!--heaer-->
+			<div class="navbar-header">
+				<!--brand-->
+				<a href="#" class="navbar-brand">bootstrap</a>
+				<!--button-->
+				<button type="button" class="navbar-toggle" data-target="#mynavbar" data-toggle="collapse">
+					<b class="icon-bar"></b>
+					<b class="icon-bar"></b>
+					<b class="icon-bar"></b>
+				</button>
+			</div>
+			<!--collapse-->
+			<div class="navbar-collapse collapse" id="mynavbar" style="background:#fff;position:absolute;">
+				<form action="" class="navbar-form navbar-right">
+					<!--输入框中放置的图标,反馈图标 feedback-->
+					<div class="form-group has-feedback">
+						<div class="input-group">
+							<span class="input-group-addon ">@</span>
+							<input class="form-control"></input>
+						</div>
+						<label for="search" class="control-label sr-only">search</label>
+						<input class="form-control" id="search" type="text" placeholder="search...">
+						<span class="form-control-feedback glyphicon glyphicon-search" style="color:#ccc;"></span>
+					</div>
+				</form>
+				<ul class="nav navbar-nav">
+					<li><a href="#">home</a></li>
+					<li class="active"><a href="#">news</a></li>
+					<li class="dropdown">
+						<a  data-toggle="dropdown" href="#">others <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>one</li>
+							<li class="divider"></li>
+							<li>two</li>
+							<li><a href="#">three</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#" class="navbar-link navbar-text navbar-right">links</a><!-- 纯文本都要加navbar-text-->
+				<span class="navbar-text navbar-right"> | </span>
+				<button class="navbar-btn btn btn-primary navbar-right" type="button">login</button>
+
+			</div>
+		</div>
+	</div>
+	<h1>复习-响应式导航</h1>
+
+
+</body>
+<script src="http://127.0.0.1/yesterday/03-1-Jquery/JS/jquery-1.11.3.min.js"></script>
+<script src="bootstrap_3_3_5/js/bootstrap.js"></script>
+<script >
+	(function () { var s = document.createElement("script"); s.onload = function () { bootlint.showLintReportForCurrentDocument([]); }; s.src = "bootstrap_3_3_5/js/bootlint.js"; document.body.appendChild(s) })();
+</script>
+
+</html>

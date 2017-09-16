@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>jquery 插件-tabs标签页</title>
+	<link href="bootstrap_3_3_5/css/bootstrap.min.css" rel="stylesheet">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+
+	</style>
+</head>
+<body>
+	<h1>插件-tabs标签页</h1>
+	<ul class="nav nav-tabs">
+		<li ><a data-toggle="tab" href="#t1">home</a></li>
+		<li  class="active"><a data-toggle="tab" href="#t2">news</a></li>
+		<li><a data-toggle="tab" href="#t3">others</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="t1" class="tab-pane fade in">home:<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci deserunt, esse impedit maiores nam neque obcaecati quae quibusdam quidem, ratione sequi sint tempora tempore unde, ut vero. Cum, officia!</div>
+		<div id="t2" class="tab-pane active in">news:<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores eos inventore mollitia quos, repellendus saepe voluptatem. Deleniti fugiat incidunt labore laboriosam perspiciatis, quam quia quos sed temporibus unde ut!</div>
+		<div id="t3" class="tab-pane fade">others:<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias architecto aspernatur atque corporis culpa impedit, incidunt libero maxime mollitia qui quo recusandae repellat suscipit unde, vel voluptatem! At, sapiente?</div>
+	</div>
+
+
+
+</body>
+<script src="http://127.0.0.1/yesterday/03-1-Jquery/JS/jquery-1.11.3.min.js"></script>
+<script src="bootstrap_3_3_5/js/bootstrap.js"></script>
+<script >
+	(function () { var s = document.createElement("script"); s.onload = function () { bootlint.showLintReportForCurrentDocument([]); }; s.src = "bootstrap_3_3_5/js/bootlint.js"; document.body.appendChild(s) })();
+</script>
+
+</html>

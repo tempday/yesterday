@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<title>全局 CSS 样式-表单form</title>
-	<link href="bootstrap_3_3_5/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap_3_3_5/css/bootstrap.css" rel="stylesheet">
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -21,7 +21,7 @@
 	<a href="#" class="btn btn-success btn-block"><span class="glyphicon glyphicon-user"></span> 默认表单</a>
 
 	<!--默认表单-->
-	<form action="" method="get" class="">
+	<form>
 		<div class="form-group">
 			<label for="username" class="control-label">用户名:</label>
 			<input type="text" id="username" class="form-control">
@@ -33,10 +33,11 @@
 			<span class="help-block">至少六位字母或数字</span>
 		</div>
 		<div class="checkbox">
-			<label>
-				<input type="checkbox">同意本站协议
+			<label> <!--单行复选框内不需要设置样式-->
+				<input type="checkbox" >同意本站协议 <!--单行复选框内不需要设置样式-->
 			</label>
 		</div>
+		<!--单行按钮不需要设置样式,不需要其他包裹,默认建议用label标签包裹-->
 		<input type="submit" value="提交" class="btn btn-success">
 		<input type="reset" value="重置" class="btn btn-danger">
 	</form>
@@ -53,7 +54,7 @@
 			<label for="pwd" class="control-label">密码:</label>
 			<input type="password" id="pwd" class="form-control">
 		</div>
-		<label >
+		<label>
 			<input type="submit" value="提交" class="btn">
 		</label>
 	</form>

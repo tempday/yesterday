@@ -1,59 +1,175 @@
 btn
-  btn-default
-
-  btn-danger
-  btn-success
-  btn-warning
-  btn-info
-  btn-primary
-
-  btn-lg
-  btn-sm
-  btn-xs
-
-  btn-block
-
-  pull-left
-  pull-right
-
-img-rounded
-  img-circle
-  img-thumbnail	
-  img-responsive 
-
-text-danger
- text-success
- text-warning
- text-info
- text-primary
- bg-danger
- bg-success
- bg-warning
- bg-info
- bg-primary
- text-left
- text-right
- text-center
- text-justify 
-
-ext-uppercase  
- text-lowercase
- text-capitalize  
- list-unstyled
- list-inline   
-
+{
+	btn-default
+	btn-danger
+	btn-success
+	btn-warning
+	btn-info
+	btn-primary
+	btn-lg
+	btn-sm
+	btn-xs
+	btn-block
+	pull-left
+	pull-right
+}
+img
+{
+	img-rounded
+	img-circle
+	img-thumbnail
+	img-responsive
+}
+text
+{
+	text-danger
+	text-success
+	text-warning
+	text-info
+	text-primary
+	bg-danger
+	bg-success
+	bg-warning
+	bg-info
+	bg-primary
+	text-left
+	text-right
+	text-center
+	text-justify
+	text-uppercase
+	text-lowercase
+	text-capitalize
+	
+}
+ul{
+	list-unstyled
+	list-inline
+}
 table
-  table-bordered
-  table-responsive
-  table-striped
-  table-hover	
-
-col-lg-*
-    col-md-* 
-    col-sm-*
-    col-xs-*
-
-	hidden-lg 
-hidden-md	
-hidden-sm	
-hidden-xs		
+{
+	table
+	table-bordered
+	table-responsive
+	table-striped
+	table-hover
+	tr/td{
+		active
+		success
+		warning
+		danger
+		info
+		xxx?
+	}
+}
+grid
+{
+	container
+	container-fluid
+	row
+	col-lg-*
+	col-md-*
+	col-sm-*
+	col-xs-*
+	hidden-lg
+	hidden-md
+	hidden-sm
+	hidden-xs
+}
+form{
+	form-inline
+	form-horizontal
+		form-group
+			control-label (用于inline 居中)
+			sr-only
+			form-control
+			help-block
+		checkbox
+		
+}
+组件
+{
+	fonts{
+		glyphicon glyphicon-apple
+	}
+	btn{
+		btn-group
+		btn-group-vertical
+		btn-group btn-group-justified
+		btn-group-lg
+		btn-group-sm
+		btn-group-xs
+	}
+	下拉菜单{
+		dropdown (作用是设置相对定位,如果已relative 可以省略)
+			触发按钮 data-toggle="dropdowm"
+				caret
+			dropdown-menu
+	}
+	导航{
+		nav nav-tabs
+		nav nav-pills
+		nav nav-tabs | nav-pills nav-justified
+		nav nav-pills  nav-stacked
+			data-toggle="tab"
+		tab-content
+			tab-pane
+	}
+	面包屑： breadcrumb
+	分页：  pagination   pager
+	标签：{
+		label
+		label label-default
+		label label-primary
+		label label-success
+		label label-info
+		label label-warning
+		label label-danger
+	}
+	徽章：  badge
+	巨幕：  jumbotron
+	水井：  well
+	页头：  page-header
+	响应式导航{
+		navbar
+		navbar-default
+		navbar-inverse
+		navbar-fixed-top/bottom
+			icon-bar
+			sr-only
+	}
+	导航条的结构：
+	<div class="navbar  颜色 定位">
+		<div class="container">
+			<!--导航条的头部：商标+按钮-->
+			<div class="navbar-header">
+				<a class="navbar-brand"></a>
+				<button class="navbar-toggle"></button>
+			</div>
+			<!--导航条折叠菜单：菜单、按钮、搜索框、链接、文本...-->
+			<div class="navbar-collapse">
+				<ul class="nav navbar-nav"></ul>
+				<form class="navbar-form ">
+					<div class="form-group has-feedback">
+						<input type="text" class="form-control">
+						<span class="form-control-feedback glyphicon glyphicon-search" style="color:#ccc;"></span>
+					</div>
+				</form>
+				<button class="navbar-btn"></button>
+				<span class="navbar-text"></span>
+				<a class="navbar-link  navbar-text"></a>
+			</div>
+		</div>
+	</div>
+}
+模态框{
+	<button type="button" class="btn btn-info"data-toggle="modal" data-target="#mod2">模态框</button>
+	<div class="modal" id="mod1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"></div>
+				<div class="modal-body"  ></div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+}

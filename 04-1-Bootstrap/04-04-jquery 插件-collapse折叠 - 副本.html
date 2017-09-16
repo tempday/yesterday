@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>jquery 插件-collapse折叠</title>
+	<link href="bootstrap_3_3_5/css/bootstrap.css" rel="stylesheet">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>collapse折叠</h1>
+	<a href="#mycollapse" class="btn btn-warning" data-toggle="collapse">link折叠效果</a>
+	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#mycollapse">btn折叠</button>
+
+	<div id="mycollapse" class="collapse in">
+		<div class="alert alert-success alert-dismissible">
+			<span class="close" data-dismiss="alert">&times;</span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eos esse fugiat ipsum maxime sequi tenetur totam! Ad architecto consequatur, deleniti error fugiat iusto officiis veniam voluptate? Beatae, ex, iusto?
+
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">panel标题</h3>
+		</div>
+		<div class="panel-body">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. udiandae sed!
+		</div>
+		<!-- 尾部去掉-->
+		<div class="panel-footer">
+			footer
+		</div>
+	</div>
+	--------------------------------------------------------------------------
+	<h1>accordion <br>手风琴</h1>
+	<div class="panel-group" id="myaccordion">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h3 class="panel-title"><a data-parent="#myaccordion" data-toggle="collapse" href="#mypanel1" >西游</a></h3>
+			</div>
+			<div class="collapse in panel-collapse" id="mypanel1">
+				<div class="panel-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. udiandae sed!
+				</div>
+			</div>
+
+		</div>
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title"><a data-parent="#myaccordion" href="#mypanel2" data-toggle="collapse">水壶</a></h3>
+			</div>
+			<div class="collapse panel-collapse" id="mypanel2">
+				<div class="panel-body">
+					Lorem ipsum dolor sit amet,  adipisicing elit. udiandae sed!
+				</div>
+			</div>
+
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title"><a data-parent="#myaccordion" href="#mypanel3" data-toggle="collapse">红楼</a></h3>
+			</div>
+			<div class="collapse panel-collapse" id="mypanel3">
+				<div class="panel-body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. udiandae sed!
+				</div>
+			</div>
+
+		</div>
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<h3 class="panel-title"><a data-parent="#myaccordion" href="#mypanel4" data-toggle="collapse">三国</a></h3>
+			</div>
+			<div class="collapse panel-collapse" id="mypanel4">
+				<div class="panel-body">
+					Lorem ipsum dolor sit amet. udiandae sed!
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+<h1><br></h1>
+<h1><br></h1>
+</body>
+<script src="http://127.0.0.1/yesterday/03-1-Jquery/JS/jquery-1.11.3.min.js"></script>
+<script src="bootstrap_3_3_5/js/bootstrap.js"></script>
+<script >
+	$(function(){
+		$("[data-toggle='tooltip']").tooltip();
+		$('[data-toggle="popover"]').popover();
+	});
+	(function () { var s = document.createElement("script"); s.onload = function () { bootlint.showLintReportForCurrentDocument([]); }; s.src = "bootstrap_3_3_5/js/bootlint.js"; document.body.appendChild(s) })();
+</script>
+
+</html>
