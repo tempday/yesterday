@@ -1,0 +1,59 @@
+btn
+  btn-default
+
+  btn-danger
+  btn-success
+  btn-warning
+  btn-info
+  btn-primary
+
+  btn-lg
+  btn-sm
+  btn-xs
+
+  btn-block
+
+  pull-left
+  pull-right
+
+img-rounded
+  img-circle
+  img-thumbnail	
+  img-responsive 
+
+text-danger
+ text-success
+ text-warning
+ text-info
+ text-primary
+ bg-danger
+ bg-success
+ bg-warning
+ bg-info
+ bg-primary
+ text-left
+ text-right
+ text-center
+ text-justify 
+
+ext-uppercase  
+ text-lowercase
+ text-capitalize  
+ list-unstyled
+ list-inline   
+
+table
+  table-bordered
+  table-responsive
+  table-striped
+  table-hover	
+
+col-lg-*
+    col-md-* 
+    col-sm-*
+    col-xs-*
+
+	hidden-lg 
+hidden-md	
+hidden-sm	
+hidden-xs		

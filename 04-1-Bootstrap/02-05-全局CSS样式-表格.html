@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>全局 CSS 样式-表格</title>
+	<link href="bootstrap_3_3_5/css/bootstrap.min.css" rel="stylesheet">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<table>
+	<thead>
+	<tr>
+		<th>编号</th>
+		<th>姓名</th>
+		<th>住址</th>
+		<th>操作</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>1003</td>
+		<td>jack</td>
+		<td>东宝路123</td>
+		<td>
+			<a class="btn btn-success btn-xs" href="#">详情</a>
+			<a class="btn btn-danger btn-xs" href="#">删除</a>
+		</td>
+	</tr>
+	<tr>
+		<td>1005</td>
+		<td>cherry</td>
+		<td>东宝路243</td>
+		<td>
+			<a class="btn btn-success btn-xs" href="#">详情</a>
+			<a class="btn btn-danger btn-xs" href="#">删除</a>
+		</td>
+	</tr>
+	<tr>
+		<td>1006</td>
+		<td>kite</td>
+		<td>东宝路789</td>
+		<td>
+			<a class="btn btn-success btn-xs" href="#">详情</a>
+			<a class="btn btn-danger btn-xs" href="#">删除</a>
+		</td>
+	</tr>
+	</tbody>
+</table>
+	table
+	<table class="table">
+		<thead>
+		<tr>
+			<th>编号</th>
+			<th>姓名</th>
+			<th>住址</th>
+			<th>操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>1003</td>
+			<td>jack</td>
+			<td>东宝路123</td>
+			<td>
+				<a class="btn btn-success btn-xs" href="#">详情</a>
+				<a class="btn btn-danger btn-xs" href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td>1005</td>
+			<td>cherry</td>
+			<td>东宝路243</td>
+			<td>
+				<a class="btn btn-success btn-xs" href="#">详情</a>
+				<a class="btn btn-danger btn-xs" href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td>1006</td>
+			<td>kite</td>
+			<td>东宝路789</td>
+			<td>
+				<a class="btn btn-success btn-xs" href="#">详情</a>
+				<a class="btn btn-danger btn-xs" href="#">删除</a>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="table-responsive">
+		table-hover
+		<table class="table table-bordered table-hover">
+			<thead>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>住址</th>
+				<th>操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>1003</td>
+				<td>jack</td>
+				<td>东宝路123</td>
+				<td>
+					<a class="btn btn-success btn-xs" href="#">详情</a>
+					<a class="btn btn-danger btn-xs" href="#">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>1005</td>
+				<td>cherry</td>
+				<td>东宝路243</td>
+				<td>
+					<a class="btn btn-success btn-xs" href="#">详情</a>
+					<a class="btn btn-danger btn-xs" href="#">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td>1006</td>
+				<td>kite</td>
+				<td>东宝路789</td>
+				<td>
+					<a class="btn btn-success btn-xs" href="#">详情</a>
+					<a class="btn btn-danger btn-xs" href="#">删除</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	table-striped
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>编号</th>
+			<th>姓名</th>
+			<th>住址</th>
+			<th>操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>1003</td>
+			<td>jack</td>
+			<td>东宝路123</td>
+			<td>
+				<a class="btn btn-success btn-xs" href="#">详情</a>
+				<a class="btn btn-danger btn-xs" href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td>1005</td>
+			<td>cherry</td>
+			<td>东宝路243</td>
+			<td>
+				<a class="btn btn-success btn-xs" href="#">详情</a>
+				<a class="btn btn-danger btn-xs" href="#">删除</a>
+			</td>
+		</tr>
+		<tr>
+			<td>1006</td>
+			<td>kite</td>
+			<td>东宝路789</td>
+			<td>
+				<a class="btn btn-success btn-xs" href="#">详情</a>
+				<a class="btn btn-danger btn-xs" href="#">删除</a>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="bootstrap_3_3_5/js/bootstrap.min.js"></script>
+	<!--
+<script >
+	(function () {
+		var s = document.createElement("script");
+		s.onload = function () {
+			bootlint.showLintReportForCurrentDocument([]);
+		};
+		s.src = "bootstrap_3_3_5/js/bootlint.js";
+		document.body.appendChild(s)
+	})();
+</script>-->
+</body>
+</html>

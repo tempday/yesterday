@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>组件-下拉菜单</title>
+	<link href="bootstrap_3_3_5/css/bootstrap.min.css" rel="stylesheet">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+
+	</style>
+</head>
+<body>
+	<h1>组件-下拉菜单</h1>
+	<div class="dropdown">
+		<a data-toggle="dropdown" href="#" class="btn btn-default">产品大全<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li class="dropdown-header">家电</li>
+			<li><a href="#">电视</a></li>
+			<li><a href="#">冰箱</a></li>
+			<li><a href="#">空调</a></li>
+			<li class="dropdown-header">玩具</li>
+			<li class="divider"></li>
+			<li><a href="#">风扇</a></li>
+			<li><a href="#">手机</a></li>
+		</ul>
+	</div>
+	<!--路径导航/面包屑导航-->
+	<ul class="breadcrumb">
+		<li><a href="#">男装</a></li>
+		<li><a href="#">T恤</a></li>
+		<li class="active">激活</li>
+	</ul>
+	<!--分页-->
+	<ul class="pagination">
+		<li><a href="#"><span aria-hidden="true">&laquo;</span></a></li>
+		<li class="active"><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul>
+	<!--翻页-->
+	<ul class="pager">
+	<li class="previous"><a href="#" >previous</a></li>
+	<li><a href="#">next</a></li>
+	</ul>
+	<!--标签-->
+	<p>今天天气很好 <span class="label label-info">天气</span></p>
+	<!--徽章-->
+	<a href="#">你有未读的信息 <span class="badge">12</span></a>
+	<a href="#" class="btn btn-primary">重要提示 <span class="badge">1</span></a>
+	<!--巨幕?-->
+	<div class="jumbotron">
+		<div class="container">
+			<h2>巨幕</h2>
+		</div>
+	</div>
+	<!--well/水井-->
+	<div class="well well-md">我是水井/well.有个内嵌的阴影看见没?</div>
+	<!--页头-->
+	<div class="page-header">
+		<h1>页头 <small>其他无关紧要</small><span>the others</span></h1>
+	</div>
+
+
+
+
+	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+	<script src="bootstrap_3_3_5/js/bootstrap.min.js"></script>
+<script >
+	(function () { var s = document.createElement("script"); s.onload = function () { bootlint.showLintReportForCurrentDocument([]); }; s.src = "bootstrap_3_3_5/js/bootlint.js"; document.body.appendChild(s) })();
+</script>
+</body>
+</html>
