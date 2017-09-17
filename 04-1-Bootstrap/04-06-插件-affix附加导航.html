@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>jquery 插件-Affix附加导航</title>
+	<link href="bootstrap_3_3_5/css/bootstrap.css" rel="stylesheet">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		.row .carousel .carousel-inner .item img{
+			width:100%;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>Affix附加导航</h1>
+	
+	<div class="row">
+		<div class="col-md-10">
+			<h2 id="p1">passage 1</h2>
+			<p>
+				Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. <br>
+				Ad<br> alias, asperiores atque consectetur <br>culpa dolor, <br>
+				dolorem ea<br> error facere laudantium molestiae nam <br>
+				praesentium quasi<br> quia quo<br> quos
+				<br>rem sunt<br> tempore.
+			</p>
+			<h2 id="p2">passage 2</h2>
+			<p>
+				Lorem ipsum dolor sit amet,<br> consectetur<br> adipisicing elit. <br>
+				Ad alias, asperiores atque consectetur culpa dolor, <br>
+				dolorem<br> ea error <br>facere laudantium <br>molestiae <br>nam <br>
+				praesentium quasi quia quo quos
+				<br>rem sunt tempore.
+			</p>
+			<h2 id="p3">passage 3</h2>
+			<p>
+				Lorem ipsum dolor sit amet,<br> consectetur adipisicing <br>elit. <br>
+				Ad alias,<br> asperiores atque consectetur culpa <br>dolor, <br>
+				dolorem <br>ea error facere laudantium <br>molestiae nam <br>
+				praesentium quasi<br> quia quo quos
+				<br>rem sunt tempore.
+			</p>
+			<h2 id="p4">passage 4</h2>
+			<p>
+				Lorem<br> ipsum <br>dolor sit amet,<br> consectetur <br>adipisicing elit. <br>
+				Ad alias, asperiores atque <br>consectetur culpa dolor, <br>
+				dolorem<br> ea error facere <br>laudantium molestiae <br>nam <br>
+				praesentium quasi <br>quia quo quos
+				<br>rem sunt tempore.<br><br><br><br><br><br><br><br>
+			</p>
+		</div>
+		<div class="col-md-2 hidden-sm hidden-xs">
+			<div data-spy="affix" data-offset-top="90">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="#p1">第一章</a></li>
+					<li><a href="#p2">第二章</a></li>
+					<li><a href="#p3">第三章</a></li>
+					<li><a href="#p4">第四章</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+
+</div>
+<h1><br></h1>
+<h1><br></h1>
+</body>
+<script src="http://127.0.0.1/yesterday/03-1-Jquery/JS/jquery-1.11.3.min.js"></script>
+<script src="bootstrap_3_3_5/js/bootstrap.js"></script>
+<script >
+	$(function(){
+		$("[data-toggle='tooltip']").tooltip();
+		$('[data-toggle="popover"]').popover();
+	});
+	(function () { var s = document.createElement("script"); s.onload = function () { bootlint.showLintReportForCurrentDocument([]); }; s.src = "bootstrap_3_3_5/js/bootlint.js"; document.body.appendChild(s) })();
+</script>
+
+</html>
