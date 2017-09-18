@@ -78,11 +78,12 @@ grid
 form{
 	form-inline
 	form-horizontal
-		form-group
+		form-group has-feedback
 			control-label (用于inline 居中)
 			sr-only
 			form-control
 			help-block
+			form-control-feedback
 		checkbox
 		
 }

@@ -26,7 +26,7 @@
 	poster 播前画面
 	peload   auto|none;
 	-->
-	<video id="mv"poster="video/oceans-clip.png" controls loop width="640" height="320" style="background:black" peload="auto">
+	<video id="video"poster="video/oceans-clip.png" controls  width="640" height="320" style="background:black" peload="auto">
 		<source src="video/oceans-clip.webm"/>
 		<source src="video/oceans-clip.ogg"/>
 		<source src="video/oceans-clip.mp4"/>
@@ -37,7 +37,7 @@
 	</div>
 </body>
 <script type="text/javascript">
-	var mv=document.getElementById("mv");
+	var mv=document.getElementById("video");
 	var adv=document.getElementById("adv");
 	mv.addEventListener("play",myPlay);
 	mv.addEventListener("pause",myPause);
@@ -46,6 +46,11 @@
 	}
 	function myPause(){
 		adv.style.display="block";
+	}
+	var video = document.getElementById('video');
+	video.onended = function(){
+	    //结束时触发
+	    this.style.opacity="0";
 	}
 </script>
 </html>
