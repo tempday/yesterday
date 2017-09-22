@@ -1,0 +1,72 @@
+@jdred:#e4393c;
+@navbar-height:50px;
+
+body{
+  margin:0;
+  font-family: "Microsoft Yahei";
+}
+.navbar{
+  background:@jdred;
+  min-height:@navbar-height;
+}
+.danger{
+  color: @jdred;
+}
+//less变量@
+@std_border:1px solid #ddd;
+@std_family:"Microsoft Yahei" "SimHei";
+
+//混合变量-->超级变量
+.std_margin{
+  margin-top:10px;
+  margin-left: 20px;
+}
+
+//带参数的可调用样式
+.bordered(@bt,@br,@c:#fff){
+  border-top: @bt;
+  border-right:@br;
+  color:@c;
+}
+
+//不带参数的可调用样式 () 括号在编译的时候自动过滤,不产生多余的样式
+.bordered(){
+  border-top:2px;
+  border-right:4px;
+  color:red;
+}
+
+//标签可嵌套
+#navbar{
+  height: 50px;
+  .logo{
+    color: #000;
+    a{
+      text-decoration: none;
+      //& 代表当前标签
+      &:hover{
+        color:cornflowerblue;
+      }
+    }
+  }
+}
+
+//变量/常量可进行算术运算
+@mycolor:#ccc;
+
+
+.alert{
+  color: @mycolor*3;
+  background: @jdred*2;
+  border:@std_border;
+  height:@navbar-height;
+  font-family:@std_family;
+  .std_margin;
+}
+h1{
+  .std_margin;
+}
+h2{
+  font-size: 18px;
+  .bordered(1px,5px);
+}

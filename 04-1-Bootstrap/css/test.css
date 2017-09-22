@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: "Microsoft Yahei";
+}
+.navbar {
+  background: #e4393c;
+  min-height: 50px;
+}
+.danger {
+  color: #e4393c;
+}
+.std_margin {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+#navbar {
+  height: 50px;
+}
+#navbar .logo {
+  color: #000;
+}
+#navbar .logo a {
+  text-decoration: none;
+}
+#navbar .logo a:hover {
+  color: cornflowerblue;
+}
+.alert {
+  color: #ffffff;
+  background: #ff7278;
+  border: 1px solid #dddddd;
+  height: 50px;
+  font-family: "Microsoft Yahei" "SimHei";
+  margin-top: 10px;
+  margin-left: 20px;
+}
+h1 {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+h2 {
+  font-size: 18px;
+  border-top: 1px;
+  border-right: 5px;
+  color: #ffffff;
+}

@@ -1,0 +1,161 @@
+/*Bootstrap的样式*/
+@import "bootstrap";
+
+
+
+/*自定义样式*/
+@logo-height:42px;
+.navbar .logo{
+
+	width:63px;
+	height:@logo-height;
+	background: url(../img/hdr-spr.png) 0 -512px no-repeat;
+	margin-top:floor((@navbar-height - @logo-height)/2);
+	margin-left: 0 !important;
+}
+body{
+	padding-top:@navbar-height;
+}
+//查找内容
+label{
+	color: @text-color-light;
+	font-family: normal;
+}
+//登录和语言下拉框
+.login,.language{
+	width: 400px;
+	height: 290px;
+	padding:20px 15px 0;
+	color: @text-color-light;
+}
+//主体
+.main{
+	background-color: @blue-dark;
+	color: @text-color-light; //图片上的文字
+	a{
+		color: @text-color-light; //每行小格a标签的字体颜色
+		&:hover{
+			color:@blue-lighter;
+
+		}
+	}
+	div>a:hover{
+		color:@text-color-light;
+		background-color:@blue-light;
+	}
+	>.container>.row{
+		margin-bottom: 40px;
+	}
+}
+//商业标示大小
+sup{
+	font-size: .6em;
+}
+//每行小格内容与顶部的距离
+.plinks{
+	padding:20px;
+	//每行小格左侧小图标
+	div.pull-left{
+		width: 30%;
+		height: 150px;
+		line-height:150px;
+		border-right: 2px solid #ddd;
+		padding-right:15px;
+		margin:0 10px;
+		img{
+			display: inline-block;
+		}
+	}
+
+}
+
+//footer的li样式
+.plinks li{
+	margin-top: 10px;
+	b{
+		display: inline-block;
+		height: 20px;
+		width: 20px;
+		margin-right: 2px;
+		vertical-align: middle;
+		background: url(../img/social_sprite_smushed.png) 0 -770px;
+	}
+}
+.plinks li:nth-child(2) b{
+	background-position:0 -70px;
+}
+//小图遮罩外层
+.masked{
+	/*父元素定位了才能隐藏已定位子元素*/
+	position: relative;
+	overflow-y: hidden;
+	&:hover .mask{
+		top:0;
+	}
+	>img{
+		margin: 0 auto;
+	}
+}
+//小图遮罩内层
+.mask{
+	position: absolute;
+	top:74%;
+	left:0;
+	right:0;
+	bottom:0;
+	padding:5px 15px;
+	//color:#fff;
+	background: rgba(0,0,0,.5);
+	transition:top .5s;
+
+}
+.mask p,.mask a,.masking-text p{
+	font-size: 1.2em;
+	line-height: 1.6em;
+}
+
+
+.masking-parent{
+	position: relative;
+	background:#0071c5;
+}
+//第二行大图片左上角文字
+.masking-top{
+	position: absolute;
+	color:#333;
+	font-size: 1.4em;
+	font-weight: bold;
+	top:1em;
+	left:1em;
+	span {
+		color: #2873ac;
+		margin-left: 1.2em;
+		font-size: .9em;
+	}
+}
+@media screen and (max-width: 768px) {
+	.masking-top{
+		top:.5em;
+		font-size: .3em;
+	}
+}
+.masking-text{
+	bottom:0;
+	padding:20px;
+	a{
+		background:#00adef;
+		padding:3px 3em;
+		border-radius: 3px;
+	}
+}
+@media screen and (min-width: 768px) {
+	.masking-text{
+		position: absolute;
+	}
+}
+//长条深色底 按钮
+@media screen and (max-width: 768px) {
+	.masking-text a{
+		padding:3px 1.2em;
+	}
+}
