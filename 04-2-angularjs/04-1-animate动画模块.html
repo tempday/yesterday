@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style>
+		body{
+			position: relative;
+			overflow-x: hidden;
+		}
+		.myPage{
+			transition:all 2s linear;
+			position: absolute;
+			width: 100%;
+		}
+		.myPage.ng-leave{
+			left: 0;
+			opacity: 1;
+		}
+		.myPage.ng-leave.ng-leave-active{
+			left:-100%;.
+			opacity:0;
+		}
+		.myPage.ng-enter{
+			left:100%;
+			/*opacity:0;*/
+			animation: newch 1s linear; /* IE10+ and Future Browsers */
+
+		}
+		.myPage.ng-enter.ng-enter-active{
+			left:0;
+			/*opacity:1;*/
+		}
+
+		@keyframes newch {
+			from { opacity:0; }
+			to { opacity:1;color:red;top:100px; }
+
+		}
+
+		@-webkit-keyframes mychange {
+			0%{
+				border-radius:0;
+			}
+			50%{
+				border-radius:50%;
+				top:100%;
+				background-color: red;
+			}
+			100%{
+				border-radius:0;
+				top:0;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="myPage" ng-view></div>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript" src="js/angular-animate.js"></script>
+<script type="text/javascript" src="js/my-animate.js"></script>
+</body>
+</html>

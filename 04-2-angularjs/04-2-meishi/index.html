@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--指定IE浏览器按最新版本渲染-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--页面初始参数,宽度,缩放比例,禁止用户缩放-->
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<!--必要三件套-->
+	<title>美食外卖</title>
+	<link rel="icon" href="img/food.jpg" type="image/x-ico">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<style type="text/css">
+		body{
+			overflow-x: hidden;
+			font-family: "Helvetica Neue","Microsoft Yahei","SimHei", Helvetica, Arial, sans-serif;;
+			color: #666;
+		}
+		.pageslide{
+			position: absolute;
+			transition: all .2s linear;
+			width: 100%;
+		}
+		.pageslide.ng-leave{
+			left:0;
+		}
+		.pageslide.ng-leave.ng-leave-active{
+			left:-100%;
+		}
+		.pageslide.ng-enter{
+			left:100%;
+		}
+		.pageslide.ng-enter.ng-enter-active{
+			left:0;
+		}
+		.navbar-fixed-bottom .navbar-nav{
+			width: 100%;
+		}
+		.navbar-fixed-bottom .navbar-nav li{
+			float: left;
+			width: 33.3%;
+		}
+		.startpage,.startpage img{
+			width: 100%;
+			font-size:7rem;
+			vertical-align: middle;
+		}
+		.startpage a:first-child{
+			display: block;
+			margin-top: 10%;
+			text-decoration: none;
+		}
+		.addmargin{
+			margin-top:60px;
+			margin-bottom:60px;
+		}
+		/*去掉面包屑底部margin*/
+		.breadcrumb{
+			margin-bottom: 0;
+		}
+		.borderbtn{
+			border-bottom: 1px solid #ddd;
+			padding-bottom: 1em;
+		}
+
+		.borderdot{
+			border-bottom: 1px dotted #ddd;
+			padding-bottom: 1em;
+		}
+		.panel>.panel-body>img{
+			margin: 0 auto;
+			margin-top:1em;
+		}
+		/*巨幕*/
+		.jumbotron{
+			font-size: 16px;
+			padding-bottom: 20px;
+			padding-top: 20px;
+			margin-bottom: 10px;
+		}
+		.jumbotron div span,{
+			font-weight:700;
+		}
+		/*加大巨幕 详情里的上外边距 行高 两边对齐*/
+		.jumbotron>.borderdot{
+			line-height: 1.4em;
+			text-align: justify;
+			margin-top: 20px;
+		}
+		table{
+			border:1px solid #ddd;
+		}
+		table.table>tbody>tr>td{
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body ng-app="orderApp">
+	<div class="pageslide" ng-view></div>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angular-animate.js"></script>
+	<script type="text/javascript" src="js/angular-route.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div ng-controller="myContrl">
+			<button type="button" class="btn btn-success" ng-click="addProduct()">添加商品</button>
+			<form>
+				<div ng-repeat="p in cart" class="alert alert-success">
+					单价:&yen; {{p.price}},&nbsp;数量: <input type="number" ng-model="p.count"> 小计:&yen; {{p.price*p.count}}
+				</div>
+			</form>
+			<span>商品总价:&yen; {{total()}}</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript">
+	angular.module("myModule",[]).controller("myContrl",function($scope){
+		function Products(count,price){
+			this.count=count||1;
+			this.price=price||Math.round(Math.random()*9001+1000);
+		}
+		$scope.cart=[new Products(1,2350)];
+		$scope.cart.push(new Products(2));
+		$scope.cart.push(new Products(null,1500));
+		$scope.addProduct=function(){
+			$scope.cart.push(new Products());
+		};
+		$scope.total= function () {
+			var sum=0;
+			for(var i=0;i<$scope.cart.length;i++){
+				sum+=$scope.cart[i].price*$scope.cart[i].count;
+			}
+			return sum;
+		}
+	});
+</script>
+</html>

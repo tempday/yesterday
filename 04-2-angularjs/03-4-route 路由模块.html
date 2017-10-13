@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-app="myModule">
+	<div ng-view></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript">
+	//引入各个模块
+	angular.module("myModule",['ng','ngRoute'])
+			.controller('startCtrl',function($scope){
+				$scope.msg="startpage";
+			})
+			.controller('mainCtrl',function($scope){
+				$scope.msg="mainpage";
+			})
+			.controller('detailCtrl',function($scope){
+				$scope.msg="detailpage";
+			})
+			.config(function($routeProvider,$locationProvider){
+				$routeProvider.when('/start',{
+					templateUrl:'template/start.html',
+					controller:'startCtrl'
+
+				}).when('/main',{
+					templateUrl:'template/main.html',
+					controller:'mainCtrl'
+
+				}).when('/detail',{
+					templateUrl:'template/detail.html',
+					controller:'detailCtrl'
+
+				}).otherwise({
+					redirectTo:'/start'
+				});
+			});
+</script>
+</html>

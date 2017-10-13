@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body ng-app><!--ng-app一个页面只能一个ng-app-->
+<div class="container">
+	<h1>angularjs page</h1>
+	<p>{{1+2}}</p>
+	<div>{{"hello"}}</div>
+	<span>{{2*3}}</span>
+	<p>{{2/3}}</p>
+	<p>{{2>3?5:8}}</p>
+	<p>{{2>3}}</p>
+	<p>{{2&&3}}</p>
+	<p>{{2||3}}</p>
+	<p>{{a=5}}</p>
+	<p>{{a}}</p>
+	<div ng-init="age=20"></div>
+	<p>年龄为:{{age}}</p>
+	<div ng-bind="age+7">标签内容失效</div>
+	<p class="ng-bind:age+9527*2;">标签内容失效</p>
+	<div class="alert alert-danger">
+		{{age%3}}
+	</div>
+</div>
+</body>
+<script src="js/angular.js"></script>
+</html>

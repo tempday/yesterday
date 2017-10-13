@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>$http 服务</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style>
+		.media-left img{
+			height: 70px;
+			width: 70px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div ng-controller="myContrl">
+			<h3>分享列表:</h3>
+			<div class="media" ng-repeat="lis in msgList">
+				<!--首先是头像-->
+				<div class="media-left">
+					<a href="#">
+						<img class="media-object" ng-src="{{lis.headpic}}" alt="">
+					</a>
+				</div>
+				<!--然后是内容主体-->
+				<div class="media-body">
+					<h4 class="media-heading">{{lis.title}}</h4>
+					<h5>{{lis.content}}</h5>
+				</div>
+			</div>
+			<h3 ng-click="load()" class="btn btn-primary btn-block" ng-disabled="isLoading">
+				<span ng-hide="isLoading" ng-bind="loadmore"></span>
+				<img ng-show="isLoading" src="img/loading.gif" alt="">
+			</h3>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript">
+	angular.module("myModule",[]).controller("myContrl",function($scope,$http,$timeout){
+		$scope.msgList=[];
+		$scope.mydata=[];
+		$scope.loadmore="加载更多";
+		$scope.isLoading=false;
+		$scope.load=function(){
+			$scope.isLoading=true;
+			if($scope.mydata.length==0){
+				$http.get("data/03-2.php").success(function(data){
+					$scope.mydata=data;
+					$scope.msgList.push($scope.mydata[$scope.msgList.length]);
+					$scope.isLoading=false;
+				});
+			}else{
+				if($scope.msgList.length<$scope.mydata.length){
+					$timeout(function(){
+						$scope.msgList.push($scope.mydata[$scope.msgList.length]);
+						$scope.msgList.length==$scope.mydata.length&&($scope.loadmore="加载完毕");
+						$scope.isLoading=false;
+					},1000);
+				}else{
+					$scope.loadmore="加载完毕";
+					$scope.isLoading=false;
+				}
+
+
+
+
+			}
+		};
+
+	});
+</script>
+</html>

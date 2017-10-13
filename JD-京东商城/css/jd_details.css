@@ -135,6 +135,7 @@ ul#summary{
 	width:72px;
 	float: left;
 	text-align: right;
+	text-align-last:justify;
 	height:23px;
 	line-height:23px;
 	

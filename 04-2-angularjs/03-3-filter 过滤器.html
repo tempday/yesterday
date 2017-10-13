@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-app="myModule">
+	<div class="container">
+		<div ng-controller="myContrl">
+			<a href="")">9527</a>
+			大小写转换
+			<p class="alert alert-success">{{myname | uppercase}}</p>
+			数字number过滤器
+			<p class="alert alert-dismissable">{{num | number}}</p>
+			<p class="alert alert-dismissable">{{num | number:2}}</p>
+			时间 date过滤器
+			<p class="alert alert-info">{{today | date:'yyyy-MM-dd HH:mm:ss EEEE'}}</p>
+			format 加不加都一样,默认样式
+			<p class="alert alert-info">{{today | date:format}}</p>
+			货币 currency过滤器
+			<p class="alert alert-warning">默认: {{salary | currency}}</p>
+			<p class="alert alert-warning">{{salary | currency:'&yen;'}}</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript">
+	angular.module("myModule",[]).controller("myContrl",function($scope){
+		$scope.myname="lglong519";
+		$scope.num=9527;
+		$scope.salary=17583;
+		$scope.today=new Date().getTime();
+	});
+</script>
+
+</html>

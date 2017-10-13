@@ -16,6 +16,8 @@
 </body>
 <script type="text/javascript">
 	var can=document.getElementById("can");
+	can.height=window.innerHeight;
+	can.width=window.innerWidth;
 	var ctx=can.getContext("2d");
 	function Shape(){
 		this.r=parseInt(Math.random()*36+5);

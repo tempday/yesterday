@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body ng-app>
+<div class="container">
+	<h1>使用controller创建model,在view显示</h1>
+	<div ng-controller="myCtrl">
+		<!--view-->
+		<div>{{sname}}</div>
+	</div>
+	<div ng-controller="myCtrl">
+		<!--在view里尽量别改model-->
+		<p>{{str}}</p>
+		<p>{{number}}</p>
+
+		<h2>循环输出功能,要放在controller里</h2>
+		<ul>
+			<li ng-repeat="fname in students">{{fname}}</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+<script src="js/angular.js"></script>
+<script type="text/javascript">
+	//声明一个module,module名随意,[]默认是ng可以不写,其他模块必须写,
+	//控制器controller是个函数,名称随意,
+	angular.module("myModule",["ng"]).controller("myCtrl",function($scope){
+		//model
+		$scope.sname="zijian";
+		$scope.str="string";
+		$scope.number=9527;
+		$scope.students=["wang","liu","lin","xue"];
+	});
+
+</script>
+</html>

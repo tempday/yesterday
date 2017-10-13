@@ -42,8 +42,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 CSS禅意花园
+.idea
 <<<<<<< HEAD
 *.rp
+*.rar
+*.zip
+*.pdf
+*.chm
 =======
 *.rp
 >>>>>>> origin/master

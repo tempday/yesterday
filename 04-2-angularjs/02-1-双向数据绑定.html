@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<script src="js/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>方向一.把model绑定到view</h1>
+		<div ng-controller="myCtrl">
+			<p>现在时间是:{{otime}}</p>
+			<p ng-bind="uname+count"></p>
+			<button type="button" class="btn bg-success" ng-click="add()">按钮</button>
+			<br>
+			<a href="javascript:void(0);" class="btn bg-primary" ng-click="prev()">上一张</a>
+			<a href="javascript:void(0);" class="btn bg-success" ng-click="next()">下一张</a>
+			<br>
+			<!--<img src="{{imgSrc}}" alt="">-->
+			--新的图片指令 ng-src--
+			<br>
+			<img ng-src="{{imgSrc}}" alt="">
+			<h1>方向二.把view绑定到model</h1>
+			<input type="text" ng-model="mytext">
+			<p>{{mytext}}</p>
+			男:<input type="radio" name="sex" value="male" ng-model="myrad">
+			女:<input type="radio" name="sex" value="female" ng-model="myrad">
+			<br>
+			<input type="checkbox" ng-model="mychb" value="checked">
+			<h3>练习一.简易版的购物车计算器</h3>
+			<h4><b>购物车计算器:</b></h4>
+			<!--单价: <input type="text" ng-model="price"> 数量: <input type="number" ng-model="amount"> 小计: <span ng-if="price>0 && amount">&yen; {{price*amount+0.00}}</span>-->
+			单价: <input type="text" ng-model="p.price"> 数量: <input type="number" ng-model="p.count"> 小计: <span>&yen; {{p.price*p.count}}</span>
+			<h3>练习二.切换用户注册按钮</h3>
+			<input type="checkbox" ng-model="agreeOrNot"> 同意本站使用条款 <br>
+			<!--<span class="btn btn-info" ng-if="userchb">注册</span>-->
+			<span class="btn btn-info" ng-show="agreeOrNot">注册</span>
+			<h3>练习三.下拉列表切换用户头像</h3>
+			<div class="row">
+				<div class="col-md-1">
+					<select name="" id="" ng-model="head">
+						<option value="green">大叔</option>
+						<option value="pink">萝莉</option>
+						<option value="yellow">少年</option>
+					</select>
+				</div>
+				<div style="height:60px;width:50px;border:1px solid #ddd;background-color:{{head}};" class="col-md-2">
+				</div>
+				<div class="col-md-1">
+					<select name="" id="" ng-model="roleImg">
+						<option value="img/b (1).jpg">大叔</option>
+						<option value="img/b (2).jpg">萝莉</option>
+						<option value="img/b (3).jpg">少年</option>
+					</select>
+				</div>
+				<div class="col-md-2">
+					<img ng-src="{{roleImg}}" alt="" class="img-responsive">
+				</div>
+			</div>
+
+			<h3 class="clearfix">练习四.表格单选-多选-全选</h3>
+			<table class="table table-striped">
+				<thead>
+				<tr>
+					<th style="width:80px;border-right: 1px solid #ddd;">选择</th>
+					<th>姓名</th>
+					<th>电话</th>
+					<th>操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td style="width:80px;border-right: 1px solid #ddd;"><input type="checkbox" ng-checked="selectAll"></td>
+					<td>小明</td>
+					<td>143</td>
+					<td><button type="button" class="btn btn-danger">删除</button></td>
+				</tr>
+				<tr>
+					<td style="width:80px;border-right: 1px solid #ddd;"><input type="checkbox" ng-checked="selectAll"></td>
+					<td>李华</td>
+					<td>149</td>
+					<td><button type="button" class="btn btn-danger">删除</button></td>
+				</tr>
+				<tr>
+					<td style="width:80px;border-right: 1px solid #ddd;"><input type="checkbox" ng-checked="selectAll"></td>
+					<td>林雷</td>
+					<td>527</td>
+					<td><button type="button" class="btn btn-danger">删除</button></td>
+				</tr>
+				</tbody>
+			</table>
+			<input type="checkbox" ng-model="selectAll"> 全部选择/取消全部选择
+			<h4>购物车计算器:</h4>
+			<button class="btn bg-success">添加商品</button>
+			<form>
+				单价: <input type="text" ng-model="s.price1"> 数量: <input type="number" ng-model="s.count1"> 小计: <span>&yen; {{s.price1*s.count1}}</span><br>
+				单价: <input type="text" ng-model="s.price2"> 数量: <input type="number" ng-model="s.count2"> 小计: <span>&yen; {{s.price2*s.count2}}</span><br>
+				单价: <input type="text" ng-model="s.price3"> 数量: <input type="number" ng-model="s.count3"> 小计: <span>&yen; {{s.price3*s.count3}}</span><br>
+				单价: <input type="text" ng-model="s.price4"> 数量: <input type="number" ng-model="s.count4"> 小计: <span>&yen; {{s.price4*s.count4}}</span>
+				<hr>
+			</form>
+			<span>购物车总金额:&yen; {{s.price1*s.count1+s.price2*s.count2+s.price3*s.count3+s.price4*s.count4}}</span>
+		</div>
+		<h3>添加新的控制器,手动遍历$digest队列</h3>
+		<div ng-controller="myCtrl2">
+			<p>{{addnum}}</p>
+		</div>
+
+	</div>
+	<div style="height:200px;"></div>
+</body>
+<script src="js/angular.js"></script>
+<script type="text/javascript">
+	//要使用内置$对象要先在函数参数里调用
+	angular.module("myModule",[]).controller("myCtrl",function($scope,$interval){
+		$scope.age=20;
+		$scope.uname="what";
+		$interval(function(){
+			var odate=new Date()
+			$scope.otime=odate.getHours()+":"+odate.getMinutes()+":"+odate.getSeconds();
+		},1000);
+		$scope.add=function(){
+			$scope.uname+="?";
+		};
+		$scope.imgSrc="img/b (1).jpg";
+		$scope.count=1;
+		$scope.prev=function(){
+			if($scope.count!=1){
+				$scope.imgSrc="img/b ("+--$scope.count+").jpg";
+			}else{
+				$scope.count=4;
+				$scope.imgSrc="img/b (4).jpg";
+			}
+		};
+		$scope.next=function(){
+			if($scope.count!=4){
+				$scope.imgSrc="img/b ("+(++$scope.count)+").jpg";
+			}else{
+				$scope.count=1;
+				$scope.imgSrc="img/b (1).jpg";
+			}
+		};
+		$scope.p=new Object();
+		$scope.p.price=0;
+		$scope.p.count=0;
+		$scope.s=new Object();
+		$scope.s.price1=$scope.s.price2=$scope.s.price3=$scope.s.price4=0;
+		$scope.s.count1=$scope.s.count2=$scope.s.count3=$scope.s.count4=0;
+		//表格多项选择
+		/*
+		//监视数据是否变化
+		$scope.$watch("mytext",function(){//"mytext", 可以不写???如果不写,底层的interval不停的输出变化的值
+			console.log($scope.mytext);
+		});
+		//$scope.$watch("myrad","mychb",function(){//只可写一个
+		$scope.$watch("myrad",function(){
+			console.log($scope.myrad);
+		});
+		$scope.$watch("mychb",function(){
+			console.log($scope.mychb);
+		});
+		*/
+		$scope.$watch("head",function(){
+			console.log($scope.head);
+		});
+	}).controller("myCtrl2",function($scope){
+		$scope.addnum=0;
+
+		setInterval(function(){
+			$scope.addnum++;
+			$scope.$apply();//队列数据手动更新
+			//$scope.$digest();//第二种 原始方法,推荐第一种
+		},1000);
+
+	});
+</script>
+</html>
