@@ -5,17 +5,125 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 		.controller('startCtrl',['$scope',function($scope){
 
 		}])
-		.controller('mainCtrl',['$scope',function($scope){
+		.controller('mainCtrl',['$scope','$http',function($scope,$http){
+			$scope.dish=[];
+			$scope.addmore=true;
+			$scope.isLoading=true;
+			$scope.searching=false;
+			//页面加载后第一次向服务器请求数据
+			$http.get('data/dish_listbypage.php').success(function(data){
+				validDate(data);
+			});
+			//加载更多按钮函数
+			$scope.load=loadDatas;
+			function loadDatas(){
+				$scope.isLoading=true;
+				//如果处在搜索状态,清空搜索model数据,dish数组,搜索状态
+				if($scope.searching){
+					$scope.dish=[];
+					$scope.searching=false;
+					$scope.addmore=true;
+					$scope.keywd='';
+				}
+				$http.get("data/dish_listbypage.php?start="+$scope.dish.length).success(function(data){
+					validDate(data);
+				});
+			}
+			//监听modle数据keywd的改变,根据输入内容请求数据
+			$scope.$watch('keywd',function(){
+				//console.log($scope.keywd);
+				if($scope.keywd){
+					$http({
+						method:'post',
+						url:'data/dish_listbykw.php',
+						data:{keywd:$scope.keywd},
+						headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+						//将数据转换成url编码
+						transformRequest: function (data) {
+							return $.param(data);
+						}
+					}).then(function successCallback(response){
+						if(response.data.length){
+							$scope.dish=response.data;
+							$scope.searching=true;
+						}
+					});
+				}else{
+					$scope.searching&&loadDatas();
+				}
+			});
+			//验证返回的数据
+			function validDate(data){
+				if(data.length>0){
+					$scope.dish=$scope.dish.concat(data);
+					if(data.length<5){
+						$scope.addmore=false;
+					}
+				}else{
+					$scope.addmore=false;
+				}
+				$scope.isLoading=false;
+			}
+		}])
+		.controller('detailCtrl',['$scope','$routeParams','$http',function($scope,$routeParams,$http){
+			$http({
+				method:'post',
+				url:'data/dish_listbydid.php',
+				data:{did:$routeParams.did},
+				headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+				transformRequest: function (data) {
+					return $.param(data);
+				}
+			}).then(function successCallback(response){
+				$scope.details=response.data;
+			});
 
 		}])
-		.controller('detailCtrl',['$scope',function($scope){
+		.controller('orderCtrl',['$scope','$routeParams','$http',function($scope,$routeParams,$http){
+			$scope.orderstate=false;
+			$scope.submit=function(){
+				$scope.datas='{' +
+						'"phone":'+$scope.phone+', ' +
+						'"did": '+$routeParams.did+', ' +
+						'"user_name":\"'+$scope.user_name+'\", ' +
+						'"sex": '+$scope.sex+', ' +
+						'"addr":\"'+$scope.addr+'\"}';
+				//console.log($scope.data);
 
+				$http({
+					method:'post',
+					url:'data/order_add.php',
+					data:{order:$scope.datas},
+					headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+					transformRequest: function (data) {
+						return $.param(data);
+					}
+				}).then(function successCallback(response){
+					if(response.data.status=="success"){
+						$scope.orderstate=true;
+						$scope.order_num=response.data.order_num;
+					}
+				});
+
+			}
 		}])
-		.controller('myorderCtrl',['$scope',function($scope){
-
-		}]).controller('orderCtrl',['$scope',function($scope){
-
+		.controller('myorderCtrl',['$scope','$http',function($scope,$http){
+			$scope.orders=[];
+			$http({
+				method:'post',
+				url:'data/dish_listbyphone.php',
+				data:{phone:13705054321},
+				headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+				transformRequest: function (data) {
+					return $.param(data);
+				}
+			}).then(function successCallback(response){
+				if(response.data.length){
+					$scope.orders=response.data;
+				}
+			});
 		}])
+
 		.config(function($routeProvider){
 			$routeProvider.when('/start',{
 			templateUrl:'tpl/start.html',
@@ -23,13 +131,14 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 		}).when('/main',{
 			templateUrl:'tpl/main.html',
 			controller:'mainCtrl'
-		}).when('/detail',{
+				//添加路由参数:一个或多个 /:n  |  /:n/:i
+		}).when('/detail/:did',{
 			templateUrl:'tpl/detail.html',
 			controller:'detailCtrl'
 		}).when('/myorder',{
 			templateUrl:'tpl/myorder.html',
 			controller:'myorderCtrl'
-		}).when('/order',{
+		}).when('/order/:did',{
 			templateUrl:'tpl/order.html',
 			controller:'orderCtrl'
 		}).otherwise({
@@ -37,10 +146,9 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 		});
 	});
 
-
 +function ($) {
 	'use strict';
-	var version = $.fn.jquery.split(' ')[0].split('.')
+	var version = $.fn.jquery.split(' ')[0].split('.');
 	if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
 		throw new Error('requires jQuery version 1.9.1 or higher')
 	}
