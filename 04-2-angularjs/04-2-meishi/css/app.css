@@ -21,22 +21,30 @@ body {
   left: 0;
 }
 .navbar-fixed-bottom .navbar-nav {
+  margin-left: 0;
+  margin-right: 0;
   width: 100%;
 }
 .navbar-fixed-bottom .navbar-nav li {
   float: left;
   width: 33.3%;
 }
+#startpage {
+  display: table;
+}
+#startpage div {
+  display: table-cell;
+  vertical-align: middle;
+}
+#startpage a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+}
 .startpage,
 .startpage img {
   width: 100%;
   font-size: 7rem;
-  vertical-align: middle;
-}
-.startpage a:first-child {
-  display: block;
-  margin-top: 10%;
-  text-decoration: none;
 }
 .addmargin {
   margin-top: 60px;

@@ -3,6 +3,7 @@
  */
 angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 		.controller('startCtrl',['$scope',function($scope){
+			$scope.myheight=window.innerHeight+"px";
 
 		}])
 		.controller('mainCtrl',['$scope','$http',function($scope,$http){
@@ -145,6 +146,14 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 			redirectTo:'/start'
 		});
 	});
+	setTimeout(function(){
+		//
+	},1000);
+	window.onresize=function(){
+			console.log("sfs");
+				document.getElementById("startpage").style.height=window.innerHeight+"px";
+		}
+
 
 +function ($) {
 	'use strict';

@@ -22,6 +22,8 @@ body{
 	left:0;
 }
 .navbar-fixed-bottom .navbar-nav{
+	margin-left:0;
+	margin-right:0;
 	width: 100%;
 	li{
 		float: left;
@@ -29,16 +31,23 @@ body{
 	}
 }
 //开始页面的样式
+#startpage{
+	display: table;
+	div{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	a{
+		text-decoration: none;
+		display: inline-block;
+		width: 100%;
+	}
+}
 .startpage,.startpage img{
 	width: 100%;
 	font-size:7rem;
-	vertical-align: middle;
 }
-.startpage a:first-child{
-	display: block;
-	margin-top: 10%;
-	text-decoration: none;
-}
+
 //增加元素距离页首和页底的边距
 .addmargin{
 	margin-top:60px;
