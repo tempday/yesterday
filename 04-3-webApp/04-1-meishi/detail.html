@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meishi">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>美食外卖</title>
+	<link rel="icon" href="img/food.jpg">
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<link href="css/meishiapp.css" rel="stylesheet">
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-touch.js"></script>
+	<script src="js/meishiapp.js"></script>
+</head>
+<body ng-controller="indexCtrl">
+<div data-role="page" id="detail" ng-controller="detailCtrl" ng-swipe-left="jumpTo('myorder.html')">
+	<div data-role="header" data-position="fixed">
+		<h1>美食外卖</h1>
+		<a href="#main" data-rel="back" class="ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"></a>
+	</div>
+	<div class="ui-content">
+		<h1>菜品详情</h1>
+		<h3 class="borderbtn">{{details.name}}</h3>
+		<div class="text-center"><img ng-src="img/{{details.img_lg}}" alt=""></div>
+		<div class="descript">
+			<div>
+				<span>主要原料：</span>{{details.material}}
+			</div>
+			<p class="borderdot" ng-bind="details.detail">
+			</p>
+			<span class="text-danger">&yen; {{details.price}}</span>
+		</div>
+		<footer>
+			<a href="order.html" class="ui-btn ui-btn-inline ui-corner-all">我要订餐</a>
+			<a href="main.html" class="ui-btn ui-btn-inline ui-corner-all">我再看看</a>
+		</footer>
+	</div>
+
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="main.html" class="ui-btn ui-icon-home ui-btn-icon-top"> </a></li>
+				<li><a href="myorder.html" class="ui-btn ui-icon-user ui-btn-icon-top"></a></li>
+				<li><a href="main.html" class="ui-btn ui-icon-gear ui-btn-icon-top"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

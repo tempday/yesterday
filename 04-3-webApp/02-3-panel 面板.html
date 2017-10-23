@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>panel</title>
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<style>
+	
+	</style>
+
+</head>
+<body>
+
+<div data-role="page">
+	<div data-role="panel" id="nav">
+		<ul>
+			<li><a href="#">按钮</a></li>
+			<li><a href="#">按钮</a></li>
+			<li><a href="#">链接</a></li>
+			<li><a href="#" data-rel="close">关闭</a></li>
+		</ul>
+	</div>
+	<div data-role="panel" id="usercenter" data-position="right" data-display="overlay">
+		<ul>
+			<li><a href="#">设置</a></li>
+			<li><a href="#">安全</a></li>
+			<li><a href="#">日志</a></li>
+		</ul>
+	</div>
+	<div data-role="panel" id="nav1" data-display="push">
+		123
+	</div>
+	<div data-role="panel" id="nav2" data-display="reveal">
+		123
+	</div>
+	<div data-role="header" data-position="fixed">
+		<h1>面板 panel</h1>
+		<a href="#nav" class="ui-btn">导航</a>
+		<a href="#usercenter" class="ui-btn ui-btn-right">中心</a>
+	</div>
+	<div class="ui-content">
+		<ul data-role="navbar">
+			<li><a href="#nav1">panelPush 不带阴影覆盖</a></li>
+			<li><a href="#nav2">panelreveal 不带阴影覆盖</a></li>
+		</ul>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-bottom"> </a></li>
+				<li><a href="#" class="ui-btn ui-icon-user ui-btn-icon-bottom"></a></li>
+				<li><a href="#" class="ui-btn ui-icon-gear ui-btn-icon-bottom"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</html>

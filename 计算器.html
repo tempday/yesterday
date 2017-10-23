@@ -2,11 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<title>计算器</title>
 	<link rel="icon" href="images/caculate.ico" type="image/x-ico"/>
-	<script src="http://www.lglong519.com/Tarena/css3/more%20Fun/more%20Fun.js"></script>
+	<script src="http://192.168.3.200/yesterday/01-3-css3/more%20Fun/more%20Fun.js"></script>
 	<style type="text/css">
-		*{
+		body{
 			margin:0;
 			padding:0;
 			font-family:"微软雅黑";
@@ -89,15 +91,30 @@
 			border:1px solid #ccddee;
 			border-bottom:1px solid #ddd;
 		}
-		.nav span{
+		.nav>div{
 			display:inline-block;
 			width:55px;
 			font-size:12px;		
 			line-height:22px;
 			border-radius:5px;
 			text-align:center;
+			position: relative;
 		}
-		.nav span:hover{
+		.nav>div>div>textarea{
+			color: #333;
+			position: absolute;
+			left:0;
+			height:62px;
+			background:linear-gradient(to top, #f2f5fa 20%, #d9e4f1);
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#d9e4f1',endColorStr='#f2f5fa',gradientType='0');
+			display: none;
+			text-align: left;
+		}
+		div.result:hover textarea{
+			display: block;
+			width:195px;
+		}
+		.nav>div:hover{
 			background:#dfe3ec;
 			border:1px solid #ccc;
 			height:18px;
@@ -111,28 +128,37 @@
 			width:195px;
 			margin:0 auto;
 			background:linear-gradient(#f2f5fa 1%, #d9e4f1);
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#f2f5fa',endColorStr='#d9e4f1',gradientType='0');
 			padding:5px;
 		}
 		.print{
 			width:93%;
 			background:linear-gradient(to top, #f2f5fa 20%, #d9e4f1);
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#d9e4f1',endColorStr='#f2f5fa',gradientType='0');
 			margin:10px auto;
 			border:1px solid #999;
 			border-radius:2px;
+			padding:0 5px 0 3px;
+			box-sizing:border-box;
+			overflow:hidden;
 		}
-		.print label{
+		.print .label{
 			display:block;
 			text-align:right;
 			color:#333;
 			height:30px;
+			width:100%;
 			line-height:25px;
 			/*letter-spacing:0;*/
 			font-size:20px;
-			margin:0 5px 0 3px;
 			font-weight:bold;
 			overflow:hidden;
+			padding: 0;
+			outline:none;
+			border:none;
+			background-color:transparent;
 		}
-		.print label:first-child{
+		.print .label:first-child{
 			line-height:22px;
 			font-size:12px;
 			height:20px;
@@ -145,6 +171,7 @@
 			width:40px;
 			height:30px;
 			background:linear-gradient(to bottom, #f2f5fa 10%, #d9e4f1);
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#f2f5fa',endColorStr='#d9e4f1',gradientType='0');
 			border:1px solid  #999;
 			line-height:30px;
 			outline:none;
@@ -153,6 +180,7 @@
 		.contain span button:hover{
 			/*background:linear-gradient(to bottom, #f0f4f9 10%, #c4d1e0);*/
 			background:radial-gradient( #f1cc4e,#eed88c,white);
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#e6ebf2',endColorStr='#cad6e5',gradientType='0');
 		}
 		.left{
 			float:left;
@@ -163,9 +191,11 @@
 			margin-right:5.5px;
 			*width:expression(this.innerHTML=="0"?"85px":"none");
 		}
+		/*ie8 不支持*/
 		.left>span:last-child button:first-child{
 			width:85px;
 		}
+		
 		.right span{
 			float:right;
 			margin-right:7px;
@@ -175,6 +205,8 @@
 		}
 		
 		button#open{
+			position: absolute;
+			right:50px;
 			margin: 20px;
 			height:40px;
 			padding: 0 10px;
@@ -197,12 +229,16 @@
 			<span>计算器</span><span class=" rt close" onclick="closeCal();">x</span><span class="rt max" onclick="maxi();">口</span><span class="mini rt" onclick="mini();">-</span>
 		</div>
 		<div class="nav">
-			<span>查看(<u>V</u>)</span><span>编辑(<u>E</u>)</span><span>帮助(<u>H</u>)</span>
+			<div class='result'>查看(<u>V</u>)
+				<div><textarea id="test"></textarea></div>
+			</div><div>编辑(<u>E</u>)</div><div>帮助(<u>H</u>)</div>
 		</div>
 		<div class="contain" id="calc">
 			<div class="print">
-				<label id="lab1"></label>
-				<label id="lab2">0</label>					
+				<!--<label class="label" id="lab1"></label>-->
+				<!--<label id="lab2">0</label>-->
+				<input type="text" id="lab1" class="label">
+				<input type="text" value="0" id="lab2" class="label">
 			</div>
 			<div class="left">
 				<span>
@@ -218,7 +254,7 @@
 					<button>7</button><button>8</button><button>9</button>
 				</span>
 				<span>
-					<button>0</button><button>.</button>
+					<button style="width:85px;">0</button><button>.</button>
 				</span>
 			</div>
 			<div class="right">
@@ -264,15 +300,15 @@
 	}
 	function setval(elem){				
 		var btnVal=elem.innerHTML,tmp;
-		var lab=document.getElementById("lab1"),arr=(lab.innerHTML).split("");
+		var lab=document.getElementById("lab1"),arr=(lab.value).split("");
 		var lab2=document.getElementById("lab2");
 		var cpi=conpareBtn(btnVal),cpb=conpareBtn(arr[arr.length-1]);
 		var check=false;
 		clearSlct();
 		//首要条件: 如果是c按钮,清空所有数据
-		if (btnVal=="C"||lab2.innerHTML.charAt(lab2.innerHTML.length-1)=="零"){
-			lab.innerHTML="";
-			lab2.innerHTML="0";
+		if (btnVal=="C"||lab2.value.charAt(lab2.value.length-1)=="零"){
+			lab.value="";
+			lab2.value="0";
 			//return;
 		}
 		//其次: 如果不是c键,首先判断label1是否空,如果不空则判断最后元素是否是"="		
@@ -327,17 +363,17 @@
 								arr[arr.length]=btnVal;
 								break;
 							//4. 计算结果
-							default://判断结果是否正常,以及解决因2进制计算产生的取舍bug
+							default://判断结果是否正常
 								cpb<2&&(arr.length-=1);
 								tmp=eval(arr.join(""));//num!
 								if (tmp=="Infinity"||isNaN(tmp)){
-									lab2.innerHTML="除数不能为零";
+									lab2.value="除数不能为零";
 								}else{
 									var ck=tmp.toFixed(10);//ECMa反对使用substr ,substring 不支持负数
 									//1.判断整数和无限小数 两层判断 !!!区分先后 
 									//if (Math.floor(ck)==tmp||(ck.slice(ck.length-1)!=0||ck.charAt(ck.length-2)!=0)){
 									if (String(tmp).length<ck.length){
-										lab2.innerHTML=tmp;
+										lab2.value=tmp;
 									//2. +00
 									}else{
 										//去0					
@@ -345,30 +381,31 @@
 											ck=ck.slice(0,ck.length-1);
 											//console.log(ck);
 										}
-										conpareBtn(ck.slice(ck.length-1))==1?(lab2.innerHTML=ck.slice(0,ck.length-1)):lab2.innerHTML=ck;									
+										conpareBtn(ck.slice(ck.length-1))==1?(lab2.value=ck.slice(0,ck.length-1)):lab2.value=ck;									
 									}
 								}
 								//计算结束,lab1++
 								arr[arr.length]=btnVal;
+								test.value+=lab.value+"="+lab2.value+"\n";
 						}//+++++++++++++
 					//非空条件结束
 					}else{
-						(cpi>=0&&cpi<2)&&(arr[arr.length]=lab2.innerHTML+btnVal);
+						(cpi>=0&&cpi<2)&&(arr[arr.length]=lab2.value+btnVal);
 					}//空条件结束
 				}//非数字键结束
-				lab.innerHTML=arr.join("");	
+				lab.value=arr.join("");
 			}//空和等号结束
 			//两个条件:1 有"=",按=键继续输出结果 或 跳过,
 			//		2  其他键一律reset数据
 			else{
 				if (cpi!=-1){
 					switch(cpi){
-						case 2:lab.innerHTML=btnVal;break;
-						case 0:lab.innerHTML=lab2.innerHTML+btnVal;break;
-						case -2:lab.innerHTML="";break;
-						default:lab.innerHTML="0.";
+						case 2:lab.value=btnVal;break;
+						case 0:lab.value=lab2.value+btnVal;break;
+						case -2:lab.value="";break;
+						default:lab.value="0.";
 					}
-					lab2.innerHTML="0";
+					lab2.value="0";
 				}
 			}
 		}//!c			
@@ -408,6 +445,10 @@
 		if(height!="320px"){
 			mini();
 		}
+	}
+	test.value='历史记录:\n';
+	lab1.onchange=function(){
+		this.value=this.value.replace(/[^\d\.\+\-\*\//]/g,'');//正则清除没意义的字符
 	}
 	/*
 	window.onmouseup=function(){

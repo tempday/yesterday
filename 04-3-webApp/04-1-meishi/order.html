@@ -1,0 +1,39 @@
+
+<div data-role="page" id="order" ng-controller="orderCtrl">
+	<div data-role="header" data-position="fixed">
+		<h1>美食外卖</h1>
+	</div>
+	<div class="ui-content">
+		<form ng-submit="submit()" ng-hide="orderstate">
+			<label for="username">联系人:</label>
+			<input ng-model="user_name" type="text" name="username" id="username" placeholder="请输入姓名..." value="" required>
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				    <legend>性别:</legend>
+				    <input ng-model="sex" type="radio" name="sex" id="male" value="0"">
+				    <label for="male">男士</label>
+				    <input ng-model="sex" type="radio" name="sex" id="female" value="1">
+				    <label for="female">女士</label>
+			</fieldset>
+			<label for="phonenum">联系电话:</label>
+			<input ng-model="phone" type="text" name="phonenum" id="phonenum" placeholder="请输入联系号码..." value="" pattern="\d{4,11}" required>
+			<label for="address">送餐地址:</label>
+			<textarea ng-model="addr" cols="40" rows="8" name="address" id="address" data-mini="true" required></textarea>
+			<button type="submit">确定下单</button>
+		</form>
+		<!--确定下单时显示下面表签-->
+		<div class="" ng-show="orderstate">
+			<div class="">
+				订单成功！您的订单编号为：{{order_num}}。您可以在用户中心查看订单状态。
+			</div>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="main.html" class="ui-btn ui-icon-home ui-btn-icon-top"> </a></li>
+				<li><a href="myorder.html" class="ui-btn ui-icon-user ui-btn-icon-top"></a></li>
+				<li><a href="main.html" class="ui-btn ui-icon-gear ui-btn-icon-top"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>

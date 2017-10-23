@@ -1,0 +1,72 @@
+h1 {
+  text-align: center;
+}
+.borderbtn {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+}
+.borderdot {
+  border-bottom: 1px dotted #ddd;
+  padding-bottom: 1em;
+}
+.text-danger {
+  color: #db5a5a;
+}
+.text-center {
+  text-align: center;
+}
+#start {
+  background-color: #fdfffa;
+}
+#start div {
+  height: 100%;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  border: none;
+}
+#start div img {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+#main li img {
+  left: 10px;
+  top: 50%;
+  margin-top: -30px;
+}
+#main li h2 {
+  font-size: 1.4em;
+}
+#main li p {
+  font-size: 1em;
+}
+#main li span {
+  font-size: .9em;
+  font-weight: 500;
+}
+#detail div.ui-content {
+  max-width: 1140px;
+  margin: 0 auto ;
+}
+#detail div.ui-content h3 {
+  font-size: 24px;
+}
+#detail div.ui-content img {
+  max-width: 100%;
+  height: auto;
+}
+#detail div.ui-content div.descript {
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 10px;
+}
+#detail div.ui-content footer {
+  margin-top: 15px;
+  text-align: right;
+  background-color: #eee;
+}
+table.ui-body-d > tbody > tr > td,
+table.ui-body-d > tbody > tr > th {
+  vertical-align: middle;
+}

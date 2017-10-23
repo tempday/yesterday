@@ -1,6 +1,6 @@
 var link=document.createElement("link");
 link.rel="stylesheet";
-link.href="http://www.lglong519.com/Tarena/css3/more%20Fun/more%20Fun.css";
+link.href="http://192.168.3.200/yesterday/01-3-css3/more%20Fun/more%20Fun.css";
 document.getElementsByTagName("head")[0].appendChild(link);
 //var script=document.createElement("script");
 //script.src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js";
@@ -31,16 +31,17 @@ window.onload=function(){
 					//pom=-1;
 				}
 			}
-			document.getElementById("stage").children[0].style.transform="rotate3D("+arr[xyz][0]+","+arr[xyz][1]+","+arr[xyz][2]+","+angle++*pom+"deg)";
+			stage.children[0].style.transform="rotate3D("+arr[xyz][0]+","+arr[xyz][1]+","+arr[xyz][2]+","+angle++*pom+"deg)";
+			stage.children[0].style.msTransform="rotate3D("+arr[xyz][0]+","+arr[xyz][1]+","+arr[xyz][2]+","+angle++*pom+"deg)";
 			trans();
 		}, 20);
 	}
 	trans();
-	document.getElementById("stage").onmouseover=function(){
+	stage.onmouseover=function(){
 		clearTimeout(timer);
 		timer=null;	
 	}
-	document.getElementById("stage").onmouseout=function(){
+	stage.onmouseout=function(){
 		trans();	
 	}
 	/*

@@ -1,0 +1,83 @@
+@std-bg-clr:#fdfffa;
+h1{
+	text-align: center;
+}
+
+//加下边框
+.borderbtn{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 1em;
+}
+//加dotted 类型的下边框
+.borderdot{
+	border-bottom: 1px dotted #ddd;
+	padding-bottom: 1em;
+}
+.text-danger {
+	color: #db5a5a;
+}
+.text-center{
+	text-align: center;
+}
+#start{
+	background-color:@std-bg-clr;
+	//height: 100%;
+	div{
+		height:100%;
+		width: 100%;
+		max-width: 768px;
+		margin:0 auto;
+		border: none;
+		img{
+			height:100%;
+			width: 100%;
+			border: none;
+		}
+	}
+}
+#main{
+	li{
+		img{
+			left: 10px;
+			top:50%;
+			margin-top: -30px;
+		}
+		h2{
+			font-size: 1.4em;
+		}
+		p{
+			font-size: 1em;
+		}
+		span{
+			font-size: .9em;
+			font-weight: 500;
+		}
+	}
+}
+#detail{
+	div.ui-content{
+		max-width: 1140px;
+		margin:0 auto ;
+		h3{
+			font-size: 24px;
+		}
+		img{    //响应式图片:max-width:100%
+			 max-width:100%;
+			 height:auto;
+		 }
+		div.descript{
+			background-color: #eee;
+			border-radius: 6px;
+			padding: 10px;
+		}
+		footer{
+			margin-top: 15px;
+			text-align: right;
+			background-color: #eee;
+
+		}
+	}
+}
+table.ui-body-d>tbody>tr>td,table.ui-body-d>tbody>tr>th{
+	vertical-align: middle;
+}

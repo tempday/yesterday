@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meishi">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>美食外卖</title>
+	<link rel="icon" href="img/food.jpg">
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<link href="css/meishiapp.css" rel="stylesheet">
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-touch.js"></script>
+	<script src="js/meishiapp.js"></script>
+</head>
+<body ng-controller="indexCtrl">
+<div data-role="page" id="myorder" ng-controller="myorderCtrl"">
+	<div data-role="header" data-position="fixed">
+		<h1>美食外卖</h1>
+		<a href="#detail" data-rel="back" class="ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"></a>
+	</div>
+	<div class="ui-content">
+		<h1>我的订单</h1>
+		<table data-role="table" id="table-custom-toggle" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-text="显示列表">
+			<thead>
+			           <tr>
+				             <th data-priority="1">编号</th>
+				             <th>菜品</th>
+				             <th data-priority="2">下单时间</th>
+				             <th data-priority="3">联系人</th>
+				       </tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="o in orders">
+					<th ng-bind="o.order_num"></th>
+					<td>
+						<a href="detail.html" ng-click="sendId(o.did)">
+							<img ng-src="img/{{o.img_sm}}" class="media-object" alt="">
+						</a>
+					</td>
+					<td>{{o.order_time | date:'yyyy-MM-dd'}}<br>{{o.order_time | date:'hh:mm:ss'}}</td>
+					<td ng-bind="o.user_name"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="main.html" class="ui-btn ui-icon-home ui-btn-icon-top"> </a></li>
+				<li><a href="myorder.html" class="ui-btn ui-icon-user ui-btn-icon-top"></a></li>
+				<li><a href="main.html" class="ui-btn ui-icon-gear ui-btn-icon-top"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

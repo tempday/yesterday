@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>navbar</title>
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<style>
+	
+	</style>
+
+</head>
+<body>
+
+<div data-role="page">
+	<div data-role="header" data-position="fixed">
+		<h1>导航条</h1>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="ui-content">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul data-role="navbar">
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#" onclick="$.mobile.loading('show')">进度loading</a></li>
+				<li><a href="#" onclick="$.mobile.loading('hide')">进度hide</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-bottom"> </a></li>
+				<li><a href="#" class="ui-btn ui-icon-user ui-btn-icon-bottom"></a></li>
+				<li><a href="#" class="ui-btn ui-icon-gear ui-btn-icon-bottom"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</html>

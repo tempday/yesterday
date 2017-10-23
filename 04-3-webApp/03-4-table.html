@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>Title</title>
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<style>
+	
+	</style>
+</head>
+<body>
+
+<div data-role="page">
+	<div data-role="header" data-position="fixed">
+		<h1>header</h1>
+	</div>
+	<div class="ui-content">
+		回流式表格
+		<table data-role="table" class="ui-responsive"> <!--data-mode-->
+			<thead>
+			<tr>
+				<th>num</th>
+				<th>name</th>
+				<th>salary</th>
+				<th>birth</th>
+				<th>action</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>001</td>
+				<td>jack</td>
+				<td>&yen;9870</td>
+				<td>09-12</td>
+				<td><a href="#" class="ui-btn ui-btn-inline ui-btn-corner-all ui-mini">delete</a></td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>jack</td>
+				<td>&yen;9870</td>
+				<td>09-12</td>
+				<td><a href="#" class="ui-btn ui-btn-inline ui-btn-corner-all ui-mini">delete</a></td>
+			</tr>
+			</tbody>
+		</table>
+		列切换表格
+		<table id="table2" data-role="table" class="ui-responsive table-stripe" data-mode="columntoggle"> <!---->
+			<thead>
+			<tr>
+				<th data-priority="6">num</th>
+				<th data-priority="1">name</th>
+				<th data-priority="4">salary</th>
+				<th data-priority="5">birth</th>
+				<th data-priority="3">action</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>001</td>
+				<td>jack</td>
+				<td>&yen;9870</td>
+				<td>09-12</td>
+				<td><a href="#" class="ui-btn ui-btn-inline ui-btn-corner-all ui-mini">delete</a></td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>jack</td>
+				<td>&yen;9870</td>
+				<td>09-12</td>
+				<td><a href="#" class="ui-btn ui-btn-inline ui-btn-corner-all ui-mini">delete</a></td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>jack</td>
+				<td>&yen;9870</td>
+				<td>09-12</td>
+				<td><a href="#" class="ui-btn ui-btn-inline ui-btn-corner-all ui-mini">delete</a></td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>jack</td>
+				<td>&yen;9870</td>
+				<td>09-12</td>
+				<td><a href="#" class="ui-btn ui-btn-inline ui-btn-corner-all ui-mini">delete</a></td>
+			</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h3>footer</h3>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript"></script>
+</html>

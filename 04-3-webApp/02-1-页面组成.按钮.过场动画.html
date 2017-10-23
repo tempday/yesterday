@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>Title</title>
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<style>
+	
+	</style>
+</head>
+<body>
+<div data-role="page">
+	<div data-role="header" data-position="fixed">
+		<h1>header</h1>
+	</div>
+	<div class="ui-content">
+		<a href="#" data-role="button">Anchor</a>
+		<button type="button" data-theme="b">button</button>
+		<input type="button" value="input">
+		<a href="01-1-.html">模态框跳转- 小窗口方式</a>
+		<a href="#p2" data-rel="dialog">模态框跳转- 完全覆盖</a>
+		<a href="#p2" data-role="button" data-transition="fade">过场动画 fade</a>
+		<a href="#p2" data-role="button" data-transition="pop">过场动画 pop</a>
+		<a href="#p2" data-role="button" data-transition="slideup">过场动画 slideup</a>
+		<a href="#p2" data-role="button" data-transition="slidedown">过场动画 slidedown</a>
+		<a href="#p2" data-role="button" data-transition="turn">过场动画 turn</a>
+		<a href="#p2" data-role="button" data-transition="flip">过场动画 flip</a>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h3>footer</h3>
+	</div>
+</div>
+<div data-role="page" id="p2">
+	<div data-role="header" data-position="fixed">
+		<h1>header</h1>
+	</div>
+	<div class="ui-content">
+		<h1>过场动画</h1>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript"></script>
+</html>

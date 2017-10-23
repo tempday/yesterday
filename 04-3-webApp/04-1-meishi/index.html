@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meishi">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>美食外卖</title>
+	<link rel="icon" href="img/food.jpg">
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<link href="css/meishiapp.css" rel="stylesheet">
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-touch.js"></script>
+	<script src="js/meishiapp.js"></script>
+</head>
+<body ng-controller="indexCtrl">
+
+<div data-role="page" id="start" ng-controller="startCtrl" ng-swipe-left="jumpTo('main.html')">
+	<div id="setSize" style="height:{{myheight}};"><a href="main.html"><img src="img/start.jpg" alt=""></a></div>
+	<script type="text/javascript">
+		window.onresize=function(){
+			document.getElementById("setSize").style.height=window.innerHeight+"px";
+		};
+	</script>
+</div>
+</body>
+<script type="text/javascript">
+	/*
+	setInterval(function(){
+		document.getElementById("start").style.height=window.innerHeight+"px";
+	},1000);
+	window.onresize=function(){
+		document.getElementById("start").style.height=window.innerHeight+"px";
+	};
+
+		setStartSize();
+		window.onresize=setStartSize;
+		function setStartSize(){
+			$("#start div").height(window.innerHeight);
+
+			var ph=$("#start div").height(),
+					wh=window.innerHeight,
+					per=$("#start div").height()/$("#start div").width();
+			if(per<1){
+				ph>100&&($("#start div").css('width',ph+"px"));
+			}else{
+				$("#start div").css('width',"100%");
+				wh>100&&$("#start div").height(wh);
+			}
+
+		}
+	*/
+</script>
+</html>

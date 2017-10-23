@@ -1,4 +1,4 @@
-# Windows image file caches
+﻿# Windows image file caches
 Thumbs.db
 ehthumbs.db
 
@@ -43,6 +43,8 @@ Temporary Items
 .apdisk
 CSS禅意花园
 .idea
+jquery.mobile-1.4.5
+ext-4.2.1.883
 <<<<<<< HEAD
 *.rp
 *.rar

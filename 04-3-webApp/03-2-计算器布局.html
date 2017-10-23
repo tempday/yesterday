@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>Title</title>
+	<link href="jqm/jquery.mobile-1.4.5.css" rel="stylesheet">
+	<style>
+		.ui-grid-c>span:nth-child(3),.ui-grid-b>span:last-child{
+			padding-right: 5px;
+		}
+
+	</style>
+</head>
+<body>
+
+<div data-role="page">
+	<div data-role="header" data-position="fixed">
+		<h1>计算器</h1>
+	</div>
+	<div class="ui-content">
+		<input type="text" value="0." style="text-align: right;" pattern="^\d*(\.?)\d*$">
+		<div class="ui-grid-c">
+			<span class="ui-block-a"><button>←</button></span>
+			<span class="ui-block-b"><button>C</button></span>
+			<span class="ui-block-c"><button>/</button></span>
+			<span class="ui-block-d"><a href="#" data-role="button">*</a></span>
+		</div>
+		<div class="ui-grid-c">
+			<span class="ui-block-a"><button>1</button></span>
+			<span class="ui-block-b"><button>2</button></span>
+			<span class="ui-block-c"><button>3</button></span>
+			<span class="ui-block-d"><a href="#" data-role="button">+</a></span>
+		</div>
+		<div class="ui-grid-c">
+			<span class="ui-block-a"><button>4</button></span>
+			<span class="ui-block-b"><button>5</button></span>
+			<span class="ui-block-c"><button>6</button></span>
+			<span class="ui-block-d"><a href="#" data-role="button">-</a></span>
+		</div>
+		<div class="ui-grid-a">
+			<span class="ui-block-a" style="width: 75%;">
+				<div class="ui-grid-b">
+					<span class="ui-block-a"><button>7</button></span>
+					<span class="ui-block-b"><button>8</button></span>
+					<span class="ui-block-c"><button>9</button></span>
+				</div>
+				<div class="ui-grid-b">
+					<span class="ui-block-a" style="width: 66.6%;"><button>0</button></span>
+					<span class="ui-block-b"><button>.</button></span>
+				</div>
+			</span>
+			<span class="ui-block-b" style="width: 25%;"><a href="#" data-role="button" style="height: 80px;line-height: 80px">=</a></span>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h3>@right</h3>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="jqm/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript"></script>
+</html>

@@ -150,9 +150,8 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 		//
 	},1000);
 	window.onresize=function(){
-			console.log("sfs");
-				document.getElementById("startpage").style.height=window.innerHeight+"px";
-		}
+		document.getElementById("startpage").style.height=window.innerHeight+"px";
+	}
 
 
 +function ($) {
