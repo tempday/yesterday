@@ -4,6 +4,8 @@
 	<meta charset="utf-8" />
 	<title>京东详情页</title>
 	<meta name="generator" content="EverEdit" />
+	<!-- saved from url=(0014)about:internet -->
+	<link rel="icon" href="images/ico.png">
 	<link rel="stylesheet" href="css/common.css"/>
 	<link rel="stylesheet" href="css/jd_details.css"/>
 	<script src="scripts/JD_details.js"></script>
@@ -12,62 +14,62 @@
 	<!---1、页面顶部--->
 	<header id="top">
 		<div id="top_box" class="">
-			<img class="lf" src="Images/star.jpg" />
-			<a class="lf" href="#">收藏京东</a>
+			<img class="lf" src="images/star.jpg" />
+			<a class="lf" href="javascript:void(0)">收藏京东</a>
 			<!--文字列表右浮动-->
 			<ul class="rt">
 				<li>
 					您好，欢迎来到京东!
-					<a href="#">[登录]</a>
-					<a href="#">[免费注册]</a>
+					<a href="javascript:void(0)">[登录]</a>
+					<a href="javascript:void(0)">[免费注册]</a>
 				</li>
 				<li>
 					<b></b><!--左侧分割线-->
-					<a href="#">我的订单</a>
+					<a href="javascript:void(0)">我的订单</a>
 				</li>
 				<li class="vip">
 					<b></b>
-					<a href="#">会员俱乐部</a>
+					<a href="javascript:void(0)">会员俱乐部</a>
 				</li>
 				<li class="dakehu">
 					<b></b>
-					<a href="#">企业频道</a>
+					<a href="javascript:void(0)">企业频道</a>
 				</li>
 				<li class="app_jd">
 					<b></b>
-					<a href="#">手机京东</a>
+					<a href="javascript:void(0)">手机京东</a>
 					<div id="app_jd_items">
 						<div class="app">
-							<h3><a href="#">京东客户端</a></h3>
-							<a href="#"><img src="Images/app_jd_erwei.jpg"/></a>
-							<a href="#"><img src="Images/app_jd_wangyin.png"/></a>
+							<h3><a href="javascript:void(0)">京东客户端</a></h3>
+							<a href="javascript:void(0)"><img src="images/app_jd_erwei.jpg"/></a>
+							<a href="javascript:void(0)"><img src="images/app_jd_wangyin.png"/></a>
 						</div>
 					</div>
 				</li>
 				<li class="service">
 					<b></b>
-					<a href="#">客户服务</a>
+					<a href="javascript:void(0)">客户服务</a>
 					<ul id="service_items">
 						<li>
-							<a href="#">帮助中心</a>
+							<a href="javascript:void(0)">帮助中心</a>
 						</li>
 						<li>
-							<a href="#">售后服务</a>
+							<a href="javascript:void(0)">售后服务</a>
 						</li>
 						<li>
-							<a href="#">在线客服</a>
+							<a href="javascript:void(0)">在线客服</a>
 						</li>
 						<li>
-							<a href="#">投诉中心</a>
+							<a href="javascript:void(0)">投诉中心</a>
 						</li>
 						<li>
-							<a href="#">客服邮箱</a>
+							<a href="javascript:void(0)">客服邮箱</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<b></b>
-					<a href="#">网站导航</a>
+					<a href="javascript:void(0)">网站导航</a>
 				</li>
 			</ul>
 		</div>
@@ -75,22 +77,25 @@
 	<!---2、logo和搜索--->
 	<div id="top_main" class="">
 		<!--logo--> <!--设置左浮动:高度宽度都是零,不占据行空间,文字会自动避开-->
-		<a href="#" class="lf"><img src="Images/logo-201305.png" ></a>
+		<a href="javascript:void(0)" class="lf"><img src="images/logo-201305.png" ></a>
 		<!--搜索-->
 		<div id="search_box" class="">
-			<!--上:搜索-->
-			<div class="search">
-				<input class="txtsearch" type="text" name="">
-				<button>搜索</button>
-			</div>
+			<form>
+				<!--上:搜索-->
+				<div class="search">
+					<label for="keywords" hidden="hidden"></label>
+					<input class="txtsearch" type="text" id="keywords" required>
+					<button>搜索</button>
+				</div>
+			</form>
 			<!--下:热门搜索-->
-			<div id="" class="hot_words">
+			<div class="hot_words">
 				<span>热门搜索 :</span>
-				<a href="#">美的空调</a>
-				<a href="#">小米手机6</a>
-				<a href="#">波音A380</a>
-				<a href="#">彩虹电视</a>
-				<a href="#">男士服装</a>
+				<a href="javascript:void(0)">美的空调</a>
+				<a href="javascript:void(0)">小米手机6</a>
+				<a href="javascript:void(0)">波音A380</a>
+				<a href="javascript:void(0)">彩虹电视</a>
+				<a href="javascript:void(0)">男士服装</a>
 			</div>
 		</div>
 		<!--我的京东-->
@@ -104,7 +109,7 @@
 			<b></b>
 		</div>
 		<!--空标记清除上面标签浮动的影响-->
-		<div id="" class="clear">
+		<div class="clear">
 			
 		</div>
 	</div>
@@ -112,85 +117,85 @@
 	<nav id="nav">
 		<!--全部商品分类-->
 		<div id="category">
-			<a href="#">全部商品分类</a>
+			<a href="javascript:void(0)">全部商品分类</a>
 			<b></b>
 			<!--1.下拉列表-->
 			<ul id="cate_box">
 				<li>
-					<h3><a href="#">家用电器</a></h3>
-					<div id="" class="sub_cate_box">家用电器</div>
+					<h3><a href="javascript:void(0)">家用电器</a></h3>
+					<div class="sub_cate_box">家用电器</div>
 				</li>
 				<li>
-					<h3><a href="#">手机</a>/<a href="#">运营商</a>/<a href="#">数码</a></h3>
-					<div id="" class="sub_cate_box">手机</div>
+					<h3><a href="javascript:void(0)">手机</a>/<a href="javascript:void(0)">运营商</a>/<a href="javascript:void(0)">数码</a></h3>
+					<div class="sub_cate_box">手机</div>
 				</li>
 				<li>
-					<h3><a href="#">电脑</a>/<a href="#">办公</a></h3>
-					<div id="" class="sub_cate_box">电脑</div>
+					<h3><a href="javascript:void(0)">电脑</a>/<a href="javascript:void(0)">办公</a></h3>
+					<div class="sub_cate_box">电脑</div>
 				</li>
 				<li>
-					<h3><a href="#">家居</a>/<a href="#">家具</a>/<a href="#">家装</a>/<a href="#">厨具</a></h3>
-					<div id="" class="sub_cate_box">家居</div>
+					<h3><a href="javascript:void(0)">家居</a>/<a href="javascript:void(0)">家具</a>/<a href="javascript:void(0)">家装</a>/<a href="javascript:void(0)">厨具</a></h3>
+					<div class="sub_cate_box">家居</div>
 				</li>
 				<li>
-					<h3><a href="#">男装</a>/<a href="#">女装</a>/<a href="#">童装</a>/<a href="#">内衣</a></h3>
-					<div id="" class="sub_cate_box">男装</div>
+					<h3><a href="javascript:void(0)">男装</a>/<a href="javascript:void(0)">女装</a>/<a href="javascript:void(0)">童装</a>/<a href="javascript:void(0)">内衣</a></h3>
+					<div class="sub_cate_box">男装</div>
 				</li>
 				<li>
 					<h3>
-						<a href="#">图书</a>/<a href="#">音像</a>/<a href="#">电子书</a>
+						<a href="javascript:void(0)">图书</a>/<a href="javascript:void(0)">音像</a>/<a href="javascript:void(0)">电子书</a>
 					</h3>
 					<!--2.弹出菜单,子分类信息-->
 					<div class="sub_cate_box" >
 						<div class="close">x</div>
-						<div class="sub_cate_items" class="">
+						<div class="sub_cate_items">
 							<ul>
-								<li class="title"><a href="#">电子书</a></li>
-								<!--<li><a href="#">畅读VIP</a></li>-->
-								<li><a href="#">小说</a></li>
-								<li><a href="#">励志与成功</a></li>
-								<li><a href="#">经济金融</a></li>
-								<li><a href="#">文学</a></li>
-								<li><a href="#">社科</a></li>
-								<li><a href="#">婚恋</a></li>
-								<li><a href="#">两性</a></li>
-								<li><a href="#">外文原版</a></li>
-								<li><a href="#">免费</a></li>
+								<li class="title"><a href="javascript:void(0)">电子书</a></li>
+								<!--<li><a href="javascript:void(0)">畅读VIP</a></li>-->
+								<li><a href="javascript:void(0)">小说</a></li>
+								<li><a href="javascript:void(0)">励志与成功</a></li>
+								<li><a href="javascript:void(0)">经济金融</a></li>
+								<li><a href="javascript:void(0)">文学</a></li>
+								<li><a href="javascript:void(0)">社科</a></li>
+								<li><a href="javascript:void(0)">婚恋</a></li>
+								<li><a href="javascript:void(0)">两性</a></li>
+								<li><a href="javascript:void(0)">外文原版</a></li>
+								<li><a href="javascript:void(0)">免费</a></li>
 							</ul>
 							<ul>
-								<li class="title"><a href="#">电子读物</a></li>
-								<li><a href="#">励志与成功</a></li>
-								<li><a href="#">经济金融</a></li>
-								<li><a href="#">畅读VIP</a></li>
-								<li><a href="#">小说</a></li>
-								<li><a href="#">文学</a></li>
+								<li class="title"><a href="javascript:void(0)">电子读物</a></li>
+								<li><a href="javascript:void(0)">励志与成功</a></li>
+								<li><a href="javascript:void(0)">经济金融</a></li>
+								<li><a href="javascript:void(0)">畅读VIP</a></li>
+								<li><a href="javascript:void(0)">小说</a></li>
+								<li><a href="javascript:void(0)">文学</a></li>
 							</ul>
 							<ul>
-								<li class="title"><a href="#">科技</a></li>
-								<li><a href="#">计算机与互联网</a></li>
-								<li><a href="#">科普</a></li>
-								<li><a href="#">电子/通信</a></li>
-								<li><a href="#">建筑</a></li>
-								<li><a href="#">工业技术</a></li>
-								<li><a href="#">医学</a></li>
-								<li><a href="#">科学与自然</a></li>
+								<li class="title"><a href="javascript:void(0)">科技</a></li>
+								<li><a href="javascript:void(0)">计算机与互联网</a></li>
+								<li><a href="javascript:void(0)">科普</a></li>
+								<li><a href="javascript:void(0)">电子/通信</a></li>
+								<li><a href="javascript:void(0)">建筑</a></li>
+								<li><a href="javascript:void(0)">工业技术</a></li>
+								<li><a href="javascript:void(0)">医学</a></li>
+								<li><a href="javascript:void(0)">科学与自然</a></li>
 							</ul>
 						</div>
-						<div class="sub_cate_ad" class="rt">
-							<div id="" class="">
-								<img src="Images/cate_banner_01.jpg" />
+						<div class="sub_cate_ad">
+							<div>
+								<img src="images/cate_banner_01.jpg" />
 							</div>
 							<div class="">
-								<img src="Images/cate_banner_02.jpg" />
+								<img src="images/cate_banner_02.jpg" />
 							</div>
 							<h3>推荐品牌出版商/书店</h3>
 							<ul>
-								<li><a href="#">中华书店</a></li>
-								<li><a href="#">人民出版社</a></li>
-								<li><a href="#">世纪出版有限公司</a></li>
-								<li><a href="#">电子工业出版社</a></li>
-								<li><a href="#">三联书店</a></li>
-								<li><a href="#">少年儿童出版社</a></li>
+								<li><a href="javascript:void(0)">中华书店</a></li>
+								<li><a href="javascript:void(0)">人民出版社</a></li>
+								<li><a href="javascript:void(0)">世纪出版有限公司</a></li>
+								<li><a href="javascript:void(0)">电子工业出版社</a></li>
+								<li><a href="javascript:void(0)">三联书店</a></li>
+								<li><a href="javascript:void(0)">少年儿童出版社</a></li>
 							</ul>
 						</div>
 					</div>
@@ -199,13 +204,13 @@
 			
 		</div>
 		<ul class="lf">
-			<li><a href="#">首页</a></li>
-			<li><a href="#">服装城</a></li>
-			<li><a href="#">食品</a></li>
-			<li><a href="#">团购</a></li>
-			<li><a href="#">夺宝岛</a></li>
-			<li><a href="#">闪购</a></li>
-			<li><a href="#">金融</a></li>
+			<li><a href="javascript:void(0)">首页</a></li>
+			<li><a href="javascript:void(0)">服装城</a></li>
+			<li><a href="javascript:void(0)">食品</a></li>
+			<li><a href="javascript:void(0)">团购</a></li>
+			<li><a href="javascript:void(0)">夺宝岛</a></li>
+			<li><a href="javascript:void(0)">闪购</a></li>
+			<li><a href="javascript:void(0)">金融</a></li>
 		</ul>
 		<!--导航列表-->
 	</nav>
@@ -215,11 +220,11 @@
 	<section id="main">
 		<!--面包屑导航-->
 		<div  class="bread_crumb">
-			<h3><a href="#">家居家装</a></h3>
-			<a href="#">清洁用品</a><span>&gt;</span>
-			<a href="#">衣物清洁</a><span>&gt;</span>
-			<a href="#">卫新</a><span>&gt;</span>
-			<a href="#">卫新洗衣液</a>
+			<h3><a href="javascript:void(0)">家居家装</a></h3>
+			<a href="javascript:void(0)">清洁用品</a><span>&gt;</span>
+			<a href="javascript:void(0)">衣物清洁</a><span>&gt;</span>
+			<a href="javascript:void(0)">卫新</a><span>&gt;</span>
+			<a href="javascript:void(0)">卫新洗衣液</a>
 			
 		</div>
 		<!--产品介绍-->
@@ -227,22 +232,32 @@
 			<!--产品图像-->
 			<div id="privew">
 				<!--大图-->
-				<p><img src="Images/products/product_01.jpg"/></p>
+				<p>
+					<img src="images/products/product_01.jpg"/>
+					<span id="mask"></span>
+				</p>
+				<p id="showpic"></p>
+				<!--细节查看框-->
+				<p id="largeDiv">
+					<img src="images/products/product-s4-l.jpg"/>
+				</p>
 				<!--方向和小图-->
 				<div>
 					<a href="javascript:void(0)" class="forward_disabled"></a>
 					<a href="javascript:void(0)" class="backward" ></a>
 					<ul id="icon_list"><!--加id用js控制-->
-						<li><img src="Images/products/product-s1.jpg"/></li>
-						<li><img src="Images/products/product-s2.jpg"/></li>
-						<li><img src="Images/products/product-s3.jpg"/></li>
-						<li><img src="Images/products/product-s4.jpg"/></li>
-						<li><img src="Images/products/product-s1.jpg"/></li>
-						<li><img src="Images/products/product-s2.jpg"/></li>
-						<li><img src="Images/products/product-s3.jpg"/></li>
-						<li><img src="Images/products/product-s4.jpg"/></li>
+						<li><img src="images/products/product-s1.jpg"/></li>
+						<li><img src="images/products/product-s2.jpg"/></li>
+						<li><img src="images/products/product-s3.jpg"/></li>
+						<li><img src="images/products/product-s4.jpg"/></li>
+						<li><img src="images/products/product-s1.jpg"/></li>
+						<li><img src="images/products/product-s2.jpg"/></li>
+						<li><img src="images/products/product-s3.jpg"/></li>
+						<li><img src="images/products/product-s4.jpg"/></li>
 					</ul>
 				</div>
+
+
 			</div>
 			<div >
 				<h3>
@@ -255,7 +270,7 @@
 						<p>京&nbsp;&nbsp;东&nbsp;&nbsp;价：</p>
 						<div class="content">
 							<b>&yen;39.90</b>
-							<a href="#">(降价通知)</a>
+							<a href="javascript:void(0)">(降价通知)</a>
 						</div>
 					</li>
 					<!--商品编号-->
@@ -270,8 +285,8 @@
 						<p>商品评分：</p>
 						<div class="content">
 							<span></span>
-							<a href="#">(已有<b>47662</b>人评价)</a>
-							<a href="#" class="liuyan">留言咨询</a>
+							<a href="javascript:void(0)">(已有<b>47662</b>人评价)</a>
+							<a href="javascript:void(0)" class="liuyan">留言咨询</a>
 						</div>
 					</li>
 					<!--配送至-->
@@ -290,29 +305,29 @@
 									</ul>
 									<!--省列表-->
 									<ul id="provinces" class="store_items">
-										<li><a href="#">北京</a></li>
-										<li><a href="#">上海</a></li>
-										<li><a href="#">广东</a></li>
-										<li><a href="#">天津</a></li>
-										<li><a href="#">重庆</a></li>
-										<li><a href="#">四川</a></li>
-										<li><a href="#">山东</a></li>
-										<li><a href="#">辽宁</a></li>
-										<li><a href="#">河南</a></li>
-										<li><a href="#">河北</a></li>
-										<li><a href="#">内蒙古</a></li>
-										<li><a href="#">江苏</a></li>
-										<li><a href="#">湖南</a></li>
-										<li><a href="#">湖北</a></li>
-										<li><a href="#">黑龙江</a></li>
-										<li><a href="#">西藏</a></li>
-										<li><a href="#">云南</a></li>
+										<li><a href="javascript:void(0)">北京</a></li>
+										<li><a href="javascript:void(0)">上海</a></li>
+										<li><a href="javascript:void(0)">广东</a></li>
+										<li><a href="javascript:void(0)">天津</a></li>
+										<li><a href="javascript:void(0)">重庆</a></li>
+										<li><a href="javascript:void(0)">四川</a></li>
+										<li><a href="javascript:void(0)">山东</a></li>
+										<li><a href="javascript:void(0)">辽宁</a></li>
+										<li><a href="javascript:void(0)">河南</a></li>
+										<li><a href="javascript:void(0)">河北</a></li>
+										<li><a href="javascript:void(0)">内蒙古</a></li>
+										<li><a href="javascript:void(0)">江苏</a></li>
+										<li><a href="javascript:void(0)">湖南</a></li>
+										<li><a href="javascript:void(0)">湖北</a></li>
+										<li><a href="javascript:void(0)">黑龙江</a></li>
+										<li><a href="javascript:void(0)">西藏</a></li>
+										<li><a href="javascript:void(0)">云南</a></li>
 									</ul>
 									<ul id="cities" class="store_items">
-										<li></li>
+										<li>市</li>
 									</ul>
 									<ul id="districts" class="store_items">
-										<li></li>
+										<li>区/镇</li>
 									</ul>
 									<b id="store_close"></b>
 								</div>
@@ -326,9 +341,9 @@
 						<p>服&nbsp;&nbsp;&nbsp;务：</p>
 						<div class="content">
 							由<b>京东</b>发货并提供售后服务。支持：
-							<a href="#" class="xianshida"></a>
-							<a href="#" class="xiankuan"></a>
-							<a href="#" class="ziti"></a>
+							<a href="javascript:void(0)" class="xianshida"></a>
+							<a href="javascript:void(0)" class="xiankuan"></a>
+							<a href="javascript:void(0)" class="ziti"></a>
 						</div>
 					</li>
 				</ul>
@@ -337,12 +352,12 @@
 					<li id="choose_color">
 						<p>选择颜色：</p>
 						<div class="content">
-							<a href="#" class="selected">
+							<a href="javascript:void(0)" class="selected">
                                 <img src="images/products/p_icon_01.jpg" />
                                 <span>薰衣草</span>
                                 <b></b>
                             </a>
-                            <a href="#" >
+                            <a href="javascript:void(0)" >
                                 <img src="images/products/p_icon_02.jpg" />
                                 <span>索菲亚玫瑰</span>
                                 <b></b>
@@ -353,7 +368,8 @@
 						<p>购买数量：</p>
 						<div class="content">
 							<a href="javascript:void(0)" class="btn_reduce"></a>
-							<input type="text" value="0"/>
+							<label for="purchnum" hidden="hidden"></label>
+							<input type="text" value="0" id="purchnum"/>
 							<a href="javascript:void(0)" class="btn_add"></a>
                         </div>  
 					</li>
@@ -370,46 +386,46 @@
 			<div id="related_sorts" >
 				<p>相关分类</p>
 				<ul class="m_content">
-					<li><a href="#">纸品湿巾</a></li>
-					<li><a href="#">衣物清洁</a></li>
-					<li><a href="#">清洁工具</a></li>
-					<li><a href="#">驱虫用品</a></li>
-					<li><a href="#">家庭清洁</a></li>
-					<li><a href="#">皮具护理</a></li>
-					<li><a href="#">一次性用品</a></li>
+					<li><a href="javascript:void(0)">纸品湿巾</a></li>
+					<li><a href="javascript:void(0)">衣物清洁</a></li>
+					<li><a href="javascript:void(0)">清洁工具</a></li>
+					<li><a href="javascript:void(0)">驱虫用品</a></li>
+					<li><a href="javascript:void(0)">家庭清洁</a></li>
+					<li><a href="javascript:void(0)">皮具护理</a></li>
+					<li><a href="javascript:void(0)">一次性用品</a></li>
 				</ul>
 			</div>
 			<!--最终购买-->
-			<div id="" class="view_buy">
+			<div class="view_buy">
 				<p>浏览了该商品的用户最终购买</p>
 				<ul>
 					<li>
 						<p><img src="images/products/p001.jpg" /></p>
-						<a href="#">卫新 护色洗衣液 2kg 袋装</a>
+						<a href="javascript:void(0)">卫新 护色洗衣液 2kg 袋装</a>
 						<h6>&yen;39.90</h6>
 					</li>
 					<li>
 						<p><img src="images/products/p002.jpg" /></p>
-						<a href="#">卫新 护色洗衣液 2kg 袋装</a>
+						<a href="javascript:void(0)">卫新 护色洗衣液 2kg 袋装</a>
 						<h6>&yen;25.80</h6>
 					</li>
 					<li>
 						<p><img src="images/products/p004.jpg" /></p>
-						<a href="#">卫新 护色洗衣液 2kg 袋装</a>
+						<a href="javascript:void(0)">卫新 护色洗衣液 2kg 袋装</a>
 						<h6>&yen;12.00</h6>
 					</li>
 					<li>
 						<p><img src="images/products/p005.jpg" /></p>
-						<a href="#">卫新 护色洗衣液 2kg 袋装</a>
+						<a href="javascript:void(0)">卫新 护色洗衣液 2kg 袋装</a>
 						<h6>&yen;55.30</h6>
 					</li>
 				</ul>
 			</div>
 			<!--其他图像-->
 			<ul id="left_shows">
-				<li><a href="#"><img src="images/products/left_p001.jpg" /></a></li>
-				<li><a href="#"><img src="images/products/left_p002.jpg" /></a></li>
-				<li><a href="#"><img src="images/products/left_p003.jpg" /></a></li>
+				<li><a href="javascript:void(0)"><img src="images/products/left_p001.jpg" /></a></li>
+				<li><a href="javascript:void(0)"><img src="images/products/left_p002.jpg" /></a></li>
+				<li><a href="javascript:void(0)"><img src="images/products/left_p003.jpg" /></a></li>
 			</ul>
 		</div>
 		<!--右侧产品信息-->
@@ -417,39 +433,39 @@
 			<!--优惠套装-->
 			<div id="favorable_suit" class="">
 				<p class="main_tabs">优惠套装</p>
-				<div id="" class="m_content">
+				<div class="m_content">
 					<!--当前要购买的商品-->
-					<div id="" class="master">
+					<div class="master">
 						<span class="add"></span>
-						<a href="#"><img src="images/products/product_01_m.jpg" /></a>
-						<p><a href="#">卫新 薰衣草洗衣液 4.26kg</a></p>
+						<a href="javascript:void(0)"><img src="images/products/product_01_m.jpg" /></a>
+						<p><a href="javascript:void(0)">卫新 薰衣草洗衣液 4.26kg</a></p>
 					</div>
 					<!--配套商品-->
 					<ul class="suit">
 						<li>
 							<span class="add"></span>
-							<a href="#"><img src="images/products/product_02_m.jpg" /></a>
-							<p><a href="#">卫新 去静电柔顺剂 清怡樱花袋装 500</a></p>
+							<a href="javascript:void(0)"><img src="images/products/product_02_m.jpg" /></a>
+							<p><a href="javascript:void(0)">卫新 去静电柔顺剂 清怡樱花袋装 500</a></p>
 						</li>
 						<li>
 							<span class="add"></span>
-							<a href="#"><img src="images/products/product_03_m.jpg" /></a>
-							<p><a href="#">威露士（Walch） 手洗洗衣液单袋装 500ml</a></p>
+							<a href="javascript:void(0)"><img src="images/products/product_03_m.jpg" /></a>
+							<p><a href="javascript:void(0)">威露士（Walch） 手洗洗衣液单袋装 500ml</a></p>
 						</li>
 						<li>
-							<a href="#"><img src="images/products/product_04_m.jpg" /></a>
-							<p><a href="#">威露士（Walch） 衣物家居消毒液 3</a></p>
+							<a href="javascript:void(0)"><img src="images/products/product_04_m.jpg" /></a>
+							<p><a href="javascript:void(0)">威露士（Walch） 衣物家居消毒液 3</a></p>
 						</li>
 					</ul>
 					<!--套装价格-->
-					<div id="" class="infos">
+					<div class="infos">
 						<span class="add"></span>
-						<h1><a href="#">威露士组合</a></h1>
+						<h1><a href="javascript:void(0)">威露士组合</a></h1>
 						<p>套装价：<b class="suit_price">105.30</b></p>
 						<p>京东价：<del class="jd_price">142.40</del></p>
 						<p>立即节省：<b class="save_price">37.10</b></p>
-						<div id="" class="btn">
-							<a href="#" class="btn_buy">购买套装</a>
+						<div class="btn">
+							<a href="javascript:void(0)" class="btn_buy">购买套装</a>
 						</div>
 					</div>
 				</div>
@@ -458,11 +474,11 @@
 			<div id="product_detail" >
 				<!--页签-->
 				<ul class="main_tabs">
-					<li class="current"><a href="#">商品介绍</a></li>
-					<li><a href="#">规格参数</a></li>
-					<li><a href="#">包装清单</a></li>
-					<li><a href="#">商品评价(43390)</a></li>
-					<li><a href="#">售后保障</a></li>
+					<li class="current"><a href="javascript:void(0)">商品介绍</a></li>
+					<li><a href="javascript:void(0)">规格参数</a></li>
+					<li><a href="javascript:void(0)">包装清单</a></li>
+					<li><a href="javascript:void(0)">商品评价(43390)</a></li>
+					<li><a href="javascript:void(0)">售后保障</a></li>
 				</ul>
 				<!--产品介绍-->
 				<div id="product_info" class="clear">
@@ -470,7 +486,7 @@
 					<ul class="detail_list">
 						<li>商品名称：卫新洗衣液</li>
 						<li>商品编号：1039778</li>
-						<li>品牌：<a href="#">卫新</a></li>
+						<li>品牌：<a href="javascript:void(0)">卫新</a></li>
 						<li>上架时间：2014-01-23 16:28:06</li>
 						<li>商品毛重：4.55kg</li>
 						<li>商品产地：广东省从化市</li>
@@ -479,28 +495,28 @@
 						<li>香型：香味</li>
 					</ul>
 					<!--图片-->
-					<div id="" class="detail_content">
-						<p><a href="#"><img src="images/products/weilushi.jpg" /></a></p>
+					<div class="detail_content">
+						<p><a href="javascript:void(0)"><img src="images/products/weilushi.jpg" /></a></p>
 						<!--虚线-->
 						<div class="dotted_split"></div>
 						<div class="jd_split">
 							<b>产品特色</b>
 							<span>Selling Point</span>
 						</div>
-						<p><a href="#"><img src="images/products/product_02.jpg" /></a></p>
-						<p><a href="#"><img src="images/products/product_03.jpg" /></a></p>
+						<p><a href="javascript:void(0)"><img src="images/products/product_02.jpg" /></a></p>
+						<p><a href="javascript:void(0)"><img src="images/products/product_03.jpg" /></a></p>
 						<div class="dotted_split"></div>
 						<div class="jd_split">
 							<b>适用范围</b>
 							<span>Heritage</span>
 						</div>
-						<p><a href="#"><img src="images/products/product_04.jpg" /></a></p>
+						<p><a href="javascript:void(0)"><img src="images/products/product_04.jpg" /></a></p>
 						<div class="dotted_split"></div>
 						<div class="jd_split">
 							<b>使用说明</b>
 							<span>Instructions</span>
 						</div>
-						<p><a href="#"><img src="images/products/product_05.jpg" /></a></p>
+						<p><a href="javascript:void(0)"><img src="images/products/product_05.jpg" /></a></p>
 						
 					</div>
 					
@@ -573,7 +589,7 @@
 						</dl>
 					</div>
 					<!--买家印象：-->
-					<div id="" class="buyers">
+					<div class="buyers">
 						<p>买家印象：</p>
 						<ul>
 							<li>比超市便宜<span>(8450)</span></li>
@@ -585,20 +601,20 @@
 						</ul>
 					</div>
 					<!--拿京豆-->
-					<div id="" class="btns">
+					<div class="btns">
 						您可对已购商品进行评价
-						<a href="#">发评价拿京豆</a>
+						<a href="javascript:void(0)">发评价拿京豆</a>
 					</div>
 				</div>	
 			</div>
 			<!--大评价详细-->
 			<div id="comment_list" >
 				<ul class="main_tabs">
-					<li class="current"><a href="#">全部评价(49639)</a></li>
-					<li><a href="#">好评(48232)</a></li>
-					<li><a href="#">中评(992)</a></li>
-					<li><a href="#">差评(415)</a></li>
-					<li><a href="#">有晒单的评价(962)</a></li>
+					<li class="current"><a href="javascript:void(0)">全部评价(49639)</a></li>
+					<li><a href="javascript:void(0)">好评(48232)</a></li>
+					<li><a href="javascript:void(0)">中评(992)</a></li>
+					<li><a href="javascript:void(0)">差评(415)</a></li>
+					<li><a href="javascript:void(0)">有晒单的评价(962)</a></li>
 				</ul>
 				<!--金牌会员-->
 				<div id="comment_0" class="">
@@ -606,7 +622,7 @@
 					<div class="comment_item">
 						<!--会员-->
 						<ul>
-							<li><a href="#"><img src="Images/user_01.jpg" /></a></li>
+							<li><a href="javascript:void(0)"><img src="images/user_01.jpg" /></a></li>
 							<li>Cherry2008</li>
 							<li><b>金牌会员</b><span>广东</span></li>
 						</ul>
@@ -614,7 +630,7 @@
 						<div >
 							<div class="topic">
 								<p class="star4"></p>
-								<a href="#">2014-08-12 19:01</a>
+								<a href="javascript:void(0)">2014-08-12 19:01</a>
 							</div>
 							<table>
 								<tr>
@@ -628,11 +644,11 @@
 								<tr>
 									<td>用户晒单：</td>
 									<td class="comment_show">
-										<a href="#"><img src="images/products/show_01.jpg" /></a>
-										<a href="#"><img src="images/products/show_02.jpg" /></a>
-										<a href="#"><img src="images/products/show_03.jpg" /></a>
+										<a href="javascript:void(0)"><img src="images/products/show_01.jpg" /></a>
+										<a href="javascript:void(0)"><img src="images/products/show_02.jpg" /></a>
+										<a href="javascript:void(0)"><img src="images/products/show_03.jpg" /></a>
 										共3张图片
-										<a href="#">查看晒单></a>
+										<a href="javascript:void(0)">查看晒单></a>
 									</td>
 								</tr>
 								<tr>
@@ -641,17 +657,17 @@
 								</tr>
 							</table>
 							<p class="btns">
-								<a href="#">有用(3)</a>
-								<a href="#">回复(0)</a>
+								<a href="javascript:void(0)">有用(3)</a>
+								<a href="javascript:void(0)">回复(0)</a>
 							</p>
 						</div>
-						<div id="" class="corner"></div>
+						<div class="corner"></div>
 					</div>
 					<!--单个完整个人晒单-->
 					<div class="comment_item">
 						<!--会员-->
 						<ul>
-							<li><a href="#"><img src="Images/user_01.jpg" /></a></li>
+							<li><a href="javascript:void(0)"><img src="images/user_01.jpg" /></a></li>
 							<li>Cherry2008</li>
 							<li><b>金牌会员</b><span>广东</span></li>
 						</ul>
@@ -659,7 +675,7 @@
 						<div >
 							<div class="topic">
 								<p class="star4"></p>
-								<a href="#">2014-08-12 19:01</a>
+								<a href="javascript:void(0)">2014-08-12 19:01</a>
 							</div>
 							<table>
 								<tr>
@@ -673,11 +689,11 @@
 								<tr>
 									<td>用户晒单：</td>
 									<td class="comment_show">
-										<a href="#"><img src="images/products/show_01.jpg" /></a>
-										<a href="#"><img src="images/products/show_02.jpg" /></a>
-										<a href="#"><img src="images/products/show_03.jpg" /></a>
+										<a href="javascript:void(0)"><img src="images/products/show_01.jpg" /></a>
+										<a href="javascript:void(0)"><img src="images/products/show_02.jpg" /></a>
+										<a href="javascript:void(0)"><img src="images/products/show_03.jpg" /></a>
 										共3张图片
-										<a href="#">查看晒单></a>
+										<a href="javascript:void(0)">查看晒单></a>
 									</td>
 								</tr>
 								<tr>
@@ -686,43 +702,43 @@
 								</tr>
 							</table>
 							<p class="btns">
-								<a href="#">有用(3)</a>
-								<a href="#">回复(0)</a>
+								<a href="javascript:void(0)">有用(3)</a>
+								<a href="javascript:void(0)">回复(0)</a>
 							</p>
 						</div>
-						<div id="" class="corner"></div>
+						<div class="corner"></div>
 					</div>
 				
 				</div>
 				<!--页码-->
 				<div>
-					<a href="#" class="comment_show_all">[查看全部评价]</a>
+					<a href="javascript:void(0)" class="comment_show_all">[查看全部评价]</a>
 					<div id="pages" >
-						<a href="#" class="current">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">4</a>
-						<a href="#">5</a>
-						<a href="#">6</a>
-						<a href="#">....</a>
-						<a href="#">9527</a>
-						<a href="#">下一页</a>
+						<a href="javascript:void(0)" class="current">1</a>
+						<a href="javascript:void(0)">2</a>
+						<a href="javascript:void(0)">3</a>
+						<a href="javascript:void(0)">4</a>
+						<a href="javascript:void(0)">5</a>
+						<a href="javascript:void(0)">6</a>
+						<a href="javascript:void(0)">....</a>
+						<a href="javascript:void(0)">9527</a>
+						<a href="javascript:void(0)">下一页</a>
 					</div>
 				</div>
 			</div>
 			<!--购买咨询-->
-			<div id="comment_list" class="clear">
+			<div id="questrion" class="clear">
 				<ul class="main_tabs">
-					<li class="current"><a href="#">全部购买咨询</a></li>
-					<li><a href="#">商品咨询</a></li>
-					<li><a href="#">库存配送</a></li>
-					<li><a href="#">支付</a></li>
-					<li><a href="#">发票保修</a></li>
-					<li><a href="#">支付帮助</a></li>
-					<li><a href="#">配送帮助</a></li>
-					<li><a href="#">常见问题</a></li>
+					<li class="current"><a href="javascript:void(0)">全部购买咨询</a></li>
+					<li><a href="javascript:void(0)">商品咨询</a></li>
+					<li><a href="javascript:void(0)">库存配送</a></li>
+					<li><a href="javascript:void(0)">支付</a></li>
+					<li><a href="javascript:void(0)">发票保修</a></li>
+					<li><a href="javascript:void(0)">支付帮助</a></li>
+					<li><a href="javascript:void(0)">配送帮助</a></li>
+					<li><a href="javascript:void(0)">常见问题</a></li>
 					<li><input type="text" placeholder="请输入关键词" id="txt_consult_search"/><button id="btn_consult_search">搜索</button></li>
-					<li><a href="#" id="add_consult">发表咨询</a></li>
+					<li><a href="javascript:void(0)" id="add_consult">发表咨询</a></li>
 				</ul>
 				<!--产品介绍-->
 				<div class="m_content">
@@ -730,7 +746,7 @@
 若由此给您带来不便请多多谅解，谢谢！
 				</div>
 				<div id="consult_0">
-					<p>共搜索到<span>14</span>条相关咨询<a href="#">返回</a></p>
+					<p>共搜索到<span>14</span>条相关咨询<a href="javascript:void(0)">返回</a></p>
 					<h4>声明：以下回复仅对提问者3天内有效，其他网友仅供参考！</h4>
 				</div>
 				<!--网友咨询-->
@@ -742,7 +758,7 @@
 						</tr>
 						<tr>
 							<td>咨询内容：</td>
-							<td><a href="#">怎么买呀？</a></td>
+							<td><a href="javascript:void(0)">怎么买呀？</a></td>
 						</tr>
 						<tr>
 							<td>京东回复：</td>
@@ -759,7 +775,7 @@
 						</tr>
 						<tr>
 							<td>咨询内容：</td>
-							<td><a href="#">请问一箱里面装几瓶?</a></td>
+							<td><a href="javascript:void(0)">请问一箱里面装几瓶?</a></td>
 						</tr>
 						<tr>
 							<td>京东回复：</td>
@@ -776,7 +792,7 @@
 						</tr>
 						<tr>
 							<td>咨询内容：</td>
-							<td><a href="#">感谢客服.</a></td>
+							<td><a href="javascript:void(0)">感谢客服.</a></td>
 						</tr>
 						<tr>
 							<td>京东回复：</td>
@@ -786,18 +802,18 @@
 				</div>
 				<!--更多咨询-->
 				<div id="consult_extra">
-					<p>购买之前，如有问题，请咨询<a href="#" class="liuyan">留言咨询</a>，或 <a href="#">[发表咨询]</a></p>
-					<span>共101条<a href="#">浏览所有咨询信息>></a></span>
+					<p>购买之前，如有问题，请咨询<a href="javascript:void(0)" class="liuyan">留言咨询</a>，或 <a href="javascript:void(0)">[发表咨询]</a></p>
+					<span>共101条<a href="javascript:void(0)">浏览所有咨询信息>></a></span>
 				</div>
 			</div>
 			<!--网友讨论圈-->
 			<div id="discuss" >
 				<ul class="main_tabs">
-					<li class="current"><a href="#">网友讨论圈</a></li>
-					<li><a href="#">晒单帖</a></li>
-					<li><a href="#">讨论帖</a></li>
-					<li><a href="#">问答贴</a></li>
-					<li><a href="#">圈子贴</a></li>
+					<li class="current"><a href="javascript:void(0)">网友讨论圈</a></li>
+					<li><a href="javascript:void(0)">晒单帖</a></li>
+					<li><a href="javascript:void(0)">讨论帖</a></li>
+					<li><a href="javascript:void(0)">问答贴</a></li>
+					<li><a href="javascript:void(0)">圈子贴</a></li>
 				</ul>
 				<table id="discuss-datas">
 					<thead>
@@ -810,27 +826,27 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="col1"><b class="topic shai"></b><a href="#">好大一瓶，不错</a></td>
+							<td class="col1"><b class="topic shai"></b><a href="javascript:void(0)">好大一瓶，不错</a></td>
 							<td>0/0</td>
-							<td><a href="#">2001年冬天</a></td>
+							<td><a href="javascript:void(0)">2001年冬天</a></td>
 							<td>2014-11-19</td>
 						</tr>
 						<tr>
-							<td class="col1"><b class="topic lun"></b><a href="#">洗衣液超级划算，活动给力</a></td>
+							<td class="col1"><b class="topic lun"></b><a href="javascript:void(0)">洗衣液超级划算，活动给力</a></td>
 							<td>0/0</td>
-							<td><a href="#">xpx2001</a></td>
+							<td><a href="javascript:void(0)">xpx2001</a></td>
 							<td>2014-11-19</td>
 						</tr>
 						<tr>
-							<td class="col1"><b class="topic lun"></b><a href="#">洗衣液超级划算，活动给力</a></td>
+							<td class="col1"><b class="topic lun"></b><a href="javascript:void(0)">洗衣液超级划算，活动给力</a></td>
 							<td>0/0</td>
-							<td><a href="#">xpx2001</a></td>
+							<td><a href="javascript:void(0)">xpx2001</a></td>
 							<td>2014-11-19</td>
 						</tr>
 						<tr>
-							<td class="col1"><b class="topic shai"></b><a href="#">瓶子好大，不错</td>
+							<td class="col1"><b class="topic shai"></b><a href="javascript:void(0)">瓶子好大，不错</a></td>
 							<td>0/0</td>
-							<td><a href="#">2001年冬天</a></td>
+							<td><a href="javascript:void(0)">2001年冬天</a></td>
 							<td>2014-11-19</td>
 						</tr>
 					</tbody>
@@ -839,10 +855,10 @@
 				<!--更多话题-->
 				<div id="discuss_extra">
 					<div class="newdiscuss">
-						<span>有问题要与其他用户讨论？</span><a href="#">[发表帖子]</a>
+						<span>有问题要与其他用户讨论？</span><a href="javascript:void(0)">[发表帖子]</a>
 					</div>
 					<div class="totaldiscuss">
-						<span>共900个话题</span><a href="#"> 浏览全部话题>></a>
+						<span>共900个话题</span><a href="javascript:void(0)"> 浏览全部话题>></a>
 					</div>
 					
 				</div>
@@ -851,44 +867,44 @@
 	</section>
 	<!------最近浏览------>
 	<footer id="recent_view">
-		<p><span >最近浏览</span><b class="rt"><a href="#">更多浏览记录</a></b></p>
+		<p><span >最近浏览</span><b class="rt"><a href="javascript:void(0)">更多浏览记录</a></b></p>
 		<!--浏览图像列表-->
 		<ul>
 			<li>
 				<p><img src="images/products/p_small_001.jpg"/></p>
-				<h6>&yen;49.90<h6>
+				<h6>&yen;49.90</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_002.jpg"/></p>
-				<h6>&yen;18.00<h6>
+				<h6>&yen;18.00</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_003.jpg"/></p>
-				<h6>&yen;22.60<h6>
+				<h6>&yen;22.60</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_004.jpg"/></p>
-				<h6>&yen;23.10<h6>
+				<h6>&yen;23.10</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_005.jpg"/></p>
-				<h6>&yen;36.50<h6>
+				<h6>&yen;36.50</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_006.jpg"/></p>
-				<h6>&yen;55.90<h6>
+				<h6>&yen;55.90</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_007.jpg"/></p>
-				<h6>&yen;89.55<h6>
+				<h6>&yen;89.55</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_008.jpg"/></p>
-				<h6>&yen;35.50<h6>
+				<h6>&yen;35.50</h6>
 			</li>
 			<li>
 				<p><img src="images/products/p_small_009.jpg"/></p>
-				<h6>&yen;149.90<h6>
+				<h6>&yen;149.90</h6>
 			</li>
 		</ul>
 	</footer>
@@ -898,112 +914,112 @@
 		<p class="shopping_guide"></p>
 		<ul>
 			<li><b>购物指南</b></li>
-			<li><a href="#">购物流程</a></li>
-			<li><a href="#">会员介绍</a></li>
-			<li><a href="#">团购/机票</a></li>
-			<li><a href="#">常见问题</a></li>
-			<li><a href="#">大家电</a></li>
-			<li><a href="#">联系客服</a></li>
+			<li><a href="javascript:void(0)">购物流程</a></li>
+			<li><a href="javascript:void(0)">会员介绍</a></li>
+			<li><a href="javascript:void(0)">团购/机票</a></li>
+			<li><a href="javascript:void(0)">常见问题</a></li>
+			<li><a href="javascript:void(0)">大家电</a></li>
+			<li><a href="javascript:void(0)">联系客服</a></li>
 			
 		</ul>
 		<p class="send_type"></p>
 		<ul>
 			<li><b>配送方式</b></li>
-			<li><a href="#">上门自提</a></li>
-			<li><a href="#">211限时达</a></li>
-			<li><a href="#">配送服务查询</a></li>
-			<li><a href="#">配送费收取标准</a></li>
-			<li><a href="#">海外配送</a></li>
+			<li><a href="javascript:void(0)">上门自提</a></li>
+			<li><a href="javascript:void(0)">211限时达</a></li>
+			<li><a href="javascript:void(0)">配送服务查询</a></li>
+			<li><a href="javascript:void(0)">配送费收取标准</a></li>
+			<li><a href="javascript:void(0)">海外配送</a></li>
 			
 		</ul>
 		<p class="pay_type"></p>
 		<ul>
 			<li><b>支付方式</b></li>
-			<li><a href="#">货到付款</a></li>
-			<li><a href="#">在线支付</a></li>
-			<li><a href="#">分期付款</a></li>
-			<li><a href="#">邮局汇款</a></li>
-			<li><a href="#">公司转账</a></li>
+			<li><a href="javascript:void(0)">货到付款</a></li>
+			<li><a href="javascript:void(0)">在线支付</a></li>
+			<li><a href="javascript:void(0)">分期付款</a></li>
+			<li><a href="javascript:void(0)">邮局汇款</a></li>
+			<li><a href="javascript:void(0)">公司转账</a></li>
 			
 		</ul>
 		<p class="sale_service"></p>
 		<ul>
 			<li><b>售后服务</b></li>
-			<li><a href="#">售后政策</a></li>
-			<li><a href="#">价格保护</a></li>
-			<li><a href="#">退款说明</a></li>
-			<li><a href="#">返修/退换货</a></li>
-			<li><a href="#">取消订单</a></li>
+			<li><a href="javascript:void(0)">售后政策</a></li>
+			<li><a href="javascript:void(0)">价格保护</a></li>
+			<li><a href="javascript:void(0)">退款说明</a></li>
+			<li><a href="javascript:void(0)">返修/退换货</a></li>
+			<li><a href="javascript:void(0)">取消订单</a></li>
 			
 		</ul>
 		<p class="special_service"></p>
 		<ul>
 			<li><b>特色服务</b></li>
-			<li><a href="#">夺宝岛</a></li>
-			<li><a href="#">DIY装机</a></li>
-			<li><a href="#">延保服务</a></li>
-			<li><a href="#">京东E卡</a></li>
-			<li><a href="#">节能补贴</a></li>
-			<li><a href="#">京东通信</a></li>
+			<li><a href="javascript:void(0)">夺宝岛</a></li>
+			<li><a href="javascript:void(0)">DIY装机</a></li>
+			<li><a href="javascript:void(0)">延保服务</a></li>
+			<li><a href="javascript:void(0)">京东E卡</a></li>
+			<li><a href="javascript:void(0)">节能补贴</a></li>
+			<li><a href="javascript:void(0)">京东通信</a></li>
 			
 		</ul>
 	</footer>
 	<!---7、页面底部-备案号等--->
 	<footer id="footer">
-		<div id="">
+		<div>
 			<ul >
 				<li>
-					<a href="#">关于我们</a>
+					<a href="javascript:void(0)">关于我们</a>
 				</li>
 				<li >
 					<b></b><!--左侧分割线-->
-					<a href="#">联系我们</a>
+					<a href="javascript:void(0)">联系我们</a>
 				</li>
 				<li >
 					<b></b>
-					<a href="#">人才招聘</a>
+					<a href="javascript:void(0)">人才招聘</a>
 				</li>
 				<li >
 					<b></b>
-					<a href="#">商家入驻</a>
+					<a href="javascript:void(0)">商家入驻</a>
 				</li>
 				<li >
 					<b></b>
-					<a href="#">京东社区</a>
+					<a href="javascript:void(0)">京东社区</a>
 				</li>
 				<li>
 					<b></b>
-					<a href="#">京东公益</a>
+					<a href="javascript:void(0)">京东公益</a>
 				</li>
 				<li>
 					<b></b>
-					<a href="#">广告服务</a>
+					<a href="javascript:void(0)">广告服务</a>
 				</li>
 				<li>
 					<b></b>
-					<a href="#">手机京东</a>
+					<a href="javascript:void(0)">手机京东</a>
 				</li>
 				<li>
 					<b></b>
-					<a href="#">友情链接</a>
+					<a href="javascript:void(0)">友情链接</a>
 				</li>
 				<li>
 					<b></b>
-					<a href="#">销售联盟</a>
+					<a href="javascript:void(0)">销售联盟</a>
 				</li>
 			</ul>
 		</div>
-		<div id="" class="desc">
+		<div class="desc">
 			北京市公安局朝阳分局备案编号110105014669 | 京ICP证070359号 | 互联网药品信息服务资格证编号(京)-非经营性-2011-0034<br>
 音像制品经营许可证苏宿批005号 | 出版物经营许可证编号新出发(苏)批字第N-012号 | 互联网出版许可证编号新出网证(京)字150号<br>
 网络文化经营许可证京网文[2011]0168-061号Copyright © 2004-2014 京东JD.com 版权所有<br>
 京东旗下网站：English Site拍拍网网银在线
 		</div>
-		<div id="" class="">
-			<img src="Images/cx.jpg" />
-			<img src="Images/cy.jpg" />
-			<img src="Images/kx.jpg" />
-			<img src="Images/jy.jpg" />
+		<div class="">
+			<img src="images/cx.jpg" />
+			<img src="images/cy.jpg" />
+			<img src="images/kx.jpg" />
+			<img src="images/jy.jpg" />
 		</div>
 	</footer>
 	

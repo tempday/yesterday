@@ -35,8 +35,8 @@
 	left:0;
 	top:0;
 	width:352px;
-	overflow: hidden;
 }
+/*左大图*/
 #privew p{
 	border: 1px solid #ddd;
 	width:350px;
@@ -44,17 +44,54 @@
 	text-align: center;
 	line-height:350px;
 	margin-bottom:5px;
+	position: relative;
 }
+/*大图细节预览*/
+#privew #largeDiv,#privew #showpic {
+	position: absolute;
+	left: 360px;
+	top: 0;
+	z-index: 1;
+	display: none;
+	overflow: hidden;
+}
+#largeDiv img{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 700px;
+	height: 700px;
+}
+#privew #showpic {
+	display: block;
+	left: 0;
+	z-index: 10;
+}
+
+#privew p span{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 50%;
+	height:50%;
+	z-index: 1;
+	cursor: move;
+	background: url("../images/mask.png") repeat transparent;
+	background-attachment:scroll;
+	display: none;
+}
+/*遮罩层*/
 #privew div{
 	width:352px;
 	height:54px;
+	overflow: hidden;
 	position: relative;
 }
 /*方向按钮*/
 #privew a.forward,#privew a.backward,#privew a.forward_disabled,#privew a.backward_disabled{
 	width:17px;
 	height:54px;
-	background:url(../Images/iconlist_1.png) no-repeat;
+	background:url('../images/iconlist_1.png') no-repeat;
 	display: block;
 	z-index:10;
 	position: absolute;
@@ -87,9 +124,9 @@
 #privew #icon_list{
 	width:496px;
 	height:54px;
-	margin:0px auto;
+	margin:0 auto;
 	position: absolute;
-	top:0px;
+	top:0;
 	left:20px;
 	overflow: hidden;
 	transition:left .3s;
@@ -105,7 +142,7 @@
 	border: 1px solid #cecfce;
 }
 #privew #icon_list li img:hover{
-	padding:0px;
+	padding:0;
 	border: 2px solid #e4393c;
 }
 /*产品标题*/
@@ -161,11 +198,11 @@ ul#summary{
 	height:14px;
 	display: inline-block;
 	margin-top:3px;
-	background:url(../Images/iconlist_1.png) no-repeat -123px -239px;
+	background:url(../images/iconlist_1.png) no-repeat -123px -239px;
 	margin-right:5px;
 }
 #summary_grade a.liuyan,a.liuyan{
-	background:url(../Images/words.png) no-repeat;
+	background:url(../images/words.png) no-repeat;
 	color:#ccc;
 	padding-left:27px;
 	margin:-3px 0 0 5px;
@@ -200,7 +237,7 @@ ul#summary{
 	top:0;
 	width:17px;
 	height:24px;
-	background:url(../Images/iconlist_1.png) no-repeat -264px -188px;
+	background:url(../images/iconlist_1.png) no-repeat -264px -188px;
 	
 }
 #stock_select:hover h3{
@@ -232,7 +269,7 @@ ul#summary{
 	right:-8px;/*定位到右边用 right*/
 	height:17px;
 	width:17px;
-	background:url(../Images/iconlist_1.png) no-repeat -257px -86px;
+	background:url(../images/iconlist_1.png) no-repeat -257px -86px;
 	cursor:pointer;
 }
 /*选择地址栏*/
@@ -260,7 +297,7 @@ ul#summary{
 	right:4px;
 	height:5px;
 	width:7px;
-	background:url(../Images/iconlist_5.png) no-repeat 0 -35px;
+	background:url(../images/iconlist_5.png) no-repeat 0 -35px;
 	
 }
 #store_tabs li.hover{
@@ -274,6 +311,7 @@ ul#summary{
 }
 #store_content ul#provinces{
 	display:block;
+	overflow: hidden;
 }
 /*省列表*/
 #store_content ul.store_items li{
@@ -282,7 +320,7 @@ ul#summary{
 	height:18px;
 	line-height:25px;
 	cursor:pointer;
-	padding:3px 0px 3px 15px;
+	padding:3px 0 3px 15px;
 	margin-top:5px;
 }
 ul.store_items li a{
@@ -301,7 +339,7 @@ ul.store_items li a{
 #summary_service a{
 	height:16px;
 	margin-right:5px;
-	background:url(../Images/promise.png) no-repeat 0 -64px;
+	background:url(../images/promise.png) no-repeat 0 -64px;
 	width:78px;
 	display: inline-block;
 	margin-bottom:3px;
@@ -325,7 +363,7 @@ ul.store_items li a{
 #choose li p{
 	float: left;
 	width:72px;
-	font-family:"Microsoft Yahei";
+	font-family:"Microsoft Yahei",arial,sans-serif;
 	text-align: right;
 	height:23px;
 	line-height:23px;
@@ -350,7 +388,7 @@ ul.store_items li a{
 	width:16px;
 	right:-2px;
 	bottom:-2px;
-	background:url(../Images/iconlist_1.png) no-repeat -199px -222px;
+	background:url(../images/iconlist_1.png) no-repeat -199px -222px;
 	
 }
 /*购买数量*/
@@ -364,7 +402,7 @@ ul.store_items li a{
 	width:15px;
 	height:15px;
 	margin-top:3px;
-	background:url(../Images/iconlist_1.png) no-repeat -216px -190px;
+	background:url(../images/iconlist_1.png) no-repeat -216px -190px;
 }
 #choose_amount a.btn_add{
 	background-position:-231.5px -190px;
@@ -380,7 +418,7 @@ ul.store_items li a{
 /*购买按钮*/
 #choose_btns a{
 	float: left;
-	background:url(../Images/iconlist_4.png) no-repeat;
+	background:url(../images/iconlist_4.png) no-repeat;
 	width:136px;
 	height:38px;
 	margin:10px 6px 0 0;
@@ -491,7 +529,7 @@ span.add{
 	float: right;
 	width:23px;
 	height:23px;
-	background:url(../Images/iconlist_1.png) no-repeat 0 -260px;
+	background:url(../images/iconlist_1.png) no-repeat 0 -260px;
 	margin-top:50px;
 	
 }
@@ -544,7 +582,7 @@ ul.suit li{
 	text-align: center;
 	font-weight:700;
 	color:#fff;
-	background:url(../Images/iconlist_1.png) no-repeat -166px -111px;
+	background:url(../images/iconlist_1.png) no-repeat -166px -111px;
 	text-decoration:none;
 	margin-top:10px;
 }
@@ -558,23 +596,25 @@ ul.suit li{
 	float: left;
 	padding:0 15px;
 	font-size:14px;
-	font-weight:600px;
+	font-weight:600;
 	line-height:28px;
 	height:30px;
 }
+
 .main_tabs li.current{
 	background-color:#fff;
 	border: 1px solid #ddd;
 	border-top:2px solid #e4393c;
 	border-bottom:0;
 	height:34px;
+	line-height: 34px;
 	margin-top:-6px;
 }
 .main_tabs li.current a{
 	color:#e4393c;
 	height:36px;
 	line-height:36px;
-	
+
 }
 ul.main_tabs{
 	padding-left:0;/*左边框凸出*/
@@ -748,7 +788,7 @@ div.buyers ul li span{
 	width:113px;
 	height:25px;
 	line-height:25px;
-	background:url(../Images/iconlist_1.png) no-repeat -145px -393px;
+	background:url(../images/iconlist_1.png) no-repeat -145px -393px;
 	margin:10px auto;
 	color:#333;
 }
@@ -787,7 +827,7 @@ div.comment_item ul li a{
 	width:50px;
 	height:50px;
 	padding:8px;
-	background-image: url(../Images/avatar-bg.png);
+	background-image: url(../images/avatar-bg.png);
 	
 }
 div.comment_item ul li b{
@@ -810,7 +850,7 @@ div.comment_item div.topic{
 div.topic p{
 	float: left;
 	width: 75px;
-	background:url(../Images/iconlist_1.png) no-repeat -109px -239px;
+	background:url(../images/iconlist_1.png) no-repeat -109px -239px;
 	height:14px;
 }
 div.topic p.star4{
@@ -865,7 +905,7 @@ p.btns a:hover{
 	top:10px;
 	width:14px;
 	height:26px;
-	background:url(../Images/iconlist_1.png) no-repeat -259px -46px;
+	background:url(../images/iconlist_1.png) no-repeat -259px -46px;
 	border:0;
 	padding:0;
 }
@@ -923,7 +963,7 @@ input#txt_consult_search{
 	width:53px;
 	height:25px;
 	border:none;/*按钮要去边框*/
-	background:url(../Images/iconlist_1.png) no-repeat -103px -112px;
+	background:url(../images/iconlist_1.png) no-repeat -103px -112px;
 }
 .main_tabs li a#add_consult{
 	display: block;
@@ -1043,7 +1083,7 @@ div#consult_0{
 	margin-right:5px;
 	margin-top:-5px;
 	height:17px;
-	background:url(../Images/iconlist_1.png) no-repeat -110px -220px;
+	background:url(../images/iconlist_1.png) no-repeat -110px -220px;
 	vertical-align:middle;
 }
 #discuss-datas b.lun{

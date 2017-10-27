@@ -30,7 +30,9 @@ a:hover{
 	width:1211px;
 	margin:0 auto;
 	overflow: hidden;/*撑开*/
-	
+}
+img{
+	border: 0;
 }
 /*---灰色长条---*/
 #top{
@@ -60,14 +62,14 @@ a:hover{
 /*会员俱乐部:背景图*/
 li.vip a{
 	padding-left:29px;
-	background-image:url(../Images/vip.jpg);
+	background-image:url(../images/vip.jpg);
 	background-repeat: no-repeat;
 	/*背景图的位置*/
 	background-position:left center;
 }
 li.dakehu a{
 	padding-left:26px;
-	background:url(../Images/dakehu.jpg) no-repeat left center;
+	background:url(../images/dakehu.jpg) no-repeat left center;
 }
 /*手机京东*/
 li.app_jd{
@@ -79,7 +81,7 @@ li.app_jd>a{
 	/*设置成快元素a会被撑开,再设置高和line-height 让背景图也居中*/
 	height:22px;
 	line-height:22px;
-	background:url(../Images/iconlist_2.png) no-repeat -128px -360px;
+	background:url(../images/iconlist_2.png) no-repeat -128px -360px;
 }
 li.app_jd>a:hover,li.app_jd>a.hover{
 	background-position:-128px -399px;
@@ -94,7 +96,7 @@ li.app_jd>a:hover,li.app_jd>a.hover{
 	padding:0 5px;
 	background-color:#fff;
 	top:28px;
-	left:0px;
+	left:0;
 	border:1px solid #ddd;
 	border-top:0;
 	display:none;
@@ -113,7 +115,7 @@ li.service>a{
 	line-height:26px;
 	border:1px solid transparent;
 	border-bottom:none;
-	background:url(../Images/jt_down.jpg) no-repeat 95% center;
+	background:url(../images/jt_down.jpg) no-repeat 95% center;
 }
 
 /*弹出菜单父元素设置相对定位*/
@@ -144,7 +146,7 @@ li.service>a.hover{
 	color:#e4393c;
 	border-color:#ddd;
 	background-color:#fff;
-	background-image:url(../Images/jt_up.jpg);
+	background-image:url(../images/jt_up.jpg);
 }
 
 /*---2、logo和搜索---*/
@@ -198,7 +200,7 @@ li.service>a.hover{
 #my_jd{
 	float:left;
 	border:1px solid #efefef;
-	background: #f7f7f7 url(../Images/iconlist_2.png) no-repeat -116px -25px;
+	background: #f7f7f7 url(../images/iconlist_2.png) no-repeat -116px -25px;
 	padding-left:30px;
 	height:28px;
 	line-height:28px;
@@ -228,7 +230,7 @@ li.service>a.hover{
 #my_count{
 	float:left;
 	border:1px solid #efefef;
-	background: #f7f7f7 url(../Images/iconlist_2.png) no-repeat -116px -85px;
+	background: #f7f7f7 url(../images/iconlist_2.png) no-repeat -116px -85px;
 	padding-left:30px;
 	margin-left:20px;
 	height:28px;
@@ -294,8 +296,8 @@ li.service>a.hover{
 #nav b{
 	width: 19px;
     height: 19px;
-    background-image: url(../Images/iconlist_2.png);
-    background-position: -66px 0px;
+    background-image: url(../images/iconlist_2.png);
+    background-position: -66px 0;
     background-repeat: no-repeat;
     float: right;
     margin-top: 10px;
@@ -453,19 +455,19 @@ div.sub_cate_ad a{
 	width:40px;
 	height:40px;
 	margin:10px 0 0 55px;
-	background:url(../Images/gw01.jpg) no-repeat;
+	background:url(../images/gw01.jpg) no-repeat;
 }
 #foot_box p.send_type{
-	background-image:url(../Images/ps02.jpg);
+	background-image:url(../images/ps02.jpg);
 }
 #foot_box p.pay_type{
-	background-image:url(../Images/zf03.jpg);
+	background-image:url(../images/zf03.jpg);
 }
 #foot_box p.sale_service{
-	background-image:url(../Images/sh04.jpg);
+	background-image:url(../images/sh04.jpg);
 }
 #foot_box p.special_service{
-	background-image:url(../Images/ts05.jpg);
+	background-image:url(../images/ts05.jpg);
 }
 #foot_box ul{
 	width:140px;
