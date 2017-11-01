@@ -6,7 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<title>计算器</title>
 	<link rel="icon" href="images/caculate.ico" type="image/x-ico"/>
+	<!--[if !IE]><!-->
 	<script src="http://192.168.3.200/yesterday/01-3-css3/more%20Fun/more%20Fun.js"></script>
+	<!--<![endif]-->
 	<style type="text/css">
 		body{
 			margin:0;
@@ -92,7 +94,7 @@
 			border-bottom:1px solid #ddd;
 		}
 		.nav>div{
-			display:inline-block;
+			float: left;
 			width:55px;
 			font-size:12px;		
 			line-height:22px;
@@ -158,7 +160,7 @@
 			border:none;
 			background-color:transparent;
 		}
-		.print .label:first-child{
+		.print .label:first-child,#lab1{
 			line-height:22px;
 			font-size:12px;
 			height:20px;
