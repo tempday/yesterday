@@ -1,0 +1,26 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="container addmargin">
+	<ol class="breadcrumb">
+		<li><a href="#/main">首页</a></li>
+		<li class="active">详情</li>
+	</ol>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="borderbtn"><h3 ng-bind="details.name"></h3></div>
+			<img ng-src="img/{{details.img_lg}}" alt=""class="img-responsive">
+			<div class="jumbotron">
+				<div>
+					<span>主要原料：</span>{{details.material}}
+				</div>
+				<h5 class="borderdot" ng-bind="details.detail">
+				</h5>
+				<span class="text-danger">&yen; {{details.price}}</span>
+			</div>
+		</div>
+		<div class="panel-footer text-right">
+			<a href="#/order/{{details.did}}" class="btn btn-success" >我要订餐</a>&nbsp;
+			<a href="#/main" class="btn btn-warning">我再看看</a>
+		</div>
+	</div>
+</div>
+<div ng-include="'tpl/footer.html'"></div>
