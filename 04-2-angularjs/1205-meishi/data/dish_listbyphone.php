@@ -4,8 +4,8 @@
 
 //	接收客户端提交的数据
 //@ 符号压制当前行 产生的所有警告消息
-	//@$phone=$_REQUEST['phone'];
-	$phone=13501234567;
+	@$phone=$_REQUEST['phone'];
+	//$phone=13501234567;
 	//判断变量是否已定义
 	if(!isset($phone)){
 		echo '[]';

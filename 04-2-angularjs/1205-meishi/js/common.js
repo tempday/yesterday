@@ -77,10 +77,16 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 			}).then(function successCallback(response){
 				$scope.details=response.data;
 			});
-
 		}])
 		.controller('orderCtrl',['$scope','$routeParams','$http',function($scope,$routeParams,$http){
 			$scope.orderstate=false;
+			if(localStorage.getItem('msUserInfo')&&localStorage.getItem('msUserInfo').indexOf('user')>-1){
+				$scope.msUserInfo=JSON.parse(localStorage.getItem('msUserInfo'));
+				$scope.phone=$scope.msUserInfo.phone;
+				$scope.user_name=$scope.msUserInfo.user_name;
+				$scope.sex=$scope.msUserInfo.sex;
+				$scope.addr=$scope.msUserInfo.addr;
+			}
 			$scope.submit=function(){
 				$scope.datas='{' +
 						'"phone":'+$scope.phone+', ' +
@@ -88,8 +94,10 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 						'"user_name":\"'+$scope.user_name+'\", ' +
 						'"sex": '+$scope.sex+', ' +
 						'"addr":\"'+$scope.addr+'\"}';
-				console.log($scope.datas);
-
+				//console.log($scope.datas);
+				if(localStorage.getItem('msUserInfo')&&localStorage.getItem('msUserInfo').indexOf('phone')==-1){
+					localStorage.setItem('msUserInfo','{"phone":"'+$scope.phone+'"}');
+				}
 				$http({
 					method:'post',
 					url:'data/order_add.php',
@@ -104,48 +112,192 @@ angular.module('orderApp',['ng','ngRoute','ngAnimate'])
 						$scope.order_num=response.data.order_num;
 					}
 				});
-
 			}
 		}])
 		.controller('myorderCtrl',['$scope','$http',function($scope,$http){
 			$scope.orders=[];
-			$http({
-				method:'post',
-				url:'data/dish_listbyphone.php',
-				data:{'phone':'13705054321'},
-				headers:{'Content-Type': 'application/x-www-form-urlencoded'},
-				transformRequest: function (data) {
-					return $.param(data);
+			if(localStorage.getItem('msUserInfo')&&localStorage.getItem('msUserInfo').indexOf('phone')>-1){
+				$http({
+					method:'post',
+					url:'data/dish_listbyphone.php',
+					data:{'phone':JSON.parse(localStorage.getItem('msUserInfo')).phone},
+					headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+					transformRequest: function (data) {
+						return $.param(data);
+					}
+				}).then(function successCallback(response){
+					//console.log(response.data);
+					if(response.data.length){
+						$scope.orders=response.data;
+					}
+				});
+			}
+
+		}])
+		.controller('userCenterCtrl',['$scope','$http','$window',function($scope,$http,$window){
+			if(localStorage.getItem('msUserInfo')&&localStorage.getItem('msUserInfo').indexOf('user')>-1){
+				$scope.isOnline=true;
+				$scope.msUserInfo=JSON.parse(localStorage.getItem('msUserInfo'));
+			}else{
+				$scope.isOnline=false;
+			}
+			$scope.submit=function(){
+				$http({
+					method:'post',
+					url:'data/login.php',
+					data:{phone:$scope.msUserInfo.phone,
+						user:$scope.msUserInfo.user_name,
+						addr:$scope.newAddr
+					},
+					headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+					transformRequest: function (data) {
+						//console.log(data);
+						return $.param(data);
+					}
+				}).then(function successCallback(response){
+					if(response.data){
+						//console.log(response.data[0]);
+						$scope.msUserInfo=response.data[0];
+						localStorage.setItem('msUserInfo',JSON.stringify(response.data[0]));
+						$('#myModal').modal('hide');
+					}
+				});
+			};
+			$scope.logout=function(){
+				localStorage.setItem('msUserInfo','');
+				$scope.msUserInfo={};
+				$window.location.reload();
+			}
+		}])
+		.controller('userInfoCtrl',['$scope','$routeParams','$http','$location','$timeout',function($scope,$routeParams,$http,$location,$timeout){
+			if($routeParams.type=='register'){
+				$scope.isRegister=true;
+				$scope.isLogin=false;
+			}else{
+				$scope.isRegister=false;
+				$scope.isLogin=true;
+			}
+			$scope.userstate=false;
+			$scope.notUniqe=true;
+			$scope.notAccord=true;
+			$scope.infoError=false;
+			if($scope.isRegister){
+				$scope.$watch('rePwd',function(){
+					$scope.pwd&&$scope.rePwd!=$scope.pwd? $scope.notAccord=false: $scope.notAccord=true;
+				});
+				$scope.$watch('pwd',function(){
+					$scope.rePwd&&$scope.rePwd!=$scope.pwd? $scope.notAccord=false: $scope.notAccord=true;
+				});
+				//监听注册用户名,判断是否已存在
+				$scope.$watch('user',function(){
+					if($scope.user){
+						$http({
+							method:'post',
+							url:'data/validName.php',
+							data:{user:$scope.user},
+							headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+							//将数据转换成url编码
+							transformRequest: function (data) {
+								return $.param(data);
+							}
+						}).then(function successCallback(response){
+							response.data?$scope.notUniqe=true:$scope.notUniqe=false;
+						});
+					}
+				});
+				//注册按钮
+				$scope.submit=function(){
+					if(!$scope.notUniqe||!$scope.notAccord){
+						return false;
+					}
+					$http({
+						method:'post',
+						url:'data/register.php',
+						data:{phone:$scope.phone,
+							pwd:$scope.pwd,
+							user:$scope.user,
+							sex:$scope.uSex,
+							addr:$scope.addr
+						},
+						headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+						transformRequest: function (data) {
+							return $.param(data);
+						}
+					}).then(function successCallback(response){
+						if(response.data){
+							$scope.userstate=true;
+							localStorage.setItem('msUserInfo','{"sex":"'+$scope.uSex+'","user_name":"'+$scope.user+'","phone":"'+$scope.phone+'","addr":"'+$scope.addr+'"}');
+							$timeout(function(){
+								$location.path('/userCenter');
+							},3000);
+						}else{
+							$scope.userstate=false;
+						}
+					});
 				}
-			}).then(function successCallback(response){
-				console.log(response.data);
-				if(response.data.length){
-					$scope.orders=response.data;
+			}else{//end register
+				//登录按钮
+				$scope.submit=function(){
+					//console.log($scope.user);
+					$http({
+						method:'post',
+						url:'data/login.php',
+						data:{
+							pwd:$scope.pwd,
+							user:$scope.user
+						},
+						headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+						transformRequest: function (data) {
+							return $.param(data);
+						}
+					}).then(function successCallback(response){
+						if(response.data){
+							$scope.userstate=true;
+							$scope.infoError=false;
+							localStorage.setItem('msUserInfo',JSON.stringify(response.data[0]));
+							//登录成功2秒后跳转到个人中心
+							$timeout(function(){
+								$location.path('/userCenter');
+							},2000);
+						}else{
+							$scope.infoError=true;
+							$scope.userstate=false;
+						}
+					});
 				}
-			});
+			}
+			//console.log($scope.notAccord);
+
+
 		}])
 		//路由配置  ng-view
 		.config(function($routeProvider){
 			$routeProvider.when('/start',{
-			templateUrl:'tpl/start.html',
-			controller:'startCtrl'
-		}).when('/main',{
-			templateUrl:'tpl/main.html',
-			controller:'mainCtrl'
+				templateUrl:'tpl/start.html',
+				controller:'startCtrl'
+			}).when('/main',{
+				templateUrl:'tpl/main.html',
+				controller:'mainCtrl'
 				//添加路由参数:一个或多个 /:n  |  /:n/:i
-		}).when('/detail/:did',{
-			templateUrl:'tpl/detail.html',
-			controller:'detailCtrl'
-		}).when('/myorder',{
-			templateUrl:'tpl/myorder.html',
-			controller:'myorderCtrl'
-		}).when('/order/:did',{
-			templateUrl:'tpl/order.html',
-			controller:'orderCtrl'
-		}).otherwise({
-			redirectTo:'/start'
+			}).when('/detail/:did',{
+				templateUrl:'tpl/detail.html',
+				controller:'detailCtrl'
+			}).when('/myorder',{
+				templateUrl:'tpl/myorder.html',
+				controller:'myorderCtrl'
+			}).when('/order/:did',{
+				templateUrl:'tpl/order.html',
+				controller:'orderCtrl'
+			}).when('/userCenter',{
+				templateUrl:'tpl/userCenter.html',
+				controller:'userCenterCtrl'
+			}).when('/userInfo/:type',{
+				templateUrl:'tpl/userInfo.html',
+				controller:'userInfoCtrl'
+			}).otherwise({
+				redirectTo:'/start'
+			});
 		});
-	});
 	window.onresize=function(){
 		document.getElementById("startpage").style.height=window.innerHeight+"px";
 	}

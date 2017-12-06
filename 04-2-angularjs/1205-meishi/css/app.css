@@ -123,3 +123,34 @@ input,
 textarea {
   border-color: #ffd79d !important;
 }
+.box-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-org {
+  color: #fe9805 !important;
+}
+.btn-org {
+  background-color: #fe9805;
+  color: #fff;
+}
+.btn-org:hover,
+.btn-org:focus,
+.btn-org:active {
+  background-color: #e98a01;
+  color: #fff;
+}
+.btn-org:active {
+  color: #cccccc;
+}
+.static-width {
+  display: inline-block;
+  width: 8rem;
+}
+.static-width-right {
+  display: inline-block;
+  width: 12rem;
+}
+.mgTop-20 {
+  margin-top: 2rem;
+}

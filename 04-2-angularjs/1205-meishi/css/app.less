@@ -129,3 +129,33 @@ table.table>tbody>tr>td{
 .list-group-item,tr,tbody,table,td,th,input,textarea {
 	border-color:lighten(@clr-org,30%)!important;
 }
+.box-center{
+	margin-left:auto;
+	margin-right:auto;
+}
+.text-org{
+	color:@clr-org!important;
+}
+.btn-org{
+	background-color:@clr-org;
+	color:@clr-w;
+	&:hover,&:focus,&:active{
+		background-color:darken(@clr-org,5%);
+		color:@clr-w;
+	}
+	&:active{
+		color:darken(@clr-w,20%);
+	}
+}
+.static-width{
+	display:inline-block;
+	width:8rem;
+}
+.static-width-right{
+	display:inline-block;
+	width:12rem;
+}
+
+.mgTop-20{
+	margin-top:2rem;
+}

@@ -133,9 +133,19 @@ CREATE TABLE ms_order(
     did INT,
     order_num INT
 );
+CREATE TABLE ms_user(
+    uid INT PRIMARY KEY AUTO_INCREMENT,
+    phone VARCHAR(16),
+    user_name VARCHAR(16),
+    sex INT,    /*1:男  2:女*/
+    addr VARCHAR(256),
+    pwd VARCHAR(16),
+    ptime datetime,
+    pip VARCHAR(16)
+);
 INSERT INTO ms_order(oid, phone,user_name,sex,order_time,addr,did,order_num) VALUES
-(NULL,'13501234567','静静',2,1445154859209,'东城中路联丰大厦201',3,101),
-(NULL,'13501234567','静静',2,1445254959209,'东城中路联丰大厦201',2,102),
-(NULL,'13501234567','静静',2,1445354959209,'东城中路联丰大厦201',5,103);
+(NULL,'13501234567','123',2,1445154859209,'东城中路103号',3,101),
+(NULL,'13501234567','123',2,1445254959209,'东城中路103号',2,102),
+(NULL,'13501234567','123',2,1445354959209,'东城中路103号',5,103);
 
 ##SELECT * FROM ms_order;

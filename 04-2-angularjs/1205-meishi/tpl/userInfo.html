@@ -1,0 +1,68 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="container addmargin">
+	<div class="panel panel-warning" ng-show="isRegister">
+		<form class="panel-body" ng-submit="submit()" ng-hide="userstate">
+			<div class="form-group">
+				<label for="username" class="control-label">用户名:</label>
+				<input ng-model="user" type="text" class="form-control" id="username" required placeholder="请输入姓名">
+			</div>
+			<h6 ng-hide="notUniqe" class=" text-danger">用户名已存在</h6>
+			<div class="form-group">
+				<label for="pwd" class="control-label">登录密码:</label>
+				<input ng-model="pwd" type="password" class="form-control" id="pwd" required placeholder="请输入密码">
+			</div>
+			<div class="form-group">
+				<label for="rePwd" class="control-label">确认密码:</label>
+				<input ng-model="rePwd" type="password" class="form-control" id="rePwd" required placeholder="请再次输入密码">
+			</div>
+			<h6 ng-hide="notAccord" class="text-danger">两次密码输入不一致</h6>
+			<label class="control-label">性别:</label>
+			<div class="radio">
+				<label class="radio-inline">
+					<input ng-model="uSex" type="radio" name="uSex" value="1" checked required> 先生
+				</label>
+				<label class="radio-inline">
+					<input ng-model="uSex" type="radio" name="uSex" value="2"> 女士
+				</label>
+			</div>
+			<div class="form-group">
+				<label for="phonenum" class="control-label">联系电话:</label>
+				<input ng-model="phone" type="text" class="form-control" id="phonenum" pattern="\d{4,11}" required placeholder="请输入联系电话">
+			</div>
+			<div class="form-group">
+				<label for="phonenum" class="control-label">送餐地址:</label>
+				<textarea ng-model="addr"  rows="5" class="form-control" required></textarea>
+			</div>
+			<button type="submit" class="btn btn-warning btn-block">确定注册</button>
+		</form>
+
+	</div>
+		<!--登录-->
+	<div class="panel panel-warning" ng-show="isLogin">
+		<form class="panel-body" ng-submit="submit()" ng-hide="userstate">
+			<div class="form-group">
+				<label for="use_rname" class="control-label">用户名:</label>
+				<input ng-model="user" type="text" class="form-control" id="use_rname" required placeholder="请输入姓名">
+			</div>
+			<div class="form-group">
+				<label for="login_pwd" class="control-label">登录密码:</label>
+				<input ng-model="pwd" type="password" class="form-control" id="login_pwd" required placeholder="请输入密码">
+			</div>
+			<h6 ng-show="infoError" class=" text-danger">用户名或密码错误</h6>
+			<button type="submit" class="btn btn-warning btn-block">确定登录</button>
+		</form>
+	</div>
+	<div class="panel panel-warning" ng-show="userstate">
+		<!--提示-->
+		<div class="panel-body">
+			<div ng-show="isRegister" class="alert alert-success">
+				注册成功！
+			</div>
+			<div ng-show="isLogin" class="alert alert-success">
+				登录成功！
+			</div>
+		</div>
+	</div>
+
+</div>
+<div ng-include="'tpl/footer.html'"></div>
